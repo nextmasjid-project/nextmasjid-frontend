@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "home": {
+      "title": "NextMasjid"
+    }
+  },
+  "languages-dropdown": {
+    "en": "English",
+    "ar": "العربيه"
+  }
+}

@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    {src: '~/plugins/i18n.js'},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -33,6 +34,23 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    ['nuxt-i18n', {
+      detectBrowserLanguage: false,
+      strategy: 'prefix',
+      defaultLocale: 'en',
+      locales: [
+        {
+          code: 'ar',
+          file: 'ar-AR.js',
+        },
+        {
+          code: 'en',
+          file: 'en-EN.js'
+        },
+      ],
+      lazy: true,
+      langDir: 'locales/'
+    }],
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
