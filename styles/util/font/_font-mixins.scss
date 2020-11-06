@@ -1,0 +1,31 @@
+@mixin font--light {
+    font-family: '29 LT Zarid Light', sans-serif;
+}
+
+@mixin font--light-slanted {
+  font-family: '29 LT Zarid Light Slanted', sans-serif;
+}
+
+@mixin font--regular {
+    font-family: '29 LT Zarid Regular', sans-serif;
+}
+
+@mixin font--medium {
+    font-family: '29 LT Zarid Medium', sans-serif;
+}
+
+@mixin font--medium-slanted {
+    font-family: '29 LT Zarid Medium Slanted', sans-serif;
+}
+
+@mixin font--bold {
+    font-family: '29 LT Zarid Bold', sans-serif;
+}
+
+@mixin font--bold-slanted {
+  font-family: '29 LT Zarid Bold Slanted', sans-serif;
+}
+
+@mixin font--slanted {
+  font-family: '29 LT Zarid Slanted', sans-serif;
+}

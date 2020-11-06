@@ -1,0 +1,32 @@
+.container {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      @include make-container()
+    }
+
+    // Facets
+
+    // States
+}
+
+
+
+.container--narrow {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      @include make-container-narrow();
+    }
+
+    // Facets
+
+    // States
+}
+

@@ -1,0 +1,76 @@
+.button {
+  // Vars
+  $button-width: 34rem;
+  $disabled-bg: #ffc79e;
+
+  // Support
+
+  // Module
+  & {
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 1.2rem;
+    display: inline-block;
+    color: currentColor;
+    @include font--bold;
+    transition: background-color .2s $cubic-300;
+    max-width: $button-width;
+    width: 100%;
+    text-decoration: none;
+    @include mq('>sm') {
+      padding: 1.6rem;
+    }
+  }
+
+  // Facets
+  & {
+    &.button--primary {
+      background-color: $c-primary;
+      color: $c-white;
+      text-transform: uppercase;
+      &[disabled] {
+        background-color: $disabled-bg;
+        opacity: 1;
+      }
+    }
+
+    &.button--red {
+      background-color: $c-red;
+      color: $c-white;
+      text-transform: uppercase;
+    }
+
+
+    &.button--outline {
+      background-color: transparent;
+      color: $c-blue-500;
+      border-color: $c-border;
+      &[disabled] {
+        background-color: transparent;
+        opacity: 0.3;
+      }
+    }
+
+    &.button--fit-content {
+      max-width: fit-content;
+    }
+  }
+
+  // States
+  & {
+    &.button--primary {
+      &:hover {
+        background-color: darken($c-primary, 4%);
+      }
+    }
+
+    &.button--outline {
+      &:hover {
+        background-color: transparentize($c-primary, 0.90);
+      }
+    }
+  }
+}
+

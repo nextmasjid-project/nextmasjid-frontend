@@ -1,0 +1,35 @@
+.icon {
+  // Vars
+  $icon-sizes: (
+    'small': 15px,
+    'medium': 24px,
+    'large': 30px,
+    'x-large': 40px,
+    'xx-large': 50px,
+    'xxx-large': 60px,
+  );
+
+  // Support
+
+  // Module
+  & {
+    pointer-events: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  // Facets
+  & {
+    // Sizes
+    @each $key, $value in $icon-sizes {
+      &.icon--#{$key} {
+        width: $value;
+        height: $value;
+      }
+    }
+  }
+
+  // States
+}

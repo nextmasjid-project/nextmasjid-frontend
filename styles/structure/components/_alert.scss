@@ -1,0 +1,40 @@
+.alert {
+    // Vars
+    $error: #FBE9F0;
+    $success: #d4edda;
+
+    // Support
+
+    // Module
+    & {
+        background-color: $c-blue-100;
+        padding: 1.4rem;
+        margin: 2rem 0;
+        border-radius: .4rem;
+        display: flex;
+        align-items: center;
+
+        .alert__icon {
+            margin-right: 2rem;
+            width: 3rem;
+        }
+
+        .alert__text {
+            line-height: 1.3;
+            font-size: 1.4rem;
+        }
+    }
+
+    // Facets
+    & {
+        &.alert--error {
+            background-color: $error;
+        }
+
+        &.alert--success {
+            background-color: $success;
+        }
+    }
+
+    // States
+}

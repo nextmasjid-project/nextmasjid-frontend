@@ -1,0 +1,44 @@
+.trs-fade-out {
+  // Vars
+  $trans: cubic-bezier(.77,0,.175,1);
+  // Support
+
+  // Module
+
+  // Facets
+
+  // States
+  &-enter-active, &-leave-active {
+    transition: opacity 0.5s $trans, transform .5s $trans;
+  }
+
+  &-enter-active {
+    transition-delay: .5s;
+  }
+
+  &-enter, &-leave-to {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+
+
+.trs-fade-out-fast {
+  // Vars
+  $trans: cubic-bezier(.77,0,.175,1);
+  // Support
+
+  // Module
+
+  // Facets
+
+  // States
+  &-enter-active, &-leave-active {
+    transition: opacity 0.3s $trans, transform .3s $trans;
+  }
+
+  &-enter, &-leave-to {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}

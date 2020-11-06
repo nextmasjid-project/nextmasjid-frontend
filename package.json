@@ -2,6 +2,7 @@
   "name": "nextmasjid",
   "version": "1.0.0",
   "private": true,
+  "description": "NextMasjid is a free, non-for-profit web app to help people in finding the best locations to build a mosque",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -9,8 +10,27 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "chaestli": "^2.0.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.0.5"
+  },
+  "keywords": [
+    "Masjid",
+    "NextMasjid",
+    "Find Masjid"
+  ],
+  "contributors": [
+    {
+      "name": "Adel Elkhodary",
+      "email": "adel.elkhodary@hotmail.com",
+      "url": "https://adel-elkhodary.ch"
+    }
+  ],
+  "bugs": "https://github.com/NextMasjid/nextmasjid-frontend/issues",
+  "license": "MIT"
 }

@@ -1,0 +1,63 @@
+.overlay {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: transparentize($c-blue-500, 0.5);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+
+      .overlay__content {
+        background-color: $c-white;
+        padding: 2rem;
+        position: relative;
+        width: 65rem;
+        height: 41rem;
+        display: flex;
+        align-items: center;
+        @include mq('>lg') {
+          padding: 4rem;
+        }
+      }
+
+      .overlay__button {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        transition: opacity .2s $cubic-300;
+      }
+
+      .overlay__body {
+        text-align: center;
+      }
+    }
+
+    // Facets
+    & {
+      &.overlay--terms {
+        .overlay__content {
+          width: calc(100% - 2rem);
+          height: 57rem;
+          @include mq('>lg') {
+            max-width: $container-width;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // States
+    & {
+      .overlay__button:hover {
+        opacity: 0.6;
+      }
+    }
+}

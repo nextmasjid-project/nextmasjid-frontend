@@ -1,0 +1,56 @@
+// Force the outermost tags to always fill the screen
+html, body {
+  width: 100%;
+  height: 100%;
+}
+//  `box-sizing: border-box` for all elements as a default behaviour
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  text-decoration: none;
+}
+
+// General styles for the `html` element
+html {
+  touch-action: manipulation;
+  overflow: visible;
+  font-size: 62.5%; // Converts 1rem to 10px!
+  @include font--regular;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Body Styles
+body {
+  background-color: $c-white;
+  overflow-wrap: break-word;
+  color: $c-blue-500;
+  font-size: $base-font-size;
+}
+
+// Button element reset
+button {
+  border: none;
+  appearance: none;
+  padding: 0;
+  background: none;
+}
+
+a {
+  color: $c-primary;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+strong {
+  @include font--bold;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    color: $c-blue-500;
+  }
+}

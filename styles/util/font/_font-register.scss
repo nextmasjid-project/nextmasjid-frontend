@@ -1,0 +1,6 @@
+@mixin font--register($font-name, $font-url) {
+  font-display: swap;
+  font-family: $font-name;
+  src: url('#{$font-url}.woff2') format('woff2'),
+       url('#{$font-url}.woff') format('woff');
+}

@@ -1,0 +1,34 @@
+h1:not(.u-reset),
+.u-reset.u-typography-h1 {
+    @include typography--h1;
+}
+
+h2:not(.u-reset),
+.u-reset.u-typography-h2 {
+    @include typography--h2;
+}
+
+h3:not(.u-reset),
+.u-reset.u-typography-h3 {
+    @include typography--h3;
+}
+
+h4:not(.u-reset),
+.u-reset.u-typography-h4 {
+    @include typography--h4;
+}
+
+h5:not(.u-reset),
+.u-reset.u-typography-h5 {
+    @include typography--h5;
+}
+
+h6:not(.u-reset),
+.u-reset.u-typography-h6 {
+    @include typography--h6;
+}
+
+p:not(.u-reset),
+.u-reset.u-typography-p {
+  @include typography--text;
+}

@@ -1,0 +1,69 @@
+ .control {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 3rem;
+
+      .control__label {
+        padding-bottom: 0;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        cursor: pointer;
+      }
+
+      .control__indicator {
+        width: 2rem;
+        height: 2rem;
+        border: 1.5px solid $c-primary;
+        background-color: transparent;
+        display: inline-block;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          background-color: $c-primary;
+          width: 100%;
+          height: 100%;
+          transition: transform .2s ease-in-out;
+          will-change: transform;
+        }
+      }
+
+      .control__input {
+        display: none;
+      }
+
+      .control__input:checked + .control__label {
+        .control__indicator {
+          &:before {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+      }
+    }
+
+    // Facets
+   & {
+     // Radio Button
+     &.control--radio {
+       .control__indicator {
+         border-radius: 50%;
+         margin-right: 1rem;
+         &:before {
+           border-radius: 50%;
+         }
+       }
+     }
+   }
+
+    // States
+}

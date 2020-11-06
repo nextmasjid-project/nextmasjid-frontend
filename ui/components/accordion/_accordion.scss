@@ -1,0 +1,54 @@
+.ui-accordion {
+  // Vars
+
+  // Support
+
+  // Module
+  & {
+    .ui-accordion__head {
+      cursor: pointer;
+      display: flex;
+      text-transform: uppercase;
+      align-items: center;
+      border-bottom: 1px solid $c-border;
+      padding-bottom: 1.3rem;
+      &:first-child {
+        margin-bottom: 3rem
+      }
+
+      .icon {
+        margin-left: 1.5rem;
+        width: 1.7rem;
+        height: 1rem;
+      }
+    }
+
+    .ui-accordion__body {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+  }
+
+  // Facets
+  & {
+    &.ui-accordion--is-open {
+      .ui-accordion__body {
+        opacity: 1;
+      }
+
+      .icon {
+        fill: $c-primary;
+      }
+    }
+
+    &.ui-accordion--is-animating {
+      .ui-accordion__body {
+        transition: opacity 300ms ease, max-height 300ms ease;
+      }
+    }
+  }
+
+  // States
+}

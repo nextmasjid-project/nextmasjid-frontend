@@ -1,0 +1,148 @@
+.form {
+    // Vars
+    $toggle-active: #66bb6a;
+    $toggle-inactive: #BCBCBC;
+    $placeholder-color: #9F9F9F;
+
+    // Support
+
+    // Module
+    & {
+      .form__control {
+        margin-bottom: 2rem;
+        position: relative;
+        @include mq('>lg') {
+          margin-bottom: 3rem;
+        }
+      }
+
+      .form__label {
+        display: block;
+        margin-bottom: .8rem;
+        color: $c-blue-500;
+        position: relative;
+      }
+
+      .form__input {
+        display: block;
+        border: 1px solid $c-border;
+        padding: 1rem 1.5rem;
+        color: $c-blue-500;
+        font-size: 1.8rem;
+        transition: border-color .3s ease-in-out;
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .form__error {
+        display: none;
+      }
+
+      .form__error-extra {
+        color: $c-primary;
+        padding-top: 0.8rem;
+        font-size: 1.4rem;;
+      }
+
+      .form__row {
+        display: flex;
+        //flex-wrap: wrap;
+      }
+
+      .form__col {
+        &:first-child {
+          padding-right: 3rem;
+        }
+      }
+
+      .form__col--wide {
+        flex: 0 0 70%;
+      }
+
+      .form__textarea {
+        width: 100%;
+        height: 320px;
+        background-color: $c-blue-100;
+        border-bottom: 2px solid transparent;
+        padding: 1.2rem;
+        color: $c-blue-500;
+        resize: none;
+        font-size: 2rem;
+      }
+
+      .form__textarea-counter {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+      }
+
+    }
+
+    // Facets
+    & {
+
+      .form__control--error {
+        .form__error {
+          display: flex;
+          color: $c-primary;
+          padding-top: 0.8rem;
+          font-size: 1.4rem;
+          position: relative;
+          &:before {
+            content: url("~@/assets/images/icon-error.svg");
+            margin-right: 0.7rem;
+          }
+        }
+      }
+
+
+      .form__info-text {
+        display: inline-block;
+        max-width: 85%;
+        @include typography--text-small();
+        @include mq('<=sm') {
+          line-height: 1.4;
+          max-width: 80%;
+        }
+
+        a {
+          text-decoration: none;
+          color: $c-primary;
+        }
+      }
+
+      .form__info-icon {
+        margin-right: 2rem;
+        margin-top: 0.6rem;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+    }
+
+    // States
+    & {
+      .form__input {
+        &::placeholder {
+          color: $placeholder-color;
+        }
+
+        &:focus {
+          border-color: $c-primary;
+        }
+      }
+
+      .form__textarea {
+        &::placeholder {
+          color: $c-blue-500;
+          opacity: 1;
+          transition: opacity .13s ease-in-out;
+        }
+
+        &:focus::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+}
+

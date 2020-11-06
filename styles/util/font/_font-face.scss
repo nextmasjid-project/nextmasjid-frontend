@@ -1,0 +1,43 @@
+// Font project path url
+$font-path: '~@/assets/fonts/29LT_Zarid_Text';
+$font-name-light: 29LTZaridText-light;
+$font-name-light-slanted: 29LTZaridText-lightSlanted;
+$font-name-regular: 29LTZaridText-Regular;
+$font-name-medium: 29LTZaridText-Medium;
+$font-name-medium-slanted: 29LTZaridText-MediumSlanted;
+$font-name-bold: 29LTZaridText-Bold;
+$font-name-bold-slanted: 29LTZaridText-BoldSlanted;
+$font-name-slanted: 29LTZaridText-Slanted;
+
+// Register fonts
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Light', $font-url: #{$font-path}/$font-name-light);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Light Slanted', $font-url: #{$font-path}/$font-name-light-slanted);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Regular', $font-url: #{$font-path}/$font-name-regular);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Medium', $font-url: #{$font-path}/$font-name-medium);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Medium Slanted', $font-url: #{$font-path}/$font-name-medium-slanted);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Bold', $font-url: #{$font-path}/$font-name-bold);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Bold Slanted', $font-url: #{$font-path}/$font-name-bold-slanted);
+}
+
+@font-face {
+  @include font--register($font-name: '29 LT Zarid Slanted', $font-url: #{$font-path}/$font-name-slanted);
+}

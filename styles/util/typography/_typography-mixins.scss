@@ -1,0 +1,42 @@
+@mixin typography--h1() {
+    @include font--bold;
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+    @include mq('>md') {
+      font-size: 5.8rem;
+    }
+}
+
+@mixin typography--h2() {
+    @include font--bold;
+    font-size: 3.3rem;
+}
+
+@mixin typography--h3() {
+    @include font--bold;
+    font-size: 2rem;
+}
+
+@mixin typography--h4() {
+    @include font--bold;
+    font-size: 1.8rem;
+}
+
+@mixin typography--h5() {
+    @include font--bold;
+    font-size: 1.6rem;
+}
+@mixin typography--h6() {
+    @include font--bold;
+    font-size: 1.4rem;
+}
+
+@mixin typography--text() {
+    @include font--regular;
+    font-size: 1.8rem;
+}
+
+@mixin typography--text-small() {
+    @include font--regular;
+    font-size: 1.4rem;
+}
