@@ -2,6 +2,10 @@
   <header class="main-header">
     <icon symbol="icon-hamburger"></icon>
     <icon symbol="icon-map-green" size="x-large"></icon>
+    <div class="button-group">
+      <button class="button button--primary">Start building</button>
+      <button class="button button--outline">Start building</button>
+    </div>
     <select class="header__lang-select" v-model="lang" @change="switchLang(lang)">
       <option v-for="(lang, i) in availableLocales" :key="`Lang${i}`" :value="lang">{{ languages[lang] }}</option>
     </select>

@@ -11,17 +11,13 @@
     cursor: pointer;
     background-color: transparent;
     border: 1px solid transparent;
-    padding: 1.2rem;
     display: inline-block;
     color: currentColor;
     @include font--bold;
     transition: background-color .2s $cubic-300;
-    max-width: $button-width;
-    width: 100%;
     text-decoration: none;
-    @include mq('>sm') {
-      padding: 1.6rem;
-    }
+    padding: 1.28rem 3rem;
+    border-radius: 1rem;
   }
 
   // Facets
@@ -29,7 +25,7 @@
     &.button--primary {
       background-color: $c-primary;
       color: $c-white;
-      text-transform: uppercase;
+      box-shadow: $box-shadow-primary-button;
       &[disabled] {
         background-color: $disabled-bg;
         opacity: 1;
@@ -53,8 +49,8 @@
       }
     }
 
-    &.button--fit-content {
-      max-width: fit-content;
+    &.button--full-width {
+      width: 100%;
     }
   }
 
@@ -72,5 +68,26 @@
       }
     }
   }
+}
+
+
+/**
+* Button Group
+ */
+.button-group {
+    // Vars
+
+    // Support
+
+    // Module
+
+    // Facets
+    & {
+      .button:first-child {
+        margin-right: 1.6rem;
+        margin-bottom: 1.6rem;
+      }
+    }
+    // States
 }
 
