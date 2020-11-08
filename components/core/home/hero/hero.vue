@@ -28,8 +28,7 @@ export default {
   data() {
     return {
       swiperOptions: {
-        speed: 800,
-        slidesPerView: 1,
+        speed: 1200,
         mousewheel: true,
         pagination: {
           el: '.swiper-pagination',
