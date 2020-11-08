@@ -1,5 +1,8 @@
 <template>
   <div class="nextMasjid">
+    <!--  SVG Icons  -->
+    <app-svg-container />
+
     <!--  Main Header  -->
     <app-header />
 

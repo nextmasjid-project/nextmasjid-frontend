@@ -1,5 +1,7 @@
 <template>
   <header class="main-header">
+    <icon symbol="icon-hamburger"></icon>
+    <icon symbol="icon-map-green" size="x-large"></icon>
     <select class="header__lang-select" v-model="lang" @change="switchLang(lang)">
       <option v-for="(lang, i) in availableLocales" :key="`Lang${i}`" :value="lang">{{ languages[lang] }}</option>
     </select>
@@ -35,7 +37,7 @@ export default {
     ...mapActions('languages', ['setLangAction']),
     switchLang(locale) {
       this.setLangAction(locale)
-      import(`../../locales/${locale}.json`).then(module => {
+      import(`@/locales/${locale}.json`).then(module => {
         this.$i18n.locale = locale;
         this.$i18n.setLocaleMessage(locale, module.default);
         this.$router.replace(this.switchLocalePath(locale));

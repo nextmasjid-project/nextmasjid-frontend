@@ -13,7 +13,9 @@
     "chaestli": "^2.0.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
-    "nuxt-i18n": "^6.15.4"
+    "nuxt-i18n": "^6.15.4",
+    "swiper": "^6.3.5",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "fibers": "^5.0.0",
