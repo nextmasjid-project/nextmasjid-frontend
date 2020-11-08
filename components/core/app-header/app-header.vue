@@ -1,14 +1,22 @@
 <template>
-  <header class="main-header">
-    <icon symbol="icon-hamburger"></icon>
-    <icon symbol="icon-map-green" size="x-large"></icon>
-    <div class="button-group">
-      <button class="button button--primary">Start building</button>
-      <button class="button button--outline">Start building</button>
+  <header class="header">
+    <div class="header__inner">
+      <button class="header__hamburger">
+        <icon symbol="icon-hamburger"></icon>
+      </button>
+
+      <nuxt-link class="header__link" :to="localePath({name: 'index'})">
+        <img class="header__logo" :src="require(`@/assets/images/${$t('header.logo')}`)" alt="NextMasjid">
+      </nuxt-link>
     </div>
-    <select class="header__lang-select" v-model="lang" @change="switchLang(lang)">
-      <option v-for="(lang, i) in availableLocales" :key="`Lang${i}`" :value="lang">{{ languages[lang] }}</option>
-    </select>
+
+<!--    <div class="button-group">-->
+<!--      <button class="button button&#45;&#45;primary">Start building</button>-->
+<!--      <button class="button button&#45;&#45;outline">Start building</button>-->
+<!--    </div>-->
+<!--    <select class="header__lang-select" v-model="lang" @change="switchLang(lang)">-->
+<!--      <option v-for="(lang, i) in availableLocales" :key="`Lang${i}`" :value="lang">{{ languages[lang] }}</option>-->
+<!--    </select>-->
   </header>
 </template>
 

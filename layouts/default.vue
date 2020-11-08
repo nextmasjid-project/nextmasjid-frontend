@@ -7,9 +7,9 @@
     <app-header />
 
     <!-- Main Content -->
-    <main><Nuxt /></main>
+    <main :dir="$t('direction')"><Nuxt /></main>
 
     <!-- Main Footer -->
-    <app-footer />
+<!--    <app-footer />-->
   </div>
 </template>

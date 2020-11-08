@@ -5,6 +5,37 @@
 
     // Module
     & {
+      padding: 2rem 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+
+      .header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        padding: 0 4rem;
+      }
+      width: 100%;
+      .header__hamburger {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 5rem;
+        background-color: $c-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header__link {
+        display: block;
+      }
+
+      .header__logo {
+        width: 20rem;
+      }
     }
 
     // Facets

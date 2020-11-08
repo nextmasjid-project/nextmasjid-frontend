@@ -85,7 +85,11 @@
     & {
       .button:first-child {
         margin-right: 1.6rem;
-        margin-bottom: 1.6rem;
+
+        main[dir="rtl"] & {
+          margin-left: 1.6rem;
+          margin-right: 0;
+        }
       }
     }
     // States

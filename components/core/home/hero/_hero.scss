@@ -1,3 +1,5 @@
+@import "styles/base/variables";
+
 .hero {
     // Vars
 
@@ -6,6 +8,62 @@
     // Module
     & {
       height: 100vh;
+
+      .hero__swiper {
+        height: 100%;
+      }
+
+      .hero__img {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        object-fit: cover;
+        object-position: bottom;
+        width: 100%;
+      }
+
+      .hero__content {
+        position: absolute;
+        padding: 0 4rem;
+        max-width: 50rem;
+        text-align: left;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      .hero__title {
+        margin-bottom: 0;
+      }
+
+      .hero__description {
+        padding: 3rem 0;
+      }
+
+      .swiper-pagination {
+        text-align: right;
+        display: flex;
+        align-items: center;
+
+        .swiper-pagination-bullet {
+          transition: all .3s;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: $c-blue-500;
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+
+      .swiper-container-horizontal > .swiper-pagination-bullets,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        bottom: 4rem;
+        right: 4rem;
+        width: auto;
+        left: auto;
+      }
     }
 
     // Facets
