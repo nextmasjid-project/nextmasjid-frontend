@@ -7,9 +7,16 @@
   "header": {
     "logo": "logo-arabic.svg"
   },
+  "meta": {
+    "home": {
+      "title": "Home title"
+    },
+    "about": {
+      "title": "About title"
+    }
+  },
   "pages": {
     "home": {
-      "title": "المسجد التالي",
       "hero": {
         "slider": [
           {
@@ -34,6 +41,80 @@
             "secondaryButton": "Search now"
           }
         ]
+      }
+    },
+    "about": {
+      "subHero": {
+        "title": "About page",
+        "description": "test"
+      },
+      "topTiles": [
+        {
+          "icon": "icon-mosque-star",
+          "title": "title 1",
+          "body": ["text 1"]
+        },
+        {
+          "icon": "icon-result-star",
+          "title": "title 2",
+          "body": [
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+            "sed diam nonumy eirmod tempor invidunt ut labore ",
+            "dolore magna aliquyam erat, sed diam voluptua"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "img": "img-1.jpg",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "img-2.jpg",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "img-3.jpg",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        }
+      ],
+      "HowToHelp": {
+        "img": "big-img-1.jpg",
+        "title": "How to help in building",
+        "body": "dolore magna aliquyam erat, sed diam voluptua more text show come here"
+      },
+      "benefits": {
+        "title": "Benefits",
+        "description": "dolore magna aliquyam erat, sed diam voluptua more text show come here dolore magna aliquyam erat, sed diam voluptua more text show come here",
+        "tiles": [
+          {
+            "img": "img-1.svg",
+            "title": "Main title",
+            "body": "some description here"
+          },
+          {
+            "img": "img-2.svg",
+            "title": "Main title 2",
+            "body": "some description here"
+          },
+          {
+            "img": "img-3.svg",
+            "title": "Main title 3",
+            "body": "some description here"
+          },
+          {
+            "img": "img-4.svg",
+            "title": "Main title 4",
+            "body": "some description here"
+          }
+        ]
+      },
+      "bottom": {
+        "title": "Bottom body",
+        "description": "very long text dolore magna aliquyam erat, sed diam voluptua more text show come here dolore magna aliquyam erat, sed diam voluptua more text show come here\""
       }
     }
   }
