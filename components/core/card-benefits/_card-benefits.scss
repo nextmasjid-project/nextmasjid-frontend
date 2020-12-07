@@ -1,0 +1,25 @@
+.card-benefits {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      background-color: $c-white;
+      padding: $main-padding * 1.5;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+
+      .card-benefits__title {
+        padding: 2rem 0;
+      }
+
+      .card-benefits__text {
+        color: $c-blue-200;
+      }
+    }
+
+    // Facets
+
+    // States
+}

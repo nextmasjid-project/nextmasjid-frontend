@@ -1,0 +1,42 @@
+.help {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+
+      .help-top {
+        margin-top: -5rem;
+      }
+
+      .help-top__list {
+        @include make-container;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(48rem, 1fr));
+        grid-gap: 3rem;
+      }
+
+      .help-accordion {
+        padding-top: 3rem;
+        @include make-container;
+        @include mq('>lg') {
+          padding-top: 12rem;
+        }
+      }
+
+      .help-accordion__heading {
+        text-align: center;
+        padding-bottom: 4rem;
+      }
+
+      .help-accordion__body {
+        padding-top: 2rem;
+      }
+
+    }
+
+    // Facets
+
+    // States
+}

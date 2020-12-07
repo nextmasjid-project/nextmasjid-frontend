@@ -1,6 +1,8 @@
 // Basic
 $container-width: 1100px;
 $container-width-narrow: 756px;
+$border-radius: 1.5rem;
+$main-padding: 1.5rem;
 
 // Colors
 
@@ -20,8 +22,9 @@ $c-black: #000;
 $c-border: #D9D9D9;
 $c-red: #FB2E2E;
 $c-gray: #F8F8F8;
+$body-bg: #F8F8F8;
 
-// Progress colors
+  // Progress colors
 $c-progress-cyan: #49FFFF;
 $c-progress-orange: #FF8888;
 $c-progress-yellow: #EFE605;
@@ -39,6 +42,8 @@ $base-font-size: 1.8rem;
 // Box shadow
 $box-shadow: 0px 30.78px 66.17px rgba(17, 36, 53, 0.04);
 $box-shadow-primary-button: 0px 15px 30px rgba(0, 101, 255, 0.15);
+$box-shadow-icon: 0px 14px 34px rgba(17, 36, 53, 0.09);
+$box-shadow-icon-hover: 0px 14px 34px rgb(0 101 255 / 25%);
 
 // Gradient
 $primary-gradient: linear-gradient(223.8deg, #0065FF 0.62%, #00C7E5 98.56%);

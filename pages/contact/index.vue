@@ -1,9 +1,13 @@
 <template>
-  <hero />
+
 </template>
 
 <script>
 export default {
-  layout: 'home-page'
+name: "index"
 }
 </script>
+
+<style scoped>
+
+</style>

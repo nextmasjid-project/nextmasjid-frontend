@@ -1,0 +1,46 @@
+.card {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      background-color: $c-white;
+      padding: 2rem;
+      box-shadow: $box-shadow;
+      border-radius: $border-radius;
+      width: 100%;
+      min-height: 28rem;
+
+      .card__title {
+        padding-top: 1rem;
+      }
+
+      .card__item {
+        list-style: circle;
+        padding: 1rem 0;
+      }
+
+      .card__icon {
+        margin-bottom: 1rem;
+      }
+
+      .card__list {
+        padding-left: 2rem;
+
+        main[dir="rtl"] & {
+          padding-right: 2rem;
+          padding-left: 0;
+        }
+      }
+
+      .card__body {
+        padding-top: 1rem;
+      }
+
+    }
+
+    // Facets
+
+    // States
+}

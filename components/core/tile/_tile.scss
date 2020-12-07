@@ -1,0 +1,39 @@
+.tile {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      box-shadow: $box-shadow;
+      width: 100%;
+
+      .tile__image {
+        height: 15rem;
+        background-size: cover;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+      }
+
+      .tile__body {
+        padding: $main-padding;
+        border-radius: $border-radius;
+        background-color: $c-white;
+        margin-top: -1rem;
+      }
+
+      .tile__title {
+        padding-top: 1rem;
+      }
+
+      .tile__text {
+        padding-top: 3rem;
+      }
+    }
+
+    // Facets
+
+    // States
+}
+
+

@@ -1,0 +1,51 @@
+.about {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+
+      .about-top {
+        margin-top: -5rem;
+      }
+
+      .about-top__list {
+        @include make-container;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(48rem, 1fr));
+        grid-gap: 2.5rem;
+      }
+
+      .about-tiles {
+        @include make-container;
+        padding: 7rem 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        grid-gap: 2.5rem;
+      }
+
+      .about-benefits {
+        @include make-container;
+        padding: 7rem 1.5rem;
+      }
+
+      .about-benefits__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+        grid-gap: 2.5rem;
+      }
+
+      .about-benefits__title {
+        margin-bottom: 3rem;
+      }
+
+      .about-benefits__text {
+        margin-bottom: 6rem;
+      }
+    }
+
+    // Facets
+
+    // States
+}

@@ -36,5 +36,19 @@
 @import "structure/components/tooltip";
 @import "structure/components/alert";
 @import "structure/layout/header";
+@import "components/core/navigation/navigation";
 @import "structure/layout/footer";
 @import "structure/components/btns";
+
+
+// App
+@import "components/core/card/card";
+@import "components/core/tile/tile";
+@import "components/core/sub-hero/sub-hero";
+@import "components/core/text-content/text-content";
+@import "components/core/card-benefits/card-benefits";
+
+// Pages
+@import "pages/about/about";
+@import "pages/blog/blog";
+@import "pages/help/help";

@@ -1,7 +1,7 @@
 @mixin item-animation{
   @for $i from 1 through 5 {
     &:nth-child(#{$i + 1}) {
-      transition-delay: #{$i * .05}s
+      transition-delay: #{$i * .09}s
     }
   }
 }

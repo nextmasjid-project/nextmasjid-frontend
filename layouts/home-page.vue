@@ -12,7 +12,11 @@
     <!-- Main Content -->
     <main :dir="$t('direction')"><Nuxt /></main>
 
-    <!-- Main Footer -->
-    <main-footer />
   </div>
 </template>
+
+<script>
+  export default {
+    name: "home-page"
+  }
+</script>

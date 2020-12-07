@@ -1,0 +1,39 @@
+.text-content {
+    // Vars
+    $bg-color: #EDF1F4;
+
+    // Support
+
+    // Module
+    & {
+      padding: 10rem 0;
+
+      .text-content__inner {
+        @include make-container;
+      }
+    }
+
+    // Facets
+    & {
+      &.text-content--bg-color {
+        background-color: $bg-color;
+      }
+
+      &.text-content--bg-image {
+        background-size: cover;
+        min-height: 40rem;
+        background-position: center;
+      }
+
+      &.text-content--bg-white {
+        .text-content__wrapper {
+          padding: 3rem;
+          background-color: $c-white;
+          max-width: 60rem;
+          border-radius: $border-radius;
+        }
+      }
+    }
+
+    // States
+}

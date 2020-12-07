@@ -5,22 +5,18 @@
 
   // Module
   & {
+    background-color: $c-white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: $box-shadow;
     .ui-accordion__head {
       cursor: pointer;
       display: flex;
       text-transform: uppercase;
       align-items: center;
-      border-bottom: 1px solid $c-border;
-      padding-bottom: 1.3rem;
-      &:first-child {
-        margin-bottom: 3rem
-      }
+      justify-content: space-between;
 
-      .icon {
-        margin-left: 1.5rem;
-        width: 1.7rem;
-        height: 1rem;
-      }
     }
 
     .ui-accordion__body {
@@ -36,10 +32,6 @@
     &.ui-accordion--is-open {
       .ui-accordion__body {
         opacity: 1;
-      }
-
-      .icon {
-        fill: $c-primary;
       }
     }
 

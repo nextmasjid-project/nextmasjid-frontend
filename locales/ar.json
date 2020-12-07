@@ -5,7 +5,13 @@
     "ar": "العربيه"
   },
   "header": {
-    "logo": "logo-arabic.svg"
+    "logo": "logo-arabic.svg",
+    "navigation": [
+      { "icon": "icon-menu-location", "title": "اين نبني مسجدا" },
+      { "icon": "icon-menu-how", "title": "كيف نبني مسجدا" },
+      { "icon": "icon-menu-about", "title": "اقرا عننا" },
+      { "icon": "icon-menu-contact", "title": "راسلنا" }
+    ]
   },
   "meta": {
     "home": {
@@ -52,7 +58,7 @@
         {
           "icon": "icon-mosque-star",
           "title": "title 1",
-          "body": ["text 1"]
+          "body": "text 1"
         },
         {
           "icon": "icon-result-star",
@@ -64,19 +70,19 @@
           ]
         }
       ],
-      "cards": [
+      "tiles": [
         {
-          "img": "img-1.jpg",
+          "img": "image-24.png",
           "title": "Lorem ipsum dolor sit amet, c",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "img-2.jpg",
+          "img": "image-25.png",
           "title": "Lorem ipsum dolor sit amet, c",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "img-3.jpg",
+          "img": "image-26.png",
           "title": "Lorem ipsum dolor sit amet, c",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         }
@@ -115,6 +121,81 @@
       "bottom": {
         "title": "Bottom body",
         "description": "very long text dolore magna aliquyam erat, sed diam voluptua more text show come here dolore magna aliquyam erat, sed diam voluptua more text show come here\""
+      }
+    },
+    "blog": {
+      "subHero": {
+        "title": "Blog Page",
+        "description": "test"
+      },
+      "tiles": [
+        {
+          "img": "image-24.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-25.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-26.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-24.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-25.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-26.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        }
+      ]
+    },
+    "help": {
+      "subHero": {
+        "title": "Help Page",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi assumenda at beatae cum cupiditate, iste, laboriosam, libero nisi sint suscipit vero? Architecto blanditiis ea in ipsum molestias mollitia vitae!"
+      },
+      "topTiles": [
+        {
+          "title": "title 1",
+          "body": "text 1"
+        },
+        {
+          "title": "title 2",
+          "body": [
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+            "sed diam nonumy eirmod tempor invidunt ut labore ",
+            "dolore magna aliquyam erat, sed diam voluptua"
+          ]
+        }
+      ],
+      "accordion": {
+        "title": "Questions",
+        "list": [
+          {
+            "title": "Question one",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eos facere incidunt officiis porro quos, sunt. Aspernatur at cum doloribus ex excepturi nisi perferendis quae quaerat quos, ratione sequi veritatis."
+          },
+          {
+            "title": "Question Two",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eos facere incidunt officiis porro quos, sunt. Aspernatur at cum doloribus ex excepturi nisi perferendis quae quaerat quos, ratione sequi veritatis."
+          },
+          {
+            "title": "Question Three",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eos facere incidunt officiis porro quos, sunt. Aspernatur at cum doloribus ex excepturi nisi perferendis quae quaerat quos, ratione sequi veritatis."
+          }
+        ]
       }
     }
   }

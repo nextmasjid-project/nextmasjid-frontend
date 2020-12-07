@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner">
-      <button class="header__hamburger">
+      <button class="header__hamburger" @click="menuHandler">
         <icon symbol="icon-hamburger"></icon>
       </button>
 
@@ -47,6 +47,10 @@ export default {
   },
   methods: {
     ...mapActions('languages', ['setLangAction']),
+    ...mapActions('navigation', ['setMenuAction']),
+    menuHandler() {
+      this.setMenuAction(true)
+    },
     switchLang(locale) {
       this.setLangAction(locale)
       import(`@/locales/${locale}.json`).then(module => {
