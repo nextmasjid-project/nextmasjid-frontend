@@ -1,0 +1,98 @@
+.search-sidebar {
+    // Vars
+    $switcher-inactive-text: #112435;
+    $c-text: #8097AC;
+
+    // Support
+
+    // Module
+    & {
+      width: $sidebar-width;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: white;
+      padding: 17rem 3rem 3rem;
+
+      .search-sidebar__text {
+        color: $c-text;
+        margin: 0.7rem 0;
+      }
+
+      .search-sidebar__switcher {
+        display: flex;
+        margin: 3rem 0;
+      }
+
+      .search-sidebar__item {
+        background-color: $c-blue-100;
+        padding: 1.7rem;
+        flex-grow: 1;
+        border-radius: .5rem;
+        color: $switcher-inactive-text;
+        text-align: center;
+      }
+    }
+
+    // Facets
+    & {
+      .search-sidebar__item--active {
+        background-color: $c-primary;
+        color: $c-white;
+        box-shadow: $box-shadow-primary-button;
+      }
+    }
+
+    // States
+}
+
+
+
+
+
+
+
+
+.card {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      color: red
+    }
+
+    // Facets
+
+    // States
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

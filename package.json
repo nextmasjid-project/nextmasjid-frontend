@@ -10,8 +10,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.1",
+    "@googlemaps/markerclustererplus": "^1.0.3",
+    "axios": "^0.21.0",
     "chaestli": "^2.0.1",
     "core-js": "^3.6.5",
+    "load-google-maps-api": "^2.0.2",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",
     "swiper": "^6.3.5",

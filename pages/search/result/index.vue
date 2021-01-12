@@ -1,5 +1,5 @@
 <template>
-
+  <h1>Search results</h1>
 </template>
 
 <script>

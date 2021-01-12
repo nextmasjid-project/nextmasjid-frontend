@@ -5,9 +5,9 @@
 
     // Module
     & {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      margin-right: 3rem;
+      margin-bottom: 1.5rem;
 
       .control__label {
         padding-bottom: 0;
@@ -24,6 +24,8 @@
         background-color: transparent;
         display: inline-block;
         position: relative;
+        will-change: transform;
+        margin-right: 0.81rem;
         &:before {
           content: "";
           position: absolute;
@@ -34,7 +36,10 @@
           width: 100%;
           height: 100%;
           transition: transform .2s ease-in-out;
-          will-change: transform;
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.1357 4.71194L4.71189 10.1357L2 7.42383' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          background-position: 2.5px 1px;
+          background-size: 12px;
         }
       }
 

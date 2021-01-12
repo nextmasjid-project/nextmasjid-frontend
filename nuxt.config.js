@@ -54,6 +54,15 @@ export default {
     }],
   ],
 
+  proxy: {
+    '/api': {
+      target: 'http://45.35.14.206',
+      pathRewrite: {
+        '^/api' : '/'
+      }
+    }
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }

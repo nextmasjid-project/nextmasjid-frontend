@@ -8,6 +8,10 @@
 
     // Module
     & {
+      .form__wrapper {
+        position: relative;
+      }
+
       .form__control {
         margin-bottom: 2rem;
         position: relative;
@@ -25,13 +29,14 @@
 
       .form__input {
         display: block;
-        border: 1px solid $c-border;
-        padding: 1rem 1.5rem;
+        background-color: $c-blue-100;
+        padding: 1.4rem;
+        border-radius: .5rem;
         color: $c-blue-500;
         font-size: 1.8rem;
         transition: border-color .3s ease-in-out;
         width: 100%;
-        border-radius: 0;
+        border: 1px solid $c-blue-100;
       }
 
       .form__error {
@@ -76,6 +81,17 @@
         right: 1rem;
       }
 
+
+      .form__icon {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        display: block;
+        transform: translateY(-50%);
+        height: 1.5rem;
+        width: 1.2rem;
+        padding-bottom: .4rem;
+      }
     }
 
     // Facets
