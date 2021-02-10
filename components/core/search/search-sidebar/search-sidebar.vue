@@ -26,24 +26,24 @@
           <label for="cities" class="form__label">Cities</label>
           <div class="form__wrapper">
             <icon class="form__icon" symbol="icon-arrow-down" size="small" />
-            <select id="cities" class="form__input" v-model="city">
+            <select id="cities" class="form__input" v-model="city" @change="cityChangeHandler">
               <option value="" selected>Choose City</option>
               <option :value="city" v-for="city in getCities" :key="city.id">{{ city.name }}</option>
             </select>
           </div>
         </div>
         <div class="control control--checkbox">
-          <input type="checkbox" class="control__input" id="time1" value="check2"/>
+          <input type="checkbox" class="control__input" id="time1" v-model="editorChoice" @change="$emit('toggle', editorChoice)"/>
           <label class="control__label" for="time1">
             <span class="control__indicator"></span>
-            <span>Choose editor</span>
+            <span>Editor Choice</span>
           </label>
         </div>
           <div class="control control--checkbox">
-            <input type="checkbox" class="control__input" id="time2" value="check1"/>
+            <input type="checkbox" class="control__input" id="time2"/>
             <label class="control__label" for="time2">
               <span class="control__indicator"></span>
-              <span>Choose editor</span>
+              <span>Current Mosques</span>
             </label>
           </div>
       </form>
@@ -54,13 +54,21 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import { centerMap } from '../search-map/map-helpers';
 
 export default {
   name: "search-sidebar",
+  props: {
+    GoogleMaps: {
+      type: Object,
+      required: true,
+    }
+  },
   data() {
     return {
       region: "",
       city: "",
+      editorChoice: null
     }
   },
   computed: {
@@ -70,9 +78,15 @@ export default {
   methods: {
     ...mapActions('search', ['fetchCitiesAction']),
     regionChangeHandler(id) {
-      console.log(id)
       this.city = "";
       !!Number(id) ? this.fetchCitiesAction({locale: this.getLocale, regionId: id}) : null
+    },
+    cityChangeHandler() {
+      const { Map } = this.GoogleMaps;
+      const { latitude, longitude } = this.city;
+      if ( latitude && longitude ) {
+        centerMap({Map}, {latlng: {lat: latitude, lng: longitude}, method: 'panTo', zoom: 10});
+      }
     }
   }
 }

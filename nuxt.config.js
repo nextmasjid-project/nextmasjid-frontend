@@ -24,6 +24,7 @@ export default {
   plugins: [
     {src: '~/plugins/i18n.js'},
     {src: '~/plugins/swiper.js', mode: 'client'},
+    {src: '~/plugins/google-maps.js', mode: 'client'},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

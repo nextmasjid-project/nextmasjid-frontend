@@ -11,6 +11,7 @@
       left: 0;
       z-index: 100;
       width: 100%;
+      pointer-events: none;
 
       .header__inner {
         display: flex;
@@ -29,10 +30,12 @@
         align-items: center;
         justify-content: center;
         box-shadow: $box-shadow-icon;
+        pointer-events: auto;
       }
 
       .header__link {
         display: block;
+        pointer-events: auto;
       }
 
       .header__logo {

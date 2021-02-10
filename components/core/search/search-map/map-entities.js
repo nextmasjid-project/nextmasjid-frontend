@@ -1,32 +1,28 @@
 import mapStyle from './map-styles.json';
-import { fitBounds } from './map-helpers';
 
-export const MINIMUM_ZOOM_LEVEL = 4;
+export const MINIMUM_ZOOM_LEVEL = 5;
 export const MAXIMUM_ZOOM_LEVEL = 20;
+const LAT_LNG = {lat: 24.712376311630543, lng: 46.67545729736327}
 
-const CUSTOM_MAP_TYPE_ID = 'COLLECTION_POINTS_MAP_STYLE';
+const CUSTOM_MAP_TYPE_ID = 'roadmap';
 const CUSTOM_MAP_TYPE_NAME = 'COLLECTION_POINTS';
-const MAP_MARKER_CLUSTER_STYLES = [
-  {
-    width: 60,
-    height: 60,
-    url: `${ process.env.PUBLIC_PATH }/Images/dummy_marker_cluster.svg`,
-  },
-];
 
 export function createMapOptions({ Api }) {
   return {
     mapTypeControlOptions: {
       mapTypeIds: [],
     },
+    zoom: 8,
+    clickableIcons: false,
+    center: createLatLng({Api}, LAT_LNG),
     minZoom: MINIMUM_ZOOM_LEVEL,
     fullscreenControl: false,
-    gestureHandling: 'cooperative',
     streetViewControl: false,
     zoomControl: true,
     zoomControlOptions: {
-      position: Api.ControlPosition.TOP_LEFT,
+      position: Api.ControlPosition.TOP_RIGHT,
     },
+    styles: mapStyle
   };
 }
 
@@ -45,9 +41,9 @@ export function createBounds({ Api }) {
  * @param {string} url - An icon url
  * @return {any} The google maps Icon object
  */
-export function createIcon({ Api }, { url }) {
+export function createIcon({ Api }, { url}) {
   return {
-    scaledSize: new Api.Size(32, 32),
+    scaledSize: new Api.Size(177, 177),
     url,
   };
 }
@@ -67,16 +63,13 @@ export function createLatLng({ Api }, { lat, lng }) {
  * Set up a google maps instance and a marker
  * @param {object} Api - The API
  * @param {HTMLElement} element - The target element
- * @param {object} initialBounds - The initial bounds for the map to focus
  * @return {any} The google maps Map object
  */
-export function createMap({ Api }, { element, initialBounds }) {
+export function createMap({ Api }, { element}) {
   const Map = new Api.Map(element, createMapOptions({ Api }));
   const CustomMapType = new Api.StyledMapType(mapStyle, { name: CUSTOM_MAP_TYPE_NAME });
   Map.mapTypes.set(CUSTOM_MAP_TYPE_ID, CustomMapType);
   Map.setMapTypeId(CUSTOM_MAP_TYPE_ID);
-
-  fitBounds({ Map }, { bounds: initialBounds, padding: null });
 
   return Map;
 }
@@ -96,24 +89,6 @@ export function createMarker({ Api, Map },  entry ) {
   });
 }
 
-/**
- * Create a maps api MarkerCluster
- * @link http://htmlpreview.github.io/?https://github.com/googlemaps/v3-utility-library/blob/master/markerclustererplus/docs/reference.html
- * @param {any} Map - The map object
- * @param {any} MarkerClusterer - The MarkerCluster constructor
- * @param {any[]} Markers - A list of google maps Marker objects
- * @return {any} The google maps MarkerCluster object
- */
-export function createMarkerCluster({ Map, MarkerClusterer }) {
-  return new MarkerClusterer(Map, [], {
-    averageCenter: true,
-    clusterClass: 'dealer-finder-map--marker-cluster',
-    maxZoom: MAXIMUM_ZOOM_LEVEL,
-    styles: MAP_MARKER_CLUSTER_STYLES,
-    zoomOnClick: false,
-  });
-}
-
 
 /**
  * Set up a google bounds instance
@@ -122,4 +97,30 @@ export function createMarkerCluster({ Map, MarkerClusterer }) {
  */
 export function createInitialBounds({ Api }) {
   return new Api.LatLngBoundsLiteral();
+}
+
+
+/**
+ * Set up a google heatmap instance
+ * @param {any} Api - The API
+ * @param {any} Map - The map object
+ * @param {any} list - The list of heatmap locations
+ * @return {any} The google maps heatmap object
+ */
+export function createHeatMapInstance({ Api, Map }, list) {
+  return new Api.visualization.HeatmapLayer({
+    data: list,
+    map: Map
+  });
+}
+
+/**
+ * Create info window
+ * @param {any} Api - The API
+ * @param {any} Map - The map object
+ * @param {any} content - info window content
+ * @return {any} The google maps info window
+ */
+export function createInfoWindow({ Api }, content) {
+  return new Api.InfoWindow(content);
 }

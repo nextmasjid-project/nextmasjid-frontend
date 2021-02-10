@@ -1,4 +1,6 @@
 import { createBounds, createIcon } from './map-entities';
+import editorChoice from '../../../../assets/images/markers/editor-choice.svg'
+import currentMosque from '../../../../assets/images/markers/current-mosque.svg'
 
 /**
  * Create map icons
@@ -7,10 +9,8 @@ import { createBounds, createIcon } from './map-entities';
  */
 export function createIcons({ Api }) {
   return {
-    MARKER_BASE: createIcon({ Api }, { url: `${ process.env.PUBLIC_PATH }/Images/dummy_marker_dealer.svg` }),
-    MARKER_ACTIVE: createIcon({ Api }, { url: `${ process.env.PUBLIC_PATH }/Images/dummy_marker_dealer_active.svg` }),
-    MARKER_CENTER: createIcon({ Api }, { url: `${ process.env.PUBLIC_PATH }/Images/dummy_marker_dealer.svg` }),
-    MARKER_CLIENT: createIcon({ Api }, { url: `${ process.env.PUBLIC_PATH }/Images/dummy_marker_dealer_client.svg` }),
+    MARKER_EDITOR_CHOICE: createIcon({ Api }, { url: editorChoice }),
+    MARKER_CURRENT_MOSQUE: createIcon({ Api }, { url: currentMosque }),
   };
 }
 
@@ -28,17 +28,6 @@ export function getBoundsOfMarkers({ Api }, { markers }) {
   });
 
   return bounds;
-}
-
-/**
- * Return a latlng position of a marker by its entry slug
- * @param {any[]} Markers
- * @param {string} slug
- * @return {any}
- */
-export function getEntryLatLng(Markers, slug) {
-  const Marker = Markers.find(m => m.entry.slug === slug);
-  return Marker ? Marker.getPosition() : null;
 }
 
 /**

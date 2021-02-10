@@ -876,12 +876,10 @@
   resolved "https://registry.yarnpkg.com/@dreipol/scss-utils/-/scss-utils-3.0.2.tgz#c6a08442c04ce610aa3f03d8e7c37020dbcb2809"
   integrity sha512-9QUOFYPPjagjfLqNrN484KTeR6LWOQ4ssO9TEbiTjjYG726oBwb0Se3cprsBmhIQc7XZJYHvIgNBJ4ASevPIfA==
 
-"@googlemaps/js-api-loader@^1.11.1":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.11.1.tgz#b7f02c04d8d8602fb4bd873b03685fccefce1c6f"
-  integrity sha512-2ug4uBu0onRXTAo7Yxkay5N7pdNIz3XpTElMTLdCtEfQDxikbjeR6GS8atVhblX+ubFBNlXvDzz7VtuXv0vMRQ==
-  dependencies:
-    fast-deep-equal "^3.1.3"
+"@google/markerclustererplus@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@google/markerclustererplus/-/markerclustererplus-5.1.3.tgz#dd7ddbb2a17c977e0b0252c3d8e61fcf502b1bf2"
+  integrity sha512-2wQGO6GGbKPC2tNmTz8ei1zBa64zV3QBBvgLHiPvYqUA63230qNqfQpN+nzsrl1RM40NJtty4Y1CEQKxq6MBGg==
 
 "@googlemaps/markerclustererplus@^1.0.3":
   version "1.0.3"
@@ -3462,7 +3460,7 @@ extract-css-chunks-webpack-plugin@^4.7.5:
     webpack-external-import "^2.2.4"
     webpack-sources "^1.1.0"
 
-fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
+fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
