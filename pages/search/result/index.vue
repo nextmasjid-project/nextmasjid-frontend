@@ -1,13 +1,9 @@
 <template>
-  <h1>Search results</h1>
+  <result></result>
 </template>
 
 <script>
 export default {
-name: "index"
+  name: "index"
 }
 </script>
-
-<style scoped>
-
-</style>

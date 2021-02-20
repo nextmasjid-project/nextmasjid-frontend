@@ -1,6 +1,6 @@
 import mapStyle from './map-styles.json';
 
-export const MINIMUM_ZOOM_LEVEL = 5;
+export const MINIMUM_ZOOM_LEVEL = 7;
 export const MAXIMUM_ZOOM_LEVEL = 20;
 const LAT_LNG = {lat: 24.712376311630543, lng: 46.67545729736327}
 
@@ -39,11 +39,12 @@ export function createBounds({ Api }) {
  * Create a maps api Icon
  * @param {any} Api - The API
  * @param {string} url - An icon url
+ * @param {number} size - An icon size
  * @return {any} The google maps Icon object
  */
-export function createIcon({ Api }, { url}) {
+export function createIcon({ Api }, { url, size}) {
   return {
-    scaledSize: new Api.Size(177, 177),
+    scaledSize: new Api.Size(size, size),
     url,
   };
 }

@@ -1,12 +1,17 @@
 <template>
   <div class="search-container">
-    <!--  Map  -->
-    <div class="search-map">
-      <div class="search-map__element" ref="mapElement"/>
-    </div>
+      <!--  Map  -->
+      <div class="search-map" v-show="getComponentName === 'search-map'">
+        <div class="search-map__element" ref="mapElement"/>
+      </div>
+      <search-list-view v-show="getComponentName !== 'search-map'" />
 
     <!-- Search Sidebar   -->
-    <search-sidebar :google-maps="GoogleMaps" @toggle="toggleEditorSuggestionList" />
+    <search-sidebar
+      :google-maps="GoogleMaps"
+      @toggleEditorChoice="toggleEditorSuggestionList"
+      @toggleCurrentMosques="toggleCurrentMosquesList"
+    />
   </div>
 </template>
 
@@ -39,56 +44,89 @@
     data() {
       return {
         isActiveWindow: null,
-        test: true,
+        currentZoomLevel: 16,
+        updatedZoomLevel: null,
+        isCurrentMosquesChecked: false,
         GoogleMaps: {
           Api: null,
           Icons: null,
-          Markers: [],
+          Markers: {
+            editorChoice: [],
+            currentMosques: []
+          },
           Map: null,
         },
+        markerName: {
+          editorChoice: 'MARKER_EDITOR_CHOICE',
+          currentMosques: 'MARKER_CURRENT_MOSQUE'
+        }
       };
     },
     computed: {
-      ...mapGetters('search', ['getCities', 'getHeatMapList', 'getEditorSuggestionList']),
+      ...mapGetters('search', [
+        'getCities',
+        'getHeatMapList',
+        'getEditorSuggestionList',
+        'getCurrentMosquesList',
+        'getComponentName'
+      ]),
+      ...mapGetters('languages', ['getLocale']),
     },
     mounted() {
-      this.fetchAllEditorsSuggestion().then(() => {
+      this.fetchAllEditorsSuggestion(this.getLocale).then(() => {
         this.initMapComponents({Api: this.api})
       })
-      // this.heatMapInit()
     },
     methods: {
-      ...mapActions('search', ['fetchHeatMapList', 'fetchCurrentLocationData', 'fetchAllEditorsSuggestion']),
+      ...mapActions('search', [
+        'fetchHeatMapList',
+        'fetchCurrentLocationData',
+        'fetchAllEditorsSuggestion',
+        'setCoordsAction',
+        'fetchCurrentMosques'
+      ]),
       initMapComponents({Api}) {
         this.GoogleMaps.Api = Api;
         this.createMap();
         this.GoogleMaps.Icons = createIcons(this.GoogleMaps);
       },
       toggleEditorSuggestionList(isChecked) {
-        isChecked ? this.createMapMarkers() : this.resetMarkerIcons()
+        if (isChecked) {
+          this.setZoomLevel(10)
+          this.createMapMarkers('editorChoice', this.getEditorSuggestionList, this.markerName.editorChoice)
+        } else {
+          this.setZoomLevel(7)
+          this.resetMarkerIcons('editorChoice')
+        }
+      },
+      toggleCurrentMosquesList(isChecked) {
+        isChecked ? this.setZoomLevel(16) : this.setZoomLevel(7);
+        this.isCurrentMosquesChecked = isChecked;
+        if ((this.updatedZoomLevel >= this.currentZoomLevel) && this.isCurrentMosquesChecked) {
+          this.createMapMarkers('currentMosques', this.getCurrentMosquesList, this.markerName.currentMosques)
+        } else {
+          this.resetMarkerIcons('currentMosques')
+        }
       },
       createMap() {
         this.GoogleMaps.Map = createMap(this.GoogleMaps, {element: this.$refs.mapElement});
-        this.GoogleMaps.Map.addListener('bounds_changed', this.onBoundChanged.bind(this));
+        this.GoogleMaps.Map.addListener('idle', this.onBoundChanged.bind(this));
         this.GoogleMaps.Map.addListener('click', this.onClickHandler.bind(this));
       },
-      updateMarkerIcon(marker) {
-        const icon = this.GoogleMaps.Icons[this.getMarkerName()];
+      updateMarkerIcon(marker, markerName) {
+        const icon = this.GoogleMaps.Icons[markerName];
         setMarkerIcon({marker, icon});
       },
-      getMarkerName() {
-        return `MARKER_EDITOR_CHOICE`;
+      createMapMarkers(markerType, typeList, markerName) {
+        this.GoogleMaps.Markers[markerType].forEach(marker => marker.setMap(null));
+        this.GoogleMaps.Markers[markerType] = typeList?.map(el => this.createMapMarker(el, markerName));
       },
-      createMapMarkers() {
-        this.GoogleMaps.Markers.forEach(marker => marker.setMap(null));
-        this.GoogleMaps.Markers = this.getEditorSuggestionList?.map(this.createMapMarker);
-      },
-      createMapMarker(entry) {
+      createMapMarker(entry, markerName) {
         const {latitude, longitude} = entry;
         const marker = createMarker(this.GoogleMaps, {position: {lat: latitude, lng: longitude}});
         marker.setPosition(createLatLng(this.GoogleMaps, {lat: latitude, lng: longitude}));
         marker.addListener('click', this.onMarkerClicked.bind(this, marker, entry));
-        this.updateMarkerIcon(marker);
+        this.updateMarkerIcon(marker, markerName);
         return marker;
       },
       onMarkerClicked(marker, {latitude, longitude}) {
@@ -99,8 +137,8 @@
           method: 'panTo'
         });
       },
-      resetMarkerIcons() {
-        this.GoogleMaps.Markers.forEach(marker => setMarkerVisibility(this.GoogleMaps, {marker, toggle: false}));
+      resetMarkerIcons(markerType) {
+        this.GoogleMaps.Markers[markerType].forEach(marker => setMarkerVisibility(this.GoogleMaps, {marker, toggle: false}));
       },
       onBoundChanged() {
         let bounds = this.GoogleMaps.Map.getBounds();
@@ -109,16 +147,36 @@
         const swLat = bounds.getSouthWest().lat();
         const swLng = bounds.getSouthWest().lng();
         const coordinates = {neLat, neLng, swLat, swLng};
+        this.updatedZoomLevel = this.GoogleMaps.Map.getZoom();
+
+        console.log("UPDATED ZOOM Level:", this.updatedZoomLevel);
+        console.log("CURRENT ZOOM Level:", this.currentZoomLevel);
+
+        if ((this.updatedZoomLevel >= this.currentZoomLevel)) {
+          if (this.isCurrentMosquesChecked) {
+            this.fetchCurrentMosques(coordinates).then(_ => {
+              this.createMapMarkers('currentMosques', this.getCurrentMosquesList, this.markerName.currentMosques);
+            });
+          }
+        } else {
+          this.resetMarkerIcons('currentMosques')
+        }
         // this.fetchHeatMapList(coordinates).then(() => this.heatMapInit())
       },
       onClickHandler(e) {
         const { lat, lng } = e.latLng;
-        this.fetchCurrentLocationData({lat: lat(), lng: lng()})
+        let payload = {lat: lat(), lng: lng(), lang: this.getLocale}
+        const locale = {
+          websiteVisit: this.$t('pages.search.infoWindow.websiteVisit'),
+          share: this.$t('pages.search.infoWindow.share'),
+          report: this.$t('pages.search.infoWindow.report'),
+        }
+        this.fetchCurrentLocationData(payload)
         .then((response) => {
           this.isActiveWindow && this.isActiveWindow.close();
           // Parse Info window vue component and mount it to the DOM
           let InfoWindow = Vue.extend(InfoWindowComponent);
-          let instanceInfoWindow = new InfoWindow({propsData: { content: response }});
+          let instanceInfoWindow = new InfoWindow({propsData: { content: {...response, ...payload, locale} }});
           instanceInfoWindow.$mount();
 
           let infoWindow = createInfoWindow(this.GoogleMaps, {
@@ -126,12 +184,16 @@
             position: e.latLng
           });
           infoWindow.open(this.GoogleMaps.Map)
-          this.isActiveWindow = infoWindow
+          this.isActiveWindow = infoWindow;
+          this.setCoordsAction({lat: lat(), lng: lng()})
         })
       },
       heatMapInit() {
         const HEAT_MAP_DATA = this.getHeatMapList.map(el => createLatLng(this.GoogleMaps, {lat: el.location.lat, lng: el.location.lng}))
         createHeatMapInstance({Api: this.GoogleMaps.Api, Map: this.GoogleMaps.Map}, HEAT_MAP_DATA)
+      },
+      setZoomLevel(level) {
+        this.GoogleMaps.Map.setZoom(level)
       },
     }
   }

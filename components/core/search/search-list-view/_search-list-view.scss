@@ -1,0 +1,47 @@
+.search-list-view {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      @include mq('>lg') {
+        padding-left: 14rem;
+        padding-right: 4rem;
+      }
+
+      .search-list-view__inner {
+        display: grid;
+        margin-top: 5rem;
+        grid-gap: 2rem;
+        margin-bottom: 2rem;
+
+        @include mq('>sm') {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq('>lg') {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .result-statistics {
+        margin-top: 0;
+      }
+
+      .button {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    // Facets
+
+    // States
+}

@@ -7,10 +7,10 @@
   "header": {
     "logo": "logo-arabic.svg",
     "navigation": [
-      { "icon": "icon-menu-location", "title": "اين نبني مسجدا" },
-      { "icon": "icon-menu-how", "title": "كيف نبني مسجدا" },
-      { "icon": "icon-menu-about", "title": "اقرا عننا" },
-      { "icon": "icon-menu-contact", "title": "راسلنا" }
+      { "icon": "icon-menu-location", "title": "اين نبني مسجدا", "route": "search" },
+      { "icon": "icon-menu-how", "title": "كيف نبني مسجدا", "route": "article" },
+      { "icon": "icon-menu-about", "title": "اقرا عننا", "route": "about" },
+      { "icon": "icon-menu-contact", "title": "راسلنا", "route": "contact" }
     ]
   },
   "meta": {
@@ -196,6 +196,36 @@
             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eos facere incidunt officiis porro quos, sunt. Aspernatur at cum doloribus ex excepturi nisi perferendis quae quaerat quos, ratione sequi veritatis."
           }
         ]
+      }
+    },
+    "search": {
+      "sidebar": {
+        "title": "How to build a Masjid",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, quia.",
+        "mapView": "Map View",
+        "gridView": "Grid View",
+        "region": "Region",
+        "cities": "Cities",
+        "chooseRegion": "Choose Region",
+        "chooseCity": "Choose City",
+        "editorChoice": "Editor Choice",
+        "currentMosques": "Current Mosques"
+      },
+      "infoWindow": {
+        "websiteVisit": "Website visit",
+        "share": "Share",
+        "report": "Report"
+      }
+    },
+    "result": {
+      "statistics": {
+        "mosqueDensity": "Lorem ipsum dolor sit amet.",
+        "nearestMosqueDistance": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "peopleDensity": "Lorem ipsum dolor sit amet, consectetur.",
+        "possiblePrayers": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      },
+      "mosqueLocations": {
+        "title": "Location Mosques"
       }
     }
   }

@@ -166,7 +166,6 @@
       <path d="M10.5355 6.00039L6 10.5359L1.46445 6.00039" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
-
   </svg>
 </template>
 

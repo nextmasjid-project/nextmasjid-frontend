@@ -2,16 +2,21 @@
   <div class="search" v-if="isInitialized">
     <!-- Search Map  -->
     <search-map :api="api"/>
-
   </div>
 </template>
 
 <script>
 
 import {mapActions, mapGetters} from "vuex";
+import SearchMap from '@/components/core/search/search-map/search-map'
+import SearchListView from '@/components/core/search/search-list-view/search-list-view'
 
 export default {
   name: "search",
+  components: {
+    SearchMap,
+    SearchListView
+  },
   data() {
     return {
       isInitialized: false,
@@ -20,6 +25,12 @@ export default {
   },
   computed: {
     ...mapGetters('languages', ['getLocale']),
+    ...mapGetters('search', ['getComponentName']),
+    currentProps() {
+      if (this.getComponentName === 'search-map') {
+        return {api: this.api};
+      }
+    }
   },
   async mounted() {
     this.fetchRegionAction(this.getLocale);
@@ -32,7 +43,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions('search', ['fetchRegionAction']),
+    ...mapActions('search', ['fetchRegionAction', 'setGoogleMapApiAction']),
   }
 }
 </script>

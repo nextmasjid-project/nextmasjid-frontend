@@ -15,15 +15,15 @@
     </div>
     <div class="search-info__bottom">
       <div class="search-info__group">
-        <button class="button button--primary">Website visit</button>
+        <a :href="resultLink" class="button button--primary" target="_blank">{{ content.locale.websiteVisit }}</a>
         <button class="button button--outline button--aligned">
           <icon size="small" symbol="icon-share"></icon>
-          <span>Share</span>
+          <span>{{ content.locale.share  }}</span>
         </button>
       </div>
-      <button class="button button--outline button--full">Share</button>
+      <button class="button button--outline button--full">{{ content.locale.share }}</button>
       <div class="search-info__center">
-        <a href="" class="search-info__link">Report</a>
+        <a href="" class="search-info__link">{{ content.locale.report }}</a>
       </div>
     </div>
   </div>
@@ -50,6 +50,13 @@ export default {
     progressWidth() {
       return { '--score': `${this.content.score}%` }
     },
+    resultLink() {
+      const { lat, lng } = this.content
+      const DETAILS_URL = new URL(`${window.location.href}/result`);
+      DETAILS_URL.searchParams.append('lat', lat)
+      DETAILS_URL.searchParams.append('lng', lng)
+      return DETAILS_URL.href;
+    }
   }
 }
 </script>

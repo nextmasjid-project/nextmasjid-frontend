@@ -47,9 +47,12 @@
 @import "components/core/sub-hero/sub-hero";
 @import "components/core/text-content/text-content";
 @import "components/core/card-benefits/card-benefits";
+@import "components/core/search/search";
 @import "components/core/search/search-map/search-map";
-@import "../components/core/search/search-map/search-map-info-window/search-map-info-window";
+@import "components/core/search/search-map/search-map-info-window/search-map-info-window";
 @import "components/core/search/search-sidebar/search-sidebar";
+@import "components/core/result/result";
+@import "components/core/search/search-list-view/search-list-view";
 
 // Pages
 @import "pages/about/about";

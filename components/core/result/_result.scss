@@ -1,0 +1,155 @@
+.result {
+    // Vars
+    $map-height: 50rem;
+    $gradient: linear-gradient(-190deg, #0065FF 0.62%, #00C7E5 98.56%);
+    $border-radius: 2rem;
+
+    // Support
+
+    // Module
+    & {
+      background-color: $body-bg;
+
+      .result-map {
+        height: $map-height;
+      }
+
+      .result-map__element {
+        height: 100%;
+      }
+
+      .result-container {
+        @include make-container;
+      }
+
+      .result-statistics {
+        margin-top: -10rem;
+        position: relative;
+        z-index: 20;
+      }
+
+      .result-statistics__header {
+        background-image: $gradient;
+        padding: 2rem 2rem 4rem 2rem;
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+
+      .result-statistics__score {
+        display: flex;
+        align-items: center;
+        font-size: 5.4rem;
+        color: $c-white;
+        margin-bottom: 0;
+      }
+
+      .result-statistics__score-symbol {
+        margin-bottom: -1.7rem;
+      }
+
+      .result-statistics__progress {
+        background-color: transparentize($c-white, 0.7);
+        height: 0.4rem;
+        border-radius: 0.4rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .result-statistics__progress-bar {
+        height: 100%;
+        width: var(--score-result);
+        border-radius: 4px;
+        display: block;
+      }
+
+      .result-statistics__body {
+        background-color: $c-blue-100;
+        padding: 2rem 2rem 4rem 2rem;
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+        box-shadow: $box-shadow;
+        margin-top: -2rem;
+      }
+
+      .result-statistics__body-inner {
+        display: grid;
+        grid-gap: 1rem;
+        @include mq('>sm') {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq('>lg') {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .result-statistics__body-title {
+        border-bottom: 1px solid $c-border;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .result-statistics__body-item__icon {
+        margin-bottom: 0.5rem;
+      }
+
+      .result-statistics__body-item__title {
+        margin-bottom: 0.5rem;
+      }
+
+      .result-statistics__footer {
+        background-color: $c-white;
+        padding: 2rem;
+        border-radius: $border-radius;
+        margin-top: -2rem;
+      }
+
+
+      .result-cards {
+        margin-bottom: 2rem;
+      }
+
+      .result-cards__title {
+        margin: 6rem 0 2rem 0;
+      }
+
+      .result-cards__inner {
+        display: grid;
+        grid-gap: 2rem;
+        @include mq('>sm') {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include mq('>md') {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .result-cards__item {
+        padding: 2rem;
+        background-color: $c-white;
+        border-radius: 1rem;
+      }
+
+      .result-cards__item-name {
+        padding: 1.5rem 0;
+      }
+    }
+
+    // Facets
+    & {
+      .result-statistics__progress-bar--green {
+        background-color: $c-progress-green;
+      }
+
+      .result-statistics__progress-bar--red {
+        background-color: $c-progress-red;
+      }
+
+      .result-statistics__progress-bar--yellow {
+        background-color: $c-progress-yellow;
+      }
+
+    }
+
+    // States
+}

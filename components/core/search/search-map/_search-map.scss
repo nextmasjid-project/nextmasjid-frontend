@@ -11,7 +11,11 @@
     & {
       .search-map__element {
         height: 100vh;
-        width: calc(100vw - 40rem);
+        width: 100%;
+
+        @include mq('>lg') {
+
+        }
       }
 
 

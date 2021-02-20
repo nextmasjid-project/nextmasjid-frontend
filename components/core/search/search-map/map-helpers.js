@@ -9,8 +9,8 @@ import currentMosque from '../../../../assets/images/markers/current-mosque.svg'
  */
 export function createIcons({ Api }) {
   return {
-    MARKER_EDITOR_CHOICE: createIcon({ Api }, { url: editorChoice }),
-    MARKER_CURRENT_MOSQUE: createIcon({ Api }, { url: currentMosque }),
+    MARKER_EDITOR_CHOICE: createIcon({ Api }, { url: editorChoice, size: 177 }),
+    MARKER_CURRENT_MOSQUE: createIcon({ Api }, { url: currentMosque, size: 64 }),
   };
 }
 

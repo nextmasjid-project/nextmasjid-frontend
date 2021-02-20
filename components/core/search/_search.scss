@@ -1,0 +1,20 @@
+.search {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      .search-container {
+
+        @include mq('>lg') {
+          display: grid;
+          grid-template-columns: 1fr 40rem;
+        }
+      }
+    }
+
+    // Facets
+
+    // States
+}

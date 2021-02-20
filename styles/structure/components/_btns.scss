@@ -32,6 +32,15 @@
       }
     }
 
+    &.button--success {
+      background-color: $c-progress-green;
+      color: $c-white;
+      box-shadow: $box-shadow-primary-button;
+      &[disabled] {
+        opacity: 0.5;
+      }
+    }
+
     &.button--red {
       background-color: $c-red;
       color: $c-white;
@@ -83,6 +92,7 @@
 
     // Facets
     & {
+      margin-bottom: 1rem;
       .button:first-child {
         margin-right: 1.6rem;
 
@@ -91,6 +101,7 @@
           margin-right: 0;
         }
       }
+
     }
     // States
 }

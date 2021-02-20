@@ -7,17 +7,19 @@
 
     // Module
     & {
-      width: $sidebar-width;
+      width: 100%;
       height: 100vh;
-      position: absolute;
-      top: 0;
-      right: 0;
       background-color: white;
-      padding: 17rem 3rem 3rem;
+      padding: 2rem;
+
+      @include mq('>lg') {
+        padding: 17rem 3rem 3rem;
+        width: $sidebar-width;
+      }
 
       .search-sidebar__text {
         color: $c-text;
-        margin: 0.7rem 0;
+        margin: 0.7rem 0 5rem;
       }
 
 
@@ -47,30 +49,6 @@
 
     // States
 }
-
-
-
-
-
-
-
-
-.card {
-    // Vars
-
-    // Support
-
-    // Module
-    & {
-      color: red
-    }
-
-    // Facets
-
-    // States
-}
-
-
 
 
 

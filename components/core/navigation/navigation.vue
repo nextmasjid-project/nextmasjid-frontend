@@ -7,7 +7,7 @@
 
       <ul class="navigation__list" :class="`is-${$t('direction')}`">
         <li class="navigation__item" v-for="item in $t('header.navigation')" :key="item.title">
-          <nuxt-link class="navigation__link" :to="{name: item.route}">
+          <nuxt-link class="navigation__link" :to="localePath({name: item.route})">
             <icon class="navigation__icon" :symbol="item.icon"></icon>
             <h2 class="navigation__text">{{ item.title }}</h2>
           </nuxt-link>
@@ -22,6 +22,14 @@ import {mapActions, mapGetters} from "vuex";
 
   export default {
     name: "navigation",
+    watch: {
+      '$route': {
+        handler: function() {
+          this.setMenuAction(false)
+        },
+        immediate: true
+      }
+    },
     computed: {
       ...mapGetters('navigation', ['getMenuState']),
     },

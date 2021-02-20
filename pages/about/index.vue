@@ -11,7 +11,7 @@
     <!-- About Top Cards -->
     <div class="about-top">
       <div class="about-top__list">
-        <div class="about-top__item" v-for="card in $t('pages.about.topTiles')">
+        <div class="about-top__item" v-for="(card, index) in $t('pages.about.topTiles')" :key="`card-${index}`">
           <card :icon="card.icon" :title="card.title" :body="card.body" />
         </div>
       </div>
@@ -20,11 +20,11 @@
     <!-- About Tiles -->
     <div class="about-tiles">
       <tile
-        v-for="tile in $t('pages.about.tiles')"
+        v-for="(tile, index) in $t('pages.about.tiles')"
         :img="require(`@/assets/images/${tile.img}`)"
         :title="tile.title"
         :body="tile.body"
-        :key="tile.title" />
+        :key="`tile-${index}`" />
     </div>
 
     <!--  About How To Help  -->

@@ -1,27 +1,20 @@
 .alert {
     // Vars
     $error: #FBE9F0;
+    $info: #FFFAAA;
     $success: #d4edda;
 
     // Support
 
     // Module
     & {
-        background-color: $c-blue-100;
-        padding: 1.4rem;
+        background-color: $info;
         margin: 2rem 0;
-        border-radius: .4rem;
-        display: flex;
-        align-items: center;
-
-        .alert__icon {
-            margin-right: 2rem;
-            width: 3rem;
-        }
+        padding: 2rem;
+        border-radius: 0.4rem;
 
         .alert__text {
-            line-height: 1.3;
-            font-size: 1.4rem;
+          margin-bottom: 1.5rem;
         }
     }
 

@@ -4,7 +4,11 @@ import {
   SET_CITIES,
   SET_REGION,
   SET_HEAT_MAP,
-  SET_EDITOR_SUGGESTION_LIST
+  SET_EDITOR_SUGGESTION_LIST,
+  SET_DETAILS_COORDS,
+  SET_CURRENT_MOSQUES_LIST,
+  SET_MOSQUE_DETAILS,
+  SET_COMPONENT_NAME
 } from '../mutation-types';
 
 
@@ -21,6 +25,18 @@ const mutations = {
   [SET_EDITOR_SUGGESTION_LIST](state, payload) {
     state.editorSuggestion = payload
   },
+  [SET_DETAILS_COORDS](state, payload) {
+    state.coords = payload
+  },
+  [SET_CURRENT_MOSQUES_LIST](state, payload) {
+    state.currentMosques = payload
+  },
+  [SET_MOSQUE_DETAILS](state, payload) {
+    state.mosqueDetails = payload
+  },
+  [SET_COMPONENT_NAME](state, payload) {
+    state.componentName = payload
+  },
 };
 
 const state = () => ({
@@ -28,6 +44,10 @@ const state = () => ({
   region: null,
   heatMap: null,
   editorSuggestion: null,
+  currentMosques: [],
+  mosqueDetails: null,
+  coords: null,
+  componentName: 'search-map'
 });
 
 export default {
