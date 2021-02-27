@@ -20,7 +20,7 @@ export function createMapOptions({ Api }) {
     streetViewControl: false,
     zoomControl: true,
     zoomControlOptions: {
-      position: Api.ControlPosition.TOP_RIGHT,
+      position: Api.ControlPosition.BOTTOM_TOP,
     },
     styles: mapStyle
   };

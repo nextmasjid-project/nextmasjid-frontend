@@ -1,0 +1,33 @@
+.is-rtl {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      direction: rtl;
+
+      .navigation__icon {
+        margin-left: 1.5rem;
+        margin-right: 0;
+      }
+
+      .navigation__lang-text {
+        padding: 1rem 0 1rem 1rem;
+      }
+
+      .navigation__lang-link {
+        margin-right: 0;
+        margin-left: 2rem;
+      }
+
+      .navigation__close {
+        margin-right: auto;
+        margin-left: inherit;
+      }
+    }
+
+    // Facets
+
+    // States
+}

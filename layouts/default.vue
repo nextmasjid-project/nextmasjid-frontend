@@ -12,7 +12,7 @@
     <!-- Main Content -->
     <main :dir="$t('direction')"><Nuxt /></main>
 
-<!--    &lt;!&ndash; Main Footer &ndash;&gt;-->
-<!--    <main-footer />-->
+    <!-- Main Footer -->
+    <main-footer />
   </div>
 </template>

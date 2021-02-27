@@ -7,6 +7,7 @@
 <script>
 import {centerMap, createIcons, setMarkerIcon} from "@/components/core/search/search-map/map-helpers";
 import {createLatLng, createMap, createMarker} from "@/components/core/search/search-map/map-entities";
+import {mapGetters} from "vuex";
 
 export default {
   name: "result-map",
@@ -22,7 +23,7 @@ export default {
   },
   data() {
     return {
-      zoomLevel: 8,
+      zoomLevel: 16,
       GoogleMaps: {
         Api: null,
         Icons: null,
@@ -38,6 +39,9 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapGetters('search', ['getMosqueDetails']),
+  },
   mounted() {
     this.initMapComponents({Api: this.api})
   },
@@ -47,10 +51,12 @@ export default {
       this.createMap();
       this.GoogleMaps.Icons = createIcons(this.GoogleMaps);
       this.createMapMarkers('editorChoice', [{latitude: +this.coords.lat, longitude: +this.coords.lng}], this.markerName.editorChoice)
+      this.createMapMarkers('currentMosques', this.getMosqueDetails.nearestMosques, this.markerName.currentMosques)
     },
     createMap() {
       this.GoogleMaps.Map = createMap(this.GoogleMaps, {element: this.$refs.resultMapElement});
       this.GoogleMaps.Map.setZoom(this.zoomLevel)
+      // this.GoogleMaps.Map.addListener('idle', this.onCenterChanged.bind(this));
     },
     createMapMarkers(markerType, typeList, markerName) {
       this.GoogleMaps.Markers[markerType].forEach(marker => marker.setMap(null));
@@ -77,10 +83,14 @@ export default {
         method: 'panTo'
       });
     },
+    onCenterChanged() {
+      const {Map} = this.GoogleMaps;
+      console.log('map changed')
+      centerMap({Map}, {
+        latlng: {lat: +this.coords.lat, lng: +this.coords.lng},
+        method: 'panTo'
+      });
+    }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

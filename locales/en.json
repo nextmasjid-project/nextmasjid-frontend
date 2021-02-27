@@ -1,24 +1,63 @@
 {
   "direction": "ltr",
-  "languages-dropdown": {
+  "languages": {
     "en": "English",
     "ar": "العربيه"
   },
   "header": {
     "logo": "logo-english.svg",
+    "logoAlt": "NextMasjid where to build a mosque",
     "navigation": [
       { "icon": "icon-menu-location", "title": "Where we build mosque", "route": "search" },
-      { "icon": "icon-menu-how", "title": "How we build mosque", "route": "article" },
+      { "icon": "icon-menu-how", "title": "How we build mosque", "route": "blog" },
       { "icon": "icon-menu-about", "title": "About NextMasjid", "route": "about" },
       { "icon": "icon-menu-contact", "title": "Contact us", "route": "contact" }
     ]
   },
   "meta": {
     "home": {
-      "title": "Home title"
+      "title": "Home title",
+      "desc": "Home Meta Description"
     },
     "about": {
-      "title": "About title"
+      "title": "About title",
+      "desc": "About Meta Description"
+    },
+    "search": {
+      "title": "Search title",
+      "desc": "Search Meta Description"
+    },
+    "article": {
+      "title": "Article title",
+      "desc": "Article Meta Description"
+    },
+    "blog": {
+      "title": "Blog title",
+      "desc": "Blog Meta Description"
+    },
+    "help": {
+      "title": "Help title",
+      "desc": "Help Meta Description"
+    },
+    "legal": {
+      "title": "Legal title",
+      "desc": "Legal Meta Description"
+    },
+    "openData": {
+      "title": "Open Data title",
+      "desc": "Open Data Description"
+    },
+    "contact": {
+      "title": "Contact title",
+      "desc": "Contact Description"
+    }
+  },
+  "footer": {
+    "text": "NextMasjid | All Rights Reserved",
+    "socialMedia": {
+      "facebook": "http://facebook.com",
+      "twitter": "http://twitter.com",
+      "instagram": "http://instagram.com"
     }
   },
   "pages": {
@@ -226,6 +265,18 @@
       },
       "mosqueLocations": {
         "title": "Location Mosques"
+      }
+    },
+    "contact": {
+      "subHero": {
+        "title": "Contact Page",
+        "description": "some text here"
+      },
+      "form": {
+        "fullName": "Full Name",
+        "email": "E-mail",
+        "message": "Case",
+        "report": "Report case"
       }
     }
   }

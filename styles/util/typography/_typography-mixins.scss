@@ -34,6 +34,7 @@
 @mixin typography--text() {
     @include font--regular;
     font-size: 1.8rem;
+    line-height: 1.4;
 }
 
 @mixin typography--text-small() {

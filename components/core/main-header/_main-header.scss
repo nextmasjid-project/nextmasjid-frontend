@@ -1,4 +1,4 @@
-.header {
+.main-header {
     // Vars
 
     // Support
@@ -24,7 +24,7 @@
         background-color: transparent;
       }
 
-      .header__inner {
+      .main-header__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -36,7 +36,7 @@
         }
       }
 
-      .header__hamburger {
+      .main-header__hamburger {
         width: 4rem;
         height: 4rem;
         border-radius: 5rem;
@@ -58,12 +58,12 @@
         }
       }
 
-      .header__link {
+      .main-header__link {
         display: block;
         pointer-events: auto;
       }
 
-      .header__logo {
+      .main-header__logo {
         width: 12rem;
 
         @include mq('>lg') {

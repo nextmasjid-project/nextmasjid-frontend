@@ -1,11 +1,12 @@
 {
   "direction": "rtl",
-  "languages-dropdown": {
+  "languages": {
     "en": "English",
-    "ar": "العربية"
+    "ar": "العربيه"
   },
   "header": {
     "logo": "logo-arabic.svg",
+    "logoAlt": "المسجد القادم كيف تبني مسجدا",
     "navigation": [
       { "icon": "icon-menu-location", "title": "اين نبني مسجدا", "route": "search" },
       { "icon": "icon-menu-how", "title": "كيف نبني مسجدا", "route": "article" },
@@ -15,11 +16,44 @@
   },
   "meta": {
     "home": {
-      "title": "المسجد القادم"
+      "title": "Home title",
+      "desc": "Home Meta Description"
     },
     "about": {
-      "title": "عن المسجد القادم"
+      "title": "About title",
+      "desc": "About Meta Description"
+    },
+    "search": {
+      "title": "Search title",
+      "desc": "Search Meta Description"
+    },
+    "article": {
+      "title": "Article title",
+      "desc": "Article Meta Description"
+    },
+    "blog": {
+      "title": "Blog title",
+      "desc": "Blog Meta Description"
+    },
+    "help": {
+      "title": "Help title",
+      "desc": "Help Meta Description"
+    },
+    "legal": {
+      "title": "Legal title",
+      "desc": "Legal Meta Description"
+    },
+    "openData": {
+      "title": "Open Data title",
+      "desc": "Open Data Description"
+    },
+    "contact": {
+      "title": "Contact title",
+      "desc": "Contact Description"
     }
+  },
+  "footer": {
+    "text": "المسجد القادم | جميع الحقوق محفوظه"
   },
   "pages": {
     "home": {
@@ -204,8 +238,8 @@
         "cities": "Cities",
         "chooseRegion": "Choose Region",
         "chooseCity": "Choose City",
-        "editorChoice": "Editor Choice",
-        "currentMosques": "Current Mosques"
+        "editorChoice": "اختيار المحررين",
+        "currentMosques": "المساجد الحاليه"
       },
       "infoWindow": {
         "websiteVisit": "Website visit",

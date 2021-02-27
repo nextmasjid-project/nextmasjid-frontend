@@ -1,17 +1,18 @@
 <template>
   <div class="search-container">
+      <!-- Search Sidebar   -->
+      <search-sidebar
+        :google-maps="GoogleMaps"
+        @toggleEditorChoice="toggleEditorSuggestionList"
+        @toggleCurrentMosques="toggleCurrentMosquesList"
+      />
+
       <!--  Map  -->
       <div class="search-map" v-show="getComponentName === 'search-map'">
         <div class="search-map__element" ref="mapElement"/>
       </div>
       <search-list-view v-show="getComponentName !== 'search-map'" />
 
-    <!-- Search Sidebar   -->
-    <search-sidebar
-      :google-maps="GoogleMaps"
-      @toggleEditorChoice="toggleEditorSuggestionList"
-      @toggleCurrentMosques="toggleCurrentMosquesList"
-    />
   </div>
 </template>
 

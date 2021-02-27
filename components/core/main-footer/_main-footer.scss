@@ -1,0 +1,60 @@
+.main-footer {
+    // Vars
+    $insta: #E4405F;
+    $fb: #1877F2;
+    $twitter: #1DA1F2;
+
+    // Support
+
+    // Module
+    & {
+
+      @include make-container;
+      padding: 2rem 1.5rem;
+
+      .main-footer__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $c-border;
+        padding-bottom: 2rem;
+      }
+
+      .main-footer__logo {
+        width: 3.5rem;
+      }
+
+      .main-footer__bottom {
+        display: flex;
+        padding-top: 2rem;
+        justify-content: flex-end;
+      }
+
+      .main-footer__social-link {
+        display: block;
+        margin-right: 2rem;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .main-footer__svg {
+        fill: $c-white;
+      }
+    }
+
+    // Facets
+    & {
+      .main-footer__social-link--facebook .main-footer__svg {
+        fill: $fb;
+      }
+      .main-footer__social-link--twitter .main-footer__svg {
+        fill: $twitter;
+      }
+      .main-footer__social-link--instagram .main-footer__svg {
+        fill: $insta;
+      }
+    }
+
+    // States
+}

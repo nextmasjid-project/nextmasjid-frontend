@@ -3,6 +3,7 @@
     $inactive-icon: #AAB8C2;
     $active-icon: #0065FF;
     $menu-animation: cubic-bezier(.11,.74,.35,.92);
+    $lang-bg: #aab8c236;
 
       // Support
 
@@ -34,6 +35,7 @@
         width: 4rem;
         height: 4rem;
         border-radius: 5rem;
+        margin-left: auto;
         background-color: $c-white;
         box-shadow: $box-shadow-icon;
         display: flex;
@@ -57,7 +59,7 @@
         margin-left: 1rem;
 
         @include mq('>lg') {
-          margin-top: 8rem;
+          margin-bottom: 4rem;
         }
       }
 
@@ -90,19 +92,33 @@
         padding-top: .2rem;
         transition: color .4s $menu-animation;
       }
+
+      .navigation__lang-link {
+        text-decoration: none;
+        background-color: $lang-bg;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 2rem;
+        color: black;
+        border-radius: .4rem;
+        transition: box-shadow .2s ease-in-out;
+      }
+
+      .navigation__lang-icon {
+        width: 4.5rem;
+        padding: 1rem;
+      }
+
+      .navigation__lang-text {
+        padding: 1rem 1rem 1rem 0;
+      }
     }
 
     // Facets
     & {
-      .navigation__list {
-        &.is-rtl {
-          direction: rtl;
-
-          .navigation__icon {
-            margin-left: 1.5rem;
-            margin-right: 0;
-          }
-        }
+      .navigation__lang-link.nuxt-link-active {
+        color: #ffffff;
+        background: #0056da;
       }
     }
 
@@ -125,7 +141,9 @@
         }
       }
 
-
+      .navigation__lang-link:hover {
+        box-shadow: $box-shadow-primary-button;
+      }
 
       &.is-opened {
         visibility: visible;

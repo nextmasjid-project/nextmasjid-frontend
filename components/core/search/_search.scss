@@ -9,7 +9,7 @@
 
         @include mq('>lg') {
           display: grid;
-          grid-template-columns: 1fr 40rem;
+          grid-template-columns: 40rem 1fr;
         }
       }
     }

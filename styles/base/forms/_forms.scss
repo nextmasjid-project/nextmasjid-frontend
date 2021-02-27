@@ -1,8 +1,7 @@
 .form {
     // Vars
-    $toggle-active: #66bb6a;
-    $toggle-inactive: #BCBCBC;
     $placeholder-color: #9F9F9F;
+    $border-radius: .3rem;
 
     // Support
 
@@ -31,7 +30,7 @@
         display: block;
         background-color: $c-blue-100;
         padding: 1.4rem;
-        border-radius: .5rem;
+        border-radius: $border-radius;
         color: $c-blue-500;
         font-size: 1.8rem;
         transition: border-color .3s ease-in-out;
@@ -51,36 +50,26 @@
 
       .form__row {
         display: flex;
-        //flex-wrap: wrap;
       }
 
       .form__col {
+        flex-grow: 1;
         &:first-child {
           padding-right: 3rem;
         }
-      }
-
-      .form__col--wide {
-        flex: 0 0 70%;
       }
 
       .form__textarea {
         width: 100%;
         height: 320px;
         background-color: $c-blue-100;
-        border-bottom: 2px solid transparent;
+        border: 1px solid transparent;
         padding: 1.2rem;
         color: $c-blue-500;
         resize: none;
         font-size: 2rem;
+        border-radius: $border-radius;
       }
-
-      .form__textarea-counter {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-      }
-
 
       .form__icon {
         position: absolute;
@@ -110,30 +99,6 @@
           }
         }
       }
-
-
-      .form__info-text {
-        display: inline-block;
-        max-width: 85%;
-        @include typography--text-small();
-        @include mq('<=sm') {
-          line-height: 1.4;
-          max-width: 80%;
-        }
-
-        a {
-          text-decoration: none;
-          color: $c-primary;
-        }
-      }
-
-      .form__info-icon {
-        margin-right: 2rem;
-        margin-top: 0.6rem;
-        display: inline-block;
-        vertical-align: top;
-      }
-
     }
 
     // States
@@ -149,14 +114,8 @@
       }
 
       .form__textarea {
-        &::placeholder {
-          color: $c-blue-500;
-          opacity: 1;
-          transition: opacity .13s ease-in-out;
-        }
-
-        &:focus::placeholder {
-          opacity: 0;
+        &:focus {
+          border-color: $c-primary;
         }
       }
     }

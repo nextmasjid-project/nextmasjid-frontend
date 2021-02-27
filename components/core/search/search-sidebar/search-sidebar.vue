@@ -46,14 +46,14 @@
           <input type="checkbox" class="control__input" id="time1" v-model="editorChoice" @change="$emit('toggleEditorChoice', editorChoice)"/>
           <label class="control__label" for="time1">
             <span class="control__indicator"></span>
-            <span>Editor Choice</span>
+            <span>{{ $t('pages.search.sidebar.editorChoice') }}</span>
           </label>
         </div>
         <div class="control control--checkbox">
           <input type="checkbox" class="control__input" id="time2" v-model="currentMosques" @change="$emit('toggleCurrentMosques', currentMosques)" />
           <label class="control__label" for="time2">
             <span class="control__indicator"></span>
-            <span>Current Mosques</span>
+            <span>{{ $t('pages.search.sidebar.currentMosques') }}</span>
           </label>
         </div>
       </form>
@@ -85,8 +85,8 @@ export default {
     }
   },
   mounted() {
-    this.searchItems = document.querySelectorAll('.search-sidebar__item');
-    setTimeout(() => this.addClassToCurrentButton(), 200)
+    // this.searchItems = document.querySelectorAll('.search-sidebar__item');
+    // setTimeout(() => this.addClassToCurrentButton(), 200)
   },
   computed: {
     ...mapGetters('search', ['getRegions', 'getCities', 'getComponentName']),

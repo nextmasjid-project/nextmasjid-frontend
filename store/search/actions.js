@@ -16,11 +16,12 @@ import { URLS } from "@/services/urls";
  * Fetch all regions
  * @param {function} commit - The vuex commit function
  * @param {Object}  state - The vuex state object
+ * @param {string }payload - the current locale value
  * @return {Array[]} list of regions
  */
 export async function fetchRegionAction({state, commit}, payload) {
   const { REGION_URL } = URLS
-  const response = await API.get(REGION_URL('en'))
+  const response = await API.get(REGION_URL('en' || payload)) // it has to be dynamic
   let { data } = response;
   commit(SET_REGION, data)
 }

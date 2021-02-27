@@ -4,10 +4,18 @@
 
 <script>
 export default {
-name: "index"
+  name: "index",
+  head() {
+    return {
+      title: this.$t('meta.legal.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('meta.legal.desc')
+        }
+      ]
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

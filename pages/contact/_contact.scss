@@ -1,0 +1,23 @@
+.contact {
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+      .contact__form {
+        @include make-container;
+        padding: 4rem 1.5rem;
+      }
+
+      .form {
+        background-color: $c-white;
+        max-width: 50rem;
+        padding: 4rem;
+      }
+    }
+
+    // Facets
+
+    // States
+}

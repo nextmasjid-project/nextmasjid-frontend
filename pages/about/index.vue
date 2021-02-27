@@ -55,5 +55,18 @@
 
 <script>
 export default {
+  name: "index",
+  head() {
+    return {
+      title: this.$t('meta.about.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('meta.about.desc')
+        }
+      ]
+    }
+  }
 }
 </script>

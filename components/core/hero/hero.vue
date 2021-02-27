@@ -11,8 +11,8 @@
             <h1 class="hero__title">{{ slide.title }}</h1>
             <p class="hero__description">{{ slide.description }}</p>
             <div class="button-group">
-              <button class="button button--outline">{{ slide.secondaryButton }}</button>
-              <button class="button button--primary"> {{ slide.primaryButton }}</button>
+              <nuxt-link :to="localePath({name: 'about'})" class="button button--outline">{{ slide.secondaryButton }}</nuxt-link>
+              <nuxt-link :to="localePath({name: 'search'})" class="button button--primary"> {{ slide.primaryButton }}</nuxt-link>
             </div>
           </div>
         </swiper-slide>

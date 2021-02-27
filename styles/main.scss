@@ -24,7 +24,9 @@
 // Base
 @import "base/general";
 @import "base/forms/forms";
+@import "base/forms/form-rtl";
 @import "base/forms/control";
+@import "base/forms/control-rtl";
 @import "base/containers";
 
 // Ui Components
@@ -35,9 +37,10 @@
 // Structure
 @import "structure/components/tooltip";
 @import "structure/components/alert";
-@import "structure/layout/header";
+@import "components/core/main-header/main-header";
+@import "components/core/main-footer/main-footer";
 @import "components/core/navigation/navigation";
-@import "structure/layout/footer";
+@import "components/core/navigation/navigation-rtl";
 @import "structure/components/btns";
 
 
@@ -49,7 +52,9 @@
 @import "components/core/card-benefits/card-benefits";
 @import "components/core/search/search";
 @import "components/core/search/search-map/search-map";
+@import "components/core/search/search-map/search-map-rtl";
 @import "components/core/search/search-map/search-map-info-window/search-map-info-window";
+@import "components/core/search/search-map/search-map-info-window/search-map-info-window-rtl";
 @import "components/core/search/search-sidebar/search-sidebar";
 @import "components/core/result/result";
 @import "components/core/search/search-list-view/search-list-view";
@@ -58,3 +63,4 @@
 @import "pages/about/about";
 @import "pages/blog/blog";
 @import "pages/help/help";
+@import "pages/contact/contact";
