@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://45.35.14.206/api'
+const URL = 'https://nextmasjidbackend.azurewebsites.net'
 
 const API = axios.create({
   baseURL: URL,

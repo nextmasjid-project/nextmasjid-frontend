@@ -2,7 +2,7 @@
   <div class="search-info" ref="mapInfoWindow">
     <div class="search-info__top">
       <h1 class="search-info__percentage">
-        <span>{{ content.score }}</span>
+        <span>{{ content.value }}</span>
         <span class="search-info__symbol">%</span>
       </h1>
       <div class="search-info__progress">
@@ -42,13 +42,13 @@ export default {
   },
   computed: {
     rootClasses() {
-      const { score } = this.content
-      return this.bemIf(score <= 50 ,'red') ||
-             this.bemIf(score > 50 && score < 70 ,'yellow') ||
-             this.bemIf(score >= 70 ,'green')
+      const { value } = this.content
+      return this.bemIf(value <= 50 ,'red') ||
+             this.bemIf(value > 50 && value < 70 ,'yellow') ||
+             this.bemIf(value >= 70 ,'green')
     },
     progressWidth() {
-      return { '--score': `${this.content.score}%` }
+      return { '--score': `${this.content.value}%` }
     },
     resultLink() {
       const { lat, lng } = this.content

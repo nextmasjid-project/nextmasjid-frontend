@@ -16,12 +16,12 @@ import { URLS } from "@/services/urls";
  * Fetch all regions
  * @param {function} commit - The vuex commit function
  * @param {Object}  state - The vuex state object
- * @param {string }payload - the current locale value
+ * @param {string} payload - the current locale value
  * @return {Array[]} list of regions
  */
 export async function fetchRegionAction({state, commit}, payload) {
   const { REGION_URL } = URLS
-  const response = await API.get(REGION_URL('en' || payload)) // it has to be dynamic
+  const response = await API.get(REGION_URL) // it has to be dynamic
   let { data } = response;
   commit(SET_REGION, data)
 }
@@ -32,14 +32,11 @@ export async function fetchRegionAction({state, commit}, payload) {
  * @param {Function} commit - The vuex commit function
  * @param {Object}  state - The vuex state object
  * @param {string} locale - app locale
- * @param {string} regionId - region id
+ * @param {Object[]} payload - list that contain cities that belong to the region
  * @return {Object[]} list of cities that belong to a region
  */
-export async function fetchCitiesAction({state, commit}, { locale, regionId }) {
-  const { CITIES_URL } = URLS
-  const response = await API.get(CITIES_URL(locale, regionId))
-  let { data } = response;
-  commit(SET_CITIES, data)
+export async function assignCitiesAction({state, commit}, payload) {
+  commit(SET_CITIES, payload)
 }
 
 
@@ -53,9 +50,8 @@ export async function fetchCitiesAction({state, commit}, { locale, regionId }) {
 export async function fetchHeatMapList({state, commit}, payload) {
   const { HEAT_MAP_URL } = URLS
   const response = await API.get(HEAT_MAP_URL(payload))
-  let { data: { data} } = response;
-  // @TODO only for testing it has to be implemented correctly
-  const TRANSFORMED_ARR = data.map(el => ({location: {lat: el.lat, lng: el.long}, weight: el.wegiht})).slice(0, 30);
+  let { data } = response;
+  const TRANSFORMED_ARR = data.map(el => ({location: {lat: el.lat, lng: el.lng}, weight: el.value}));
   commit(SET_HEAT_MAP, TRANSFORMED_ARR)
   return Promise.resolve(TRANSFORMED_ARR)
 }
@@ -101,7 +97,7 @@ export async function fetchCurrentLocationData({state, commit}, payload) {
  */
 export async function fetchAllEditorsSuggestion({state, commit}, payload) {
   const { EDITOR_SUGGESTION_URL } = URLS
-  const response = await API.get(EDITOR_SUGGESTION_URL(payload))
+  const response = await API.get(EDITOR_SUGGESTION_URL)
   let { data } = response;
   commit(SET_EDITOR_SUGGESTION_LIST, data)
   return Promise.resolve(data)

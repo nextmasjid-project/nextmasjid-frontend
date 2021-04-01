@@ -12,7 +12,7 @@ export default {
   props: {
     img: {
       type: String,
-      default: 'https://placehold.it/60x60'
+      default: 'http://placehold.it/60x60'
     },
     title: {
       type: String,

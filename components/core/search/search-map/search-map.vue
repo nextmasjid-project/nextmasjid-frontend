@@ -162,7 +162,7 @@
         } else {
           this.resetMarkerIcons('currentMosques')
         }
-        // this.fetchHeatMapList(coordinates).then(() => this.heatMapInit())
+       // this.fetchHeatMapList(coordinates).then(() => this.heatMapInit())
       },
       onClickHandler(e) {
         const { lat, lng } = e.latLng;

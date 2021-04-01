@@ -4,12 +4,12 @@
       <template v-if="isImage && isBgWhite">
         <div class="text-content__wrapper">
           <h3>{{ title }}</h3>
-          <p>{{ body }}</p>
+          <p v-html="body" />
         </div>
       </template>
       <template v-else>
         <h3>{{ title }}</h3>
-        <p>{{ body }}</p>
+        <p v-html="body" />
       </template>
     </div>
   </div>

@@ -12,7 +12,7 @@ export function createMapOptions({ Api }) {
     mapTypeControlOptions: {
       mapTypeIds: [],
     },
-    zoom: 8,
+    zoom: 14,
     clickableIcons: false,
     center: createLatLng({Api}, LAT_LNG),
     minZoom: MINIMUM_ZOOM_LEVEL,

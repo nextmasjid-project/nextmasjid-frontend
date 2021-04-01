@@ -3,9 +3,9 @@
     <!-- Sub Hero -->
     <div class="about-sub-hero">
       <sub-hero
-        background-image="http://placehold.it/1920x768"
-        title="What is NextMasjid?"
-        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur consequuntur doloremque eveniet exercitationem illo inventore labore possimus quas qui?"/>
+        :background-image="require('@/assets/images/about-header.png')"
+        :title="$t('pages.about.subHero.title')"
+        :text="$t('pages.about.subHero.description')"/>
     </div>
 
     <!-- About Top Cards -->
@@ -46,7 +46,7 @@
 
     <!--  About Text  -->
     <div class="about-text">
-      <text-content :is-color="true" title="some title" body="Lorem" />
+      <text-content :is-color="true" title="some title" :body="$t('pages.about.bottom.description')" />
     </div>
 
 

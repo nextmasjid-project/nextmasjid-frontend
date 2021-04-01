@@ -45,7 +45,7 @@ export default {
     ['nuxt-i18n', {
       detectBrowserLanguage: false,
       strategy: 'prefix',
-      defaultLocale: 'en',
+      defaultLocale: 'ar',
       locales: [
         {
           code: 'ar',
@@ -60,16 +60,6 @@ export default {
       langDir: 'locales/'
     }],
   ],
-
-  proxy: {
-    '/api': {
-      target: 'http://45.35.14.206',
-      pathRewrite: {
-        '^/api' : '/'
-      }
-    }
-  },
-
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }

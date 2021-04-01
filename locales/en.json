@@ -159,7 +159,7 @@
       },
       "bottom": {
         "title": "Bottom body",
-        "description": "very long text dolore magna aliquyam erat, sed diam voluptua more text show come here dolore magna aliquyam erat, sed diam voluptua more text show come here\""
+        "description": "very long text dolore magna aliquyam erat, sed diam voluptua more text show come here dolore <br><br> <h3>magna aliquyam erat,</h3>sed diam voluptua more text show come here\""
       }
     },
     "blog": {
