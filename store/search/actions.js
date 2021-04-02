@@ -21,7 +21,7 @@ import { URLS } from "@/services/urls";
  */
 export async function fetchRegionAction({state, commit}, payload) {
   const { REGION_URL } = URLS
-  const response = await API.get(REGION_URL) // it has to be dynamic
+  const response = await API.get(REGION_URL(payload))
   let { data } = response;
   commit(SET_REGION, data)
 }
@@ -67,7 +67,7 @@ export async function fetchHeatMapList({state, commit}, payload) {
 export async function fetchCurrentMosques({state, commit}, payload) {
   const { CURRENT_MOSQUES_URL } = URLS
   const response = await API.get(CURRENT_MOSQUES_URL(payload))
-  let { data: { data } } = response;
+  let { data } = response;
   commit(SET_CURRENT_MOSQUES_LIST, data)
   return Promise.resolve(data)
 }

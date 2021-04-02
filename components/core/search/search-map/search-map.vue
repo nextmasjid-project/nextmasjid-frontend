@@ -123,18 +123,18 @@
         this.GoogleMaps.Markers[markerType] = typeList?.map(el => this.createMapMarker(el, markerName));
       },
       createMapMarker(entry, markerName) {
-        const {latitude, longitude} = entry;
-        const marker = createMarker(this.GoogleMaps, {position: {lat: latitude, lng: longitude}});
-        marker.setPosition(createLatLng(this.GoogleMaps, {lat: latitude, lng: longitude}));
+        const {lat, lng} = entry;
+        const marker = createMarker(this.GoogleMaps, {position: {lat, lng}});
+        marker.setPosition(createLatLng(this.GoogleMaps, {lat, lng}));
         marker.addListener('click', this.onMarkerClicked.bind(this, marker, entry));
         this.updateMarkerIcon(marker, markerName);
         return marker;
       },
-      onMarkerClicked(marker, {latitude, longitude}) {
+      onMarkerClicked(marker, {lat, lng}) {
         const {Map} = this.GoogleMaps;
 
         centerMap({Map}, {
-          latlng: {lat: latitude, lng: longitude},
+          latlng: {lat, lng},
           method: 'panTo'
         });
       },
@@ -147,7 +147,7 @@
         const neLng = bounds.getNorthEast().lng();
         const swLat = bounds.getSouthWest().lat();
         const swLng = bounds.getSouthWest().lng();
-        const coordinates = {neLat, neLng, swLat, swLng};
+        const coordinates = {neLat, neLng, swLat, swLng, lang: this.getLocale};
         this.updatedZoomLevel = this.GoogleMaps.Map.getZoom();
 
         console.log("UPDATED ZOOM Level:", this.updatedZoomLevel);
