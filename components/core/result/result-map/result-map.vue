@@ -32,6 +32,7 @@ export default {
           currentMosques: []
         },
         Map: null,
+        HeatMap: null 
       },
       markerName: {
         editorChoice: 'MARKER_EDITOR_CHOICE',

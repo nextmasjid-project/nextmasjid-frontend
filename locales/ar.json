@@ -2,30 +2,30 @@
   "direction": "rtl",
   "languages": {
     "en": "English",
-    "ar": "العربيه"
+    "ar": "العربية"
   },
   "header": {
     "logo": "logo-arabic.svg",
     "logoAlt": "المسجد القادم كيف تبني مسجدا",
     "navigation": [
-      { "icon": "icon-menu-location", "title": "اين نبني مسجدا", "route": "search" },
-      { "icon": "icon-menu-how", "title": "كيف نبني مسجدا", "route": "article" },
-      { "icon": "icon-menu-about", "title": "اقرا عننا", "route": "about" },
-      { "icon": "icon-menu-contact", "title": "راسلنا", "route": "contact" }
+      { "icon": "icon-menu-location", "title": "أين تبني مسجدًا", "route": "search" },
+      { "icon": "icon-menu-how", "title": "كيف تبني مسجدًا", "route": "article" },
+      { "icon": "icon-menu-about", "title": "حول الموقع", "route": "about" },
+      { "icon": "icon-menu-contact", "title": "اتصل بنا", "route": "contact" }
     ]
   },
   "meta": {
     "home": {
-      "title": "Home title",
-      "desc": "Home Meta Description"
+      "title": "المسجد القادم",
+      "desc": "خارطة ذكية لأفضل مكان لبناء مسجد"
     },
     "about": {
-      "title": "About title",
-      "desc": "About Meta Description"
+      "title": "حول المسجد القادم",
+      "desc": "تعرف أكثر على المسجد القادم"
     },
     "search": {
-      "title": "Search title",
-      "desc": "Search Meta Description"
+      "title": "المسجد القادم - البحث",
+      "desc": "أين تبني مسجدًا؟ أفضل مكان لبناء مسجد"
     },
     "article": {
       "title": "Article title",
@@ -36,24 +36,30 @@
       "desc": "Blog Meta Description"
     },
     "help": {
-      "title": "Help title",
-      "desc": "Help Meta Description"
+      "title": "المسجد القادم - مساعدة",
+      "desc": "المساعدة والأسئلة الشائعة - حول المسجد القادم"
     },
     "legal": {
-      "title": "Legal title",
-      "desc": "Legal Meta Description"
+      "title": "مسائل قانونية",
+      "desc": "المسجد القادم - مسائل قانونية"
     },
     "openData": {
-      "title": "Open Data title",
-      "desc": "Open Data Description"
+      "title": "البيانات المفتوحة",
+      "desc": "البيانات المفتوحة - المسجد القادم"
     },
     "contact": {
-      "title": "Contact title",
-      "desc": "Contact Description"
+      "title": "اتصل بنا",
+      "desc": "التواصل والاتصال بـ المسجد القادم"
     }
   },
   "footer": {
-    "text": "المسجد القادم | جميع الحقوق محفوظه"
+    "text": "المسجد القادم | لا حقوق محفوظة - الخير متاح للجميع - تفضل بزيارة هذا   <a href=\"http://www.google.com\">الرابط</a> ه لتحميل ما تريد",
+    "socialMedia":
+      {
+        "twitter" : "https://twitter.com/nextmasjid"
+      }
+    
+      
   },
   "pages": {
     "home": {
@@ -150,7 +156,7 @@
       },
       "bottom": {
         "title": "Bottom body",
-        "description": "very long text dolore magna aliquyam erat, sed diam voluptua more text show come here dolore magna aliquyam erat, sed diam voluptua more text show come here\""
+        "description": "<h3>خوارزميات ذكية، وبك نكون أدق وأذكى</h3>جديث <br/><br/><br/> <h3>شكر خاص</h3>نورة عبدالعزيز الشايع، محمد جابر، تنوير راشد، أحمد جدوع، عبدالإله العويس، معاذ المجيدي، عادل الخضري، وليد المطيري، محمد سليم، وآخرون. "
       }
     },
     "blog": {
@@ -230,32 +236,33 @@
     },
     "search": {
       "sidebar": {
-        "title": "How to build a Masjid",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, quia.",
+        "title": "أين تبني مسجدًا",
+        "description": "تصفح الخريطة وانقر للتعرف على مناسبة أي موقع تختاره",
         "mapView": "Map View",
         "gridView": "Grid View",
-        "region": "Region",
-        "cities": "Cities",
-        "chooseRegion": "Choose Region",
-        "chooseCity": "Choose City",
-        "editorChoice": "اختيار المحررين",
-        "currentMosques": "المساجد الحاليه"
+        "region": "المنطقة",
+        "cities": "المدن والمحافظات",
+        "chooseRegion": "حدد المنطقة",
+        "chooseCity": "حدد المدينة",
+        "editorChoice": "عرض اختيارات المحررين",
+        "currentMosques": "عرض المساجد الحالية"
       },
       "infoWindow": {
-        "websiteVisit": "Website visit",
-        "share": "Share",
-        "report": "Report"
+        "websiteVisit": "عرض التفاصيل",
+        "share": "مشاركة",
+        "howItWorks": "كيف يعمل المؤشر القادم",
+        "report": "خطأ في البيانات؟ أبلغنا"
       }
     },
     "result": {
       "statistics": {
-        "mosqueDensity": "Lorem ipsum dolor sit amet.",
-        "nearestMosqueDistance": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "peopleDensity": "Lorem ipsum dolor sit amet, consectetur.",
-        "possiblePrayers": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        "mosqueDensity": "كثافة المساجد - عدد المساجد لكل ألف نسمة",
+        "nearestMosqueDistance": "أقرب مسجد",
+        "peopleDensity": "الكثافة السكانية للمدينة",
+        "possiblePrayers": "عدد المصلين في المساحة القريبة"
       },
       "mosqueLocations": {
-        "title": "Location Mosques"
+        "title": "أقرب ٣ مساجد"
       }
     }
   }

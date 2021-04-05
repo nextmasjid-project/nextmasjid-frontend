@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const URL = 'https://nextmasjidbackend.azurewebsites.net'
+//const URL = 'https://localhost:5005'
 
 const API = axios.create({
   baseURL: URL,

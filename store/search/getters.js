@@ -19,7 +19,7 @@ export const getCities = state => state.cities;
  * @param {object} state - The vuex state object
  * @return {array[]} List of all heat map
  */
-export const getHeatMapList = state => state.heatMap?.slice(0, 20);
+export const getHeatMapList = state => state.heatMap;//?.slice(0, 20);
 
 
 /**

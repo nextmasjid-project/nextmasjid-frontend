@@ -49,6 +49,36 @@ export async function assignCitiesAction({state, commit}, payload) {
  */
 export async function fetchHeatMapList({state, commit}, payload) {
   const { HEAT_MAP_URL } = URLS
+  
+  let step = 2
+  let factor = 1
+  let currentZoom = payload.zoom
+  
+  
+  if(currentZoom >= 17)
+    step= factor * 1;
+  else if(currentZoom >= 16)
+    step= factor * 4
+  else if(currentZoom >= 15)
+    step= factor * 8
+  else if(currentZoom >= 14)
+    step= factor * 16
+  else if(currentZoom >= 13)
+    step= factor * 36
+  else if(currentZoom >= 12)
+    step= factor * 64
+  else if(currentZoom >= 11)
+    step= 128
+  else if(currentZoom >= 10)
+    step= 256
+  else if(currentZoom >= 6)
+    step= 512
+  else if(currentZoom >= 1)
+    step= 1024  
+  
+    payload.currentZoom = step
+  
+
   const response = await API.get(HEAT_MAP_URL(payload))
   let { data } = response;
   const TRANSFORMED_ARR = data.map(el => ({location: {lat: el.lat, lng: el.lng}, weight: el.value}));

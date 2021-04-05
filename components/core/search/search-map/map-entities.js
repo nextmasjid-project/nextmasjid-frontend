@@ -60,6 +60,12 @@ export function createLatLng({ Api }, { lat, lng }) {
   return new Api.LatLng({ lat, lng});
 }
 
+// export function createLatLngWeight({ Api }, { lat, lng, weight }) {
+//   var loc = new Api.LatLng({ lat, lng});
+//   return {location:loc, weight: weight};
+// }
+
+
 /**
  * Set up a google maps instance and a marker
  * @param {object} Api - The API
@@ -111,7 +117,8 @@ export function createInitialBounds({ Api }) {
 export function createHeatMapInstance({ Api, Map }, list) {
   return new Api.visualization.HeatmapLayer({
     data: list,
-    map: Map
+    map: Map,
+    radius: 50
   });
 }
 

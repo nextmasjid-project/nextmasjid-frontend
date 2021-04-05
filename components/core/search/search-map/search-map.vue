@@ -56,6 +56,7 @@
             currentMosques: []
           },
           Map: null,
+          HeatMap: null,
         },
         markerName: {
           editorChoice: 'MARKER_EDITOR_CHOICE',
@@ -147,7 +148,8 @@
         const neLng = bounds.getNorthEast().lng();
         const swLat = bounds.getSouthWest().lat();
         const swLng = bounds.getSouthWest().lng();
-        const coordinates = {neLat, neLng, swLat, swLng, lang: this.getLocale};
+        const currnetZoom = this.GoogleMaps.Map.getZoom();
+        const coordinates = {neLat, neLng, swLat, swLng, lang: this.getLocale, zoom: currnetZoom};
         this.updatedZoomLevel = this.GoogleMaps.Map.getZoom();
 
         console.log("UPDATED ZOOM Level:", this.updatedZoomLevel);
@@ -162,7 +164,7 @@
         } else {
           this.resetMarkerIcons('currentMosques')
         }
-       // this.fetchHeatMapList(coordinates).then(() => this.heatMapInit())
+        this.fetchHeatMapList(coordinates).then(() => this.heatMapInit())
       },
       onClickHandler(e) {
         const { lat, lng } = e.latLng;
@@ -190,8 +192,16 @@
         })
       },
       heatMapInit() {
-        const HEAT_MAP_DATA = this.getHeatMapList.map(el => createLatLng(this.GoogleMaps, {lat: el.location.lat, lng: el.location.lng}))
-        createHeatMapInstance({Api: this.GoogleMaps.Api, Map: this.GoogleMaps.Map}, HEAT_MAP_DATA)
+        const HEAT_MAP_DATA = this.getHeatMapList.map(el => { return {location: createLatLng(this.GoogleMaps, {lat: el.location.lat, lng: el.location.lng}), weight: el.weight}})
+        
+        if(this.GoogleMaps.HeatMap)
+        {
+          this.GoogleMaps.HeatMap.setMap(null);
+        }
+        this.GoogleMaps.HeatMap = createHeatMapInstance({Api: this.GoogleMaps.Api, Map: this.GoogleMaps.Map}, HEAT_MAP_DATA)
+        this.GoogleMaps.HeatMap.set("dissipating", false) 
+        this.GoogleMaps.HeatMap.set("maxIntensity", 1000) 
+        
       },
       setZoomLevel(level) {
         this.GoogleMaps.Map.setZoom(level)
