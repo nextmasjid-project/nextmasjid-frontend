@@ -18,12 +18,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-    - name: Install dependencies
-      run: yarn
-    - name: Build
-      run: yarn build
-    - name: generate static project
-      run: yarn generate     
+    - name : npm install dependencies
+      run: npm install
+      
+    - name: build
+      run: npm run build
+      
+
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
