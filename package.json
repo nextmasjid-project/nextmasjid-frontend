@@ -5,7 +5,7 @@
   "description": "NextMasjid is a free, non-for-profit web app to help people in finding the best locations to build a mosque",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "start": "nuxt start",
     "start:success": "node ./server/index.js",
     "generate": "nuxt generate"
