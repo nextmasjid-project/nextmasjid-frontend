@@ -23,8 +23,8 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 Under /workflows, the CI and CD pipelines have been defined
 
-##Update 9th April 2021
-##=====================
+## Update 9th April 2021
+## =====================
 The script command package.json file has been update to run nuxt generate on a build command. 
 So previously the build command called *nuxt build*
 However now the build command has been changed to called *nuxt generate* for static web app generation when *npm run build* is called instead of a standard build. 
