@@ -1,7 +1,7 @@
 <template>
   <div class="card-benefits">
     <img :src="img" :alt="title">
-    <h3 class="card-benefits__title">{{ title }}</h3>
+    <h2 class="card-benefits__title">{{ title }}</h2>
     <p class="card-benefits__text">{{ text }}</p>
   </div>
 </template>

@@ -1,7 +1,12 @@
 <template>
   <footer class="main-footer">
     <div class="main-footer__top">
-      <p class="main-footer__text"> {{ $t('footer.text') }}</p>
+      <div class="main-footer__text"> 
+        <nuxt-link class="main-header__link" :to="localePath({name: 'open-data'})">
+          {{ $t('footer.linkText') }}
+          </nuxt-link> <span>{{ $t('footer.text') }}</span>
+         
+         </div>
       <nuxt-link class="main-footer__link" :to="localePath({name: 'index'})">
         <img class="main-footer__logo" src="@/assets/images/logo-plain.svg" :alt="$t('header.logoAlt')" />
       </nuxt-link>

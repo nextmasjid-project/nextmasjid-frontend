@@ -14,6 +14,7 @@ export function createMapOptions({ Api }) {
     },
     zoom: 14,
     clickableIcons: false,
+    gestureHandling: "greedy",
     center: createLatLng({Api}, LAT_LNG),
     minZoom: MINIMUM_ZOOM_LEVEL,
     fullscreenControl: false,

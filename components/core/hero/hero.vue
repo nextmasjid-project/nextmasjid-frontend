@@ -29,6 +29,9 @@ export default {
     return {
       swiperOptions: {
         speed: 1200,
+        autoplay: {
+   delay: 4000,
+ },
         mousewheel: true,
         pagination: {
           el: '.swiper-pagination',

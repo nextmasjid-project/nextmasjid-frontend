@@ -3,7 +3,7 @@
     <!-- Sub Hero -->
     <div class="blog-sub-hero">
       <sub-hero
-        background-image="http://placehold.it/1920x768"
+        
         :title="$t('pages.contact.subHero.title')"
         :text="$t('pages.contact.subHero.description')"/>
     </div>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="contact__c2a">
-          <button class="button button--primary">Report Case</button>
+          <button class="button button--primary">{{ $t('pages.contact.form.submit') }}</button>
         </div>
       </form>
     </div>

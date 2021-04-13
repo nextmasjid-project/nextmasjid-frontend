@@ -1,8 +1,14 @@
 .contact {
     // Vars
+    //background-image: ;
 
+    background: url('~assets/images/home-slide-1.svg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     // Support
-
+    
     // Module
     & {
       .contact__form {
@@ -20,4 +26,4 @@
     // Facets
 
     // States
-}
+  }
