@@ -8,9 +8,22 @@
     "logo": "logo-english.svg",
     "logoAlt": "NextMasjid where to build a mosque",
     "navigation": [
-      { "icon": "icon-menu-location", "title": "Where we build mosque", "route": "search" },
-      { "icon": "icon-menu-how", "title": "How we build mosque", "route": "blog" },
-      { "icon": "icon-menu-about", "title": "About NextMasjid", "route": "about" },
+      {
+        "icon": "icon-menu-location",
+        "title": "Where we build mosque",
+        "route": "search"
+      },
+      {
+        "icon": "icon-menu-how",
+        "title": "How we build mosque",
+        "route": "blog"
+      },
+      { "icon": "icon-menu-how", "title": "Open data", "route": "open-data" },
+      {
+        "icon": "icon-menu-about",
+        "title": "About NextMasjid",
+        "route": "about"
+      },
       { "icon": "icon-menu-contact", "title": "Contact us", "route": "contact" }
     ]
   },
@@ -165,6 +178,44 @@
     "blog": {
       "subHero": {
         "title": "Blog Page",
+        "description": "test"
+      },
+      "tiles": [
+        {
+          "img": "image-24.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-25.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-26.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-24.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-25.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-26.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        }
+      ]
+    },
+    "openData": {
+      "subHero": {
+        "title": "Open Data Page",
         "description": "test"
       },
       "tiles": [

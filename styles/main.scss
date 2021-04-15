@@ -1,7 +1,7 @@
 // Grid
 // More information go here -> https://github.com/dreipol/chaestli
-@import '~@dreipol/scss-utils/unprefixed/index';
-@import '~chaestli/index';
+@import "~@dreipol/scss-utils/unprefixed/index";
+@import "~chaestli/index";
 
 // Vendors
 @import "~swiper/swiper-bundle.min";
@@ -14,7 +14,7 @@
 @import "util/mixins/container";
 @import "util/mixins/animate-list";
 @import "util/media-queries";
-@import 'util/font/font';
+@import "util/font/font";
 @import "util/typography/typography-mixins";
 @import "util/typography/typography";
 @import "util/forms";
@@ -43,7 +43,6 @@
 @import "components/core/navigation/navigation-rtl";
 @import "structure/components/btns";
 
-
 // App
 @import "components/core/card/card";
 @import "components/core/tile/tile";
@@ -62,5 +61,6 @@
 // Pages
 @import "pages/about/about";
 @import "pages/blog/blog";
+@import "pages/open-data/open-data";
 @import "pages/help/help";
 @import "pages/contact/contact";

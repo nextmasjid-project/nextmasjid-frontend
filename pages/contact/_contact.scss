@@ -1,29 +1,29 @@
 .contact {
-    // Vars
-    //background-image: ;
+  // Vars
+  //background-image: ;
 
-    background: url('~assets/images/home-slide-1.svg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    // Support
-    
-    // Module
-    & {
-      .contact__form {
-        @include make-container;
-        padding: 4rem 1.5rem;
-      }
+  // background: url('~assets/images/home-slide-1.svg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // Support
 
-      .form {
-        background-color: $c-white;
-        max-width: 50rem;
-        padding: 4rem;
-      }
+  // Module
+  & {
+    .contact__form {
+      @include make-container;
+      padding: 4rem 1.5rem;
     }
 
-    // Facets
-
-    // States
+    .form {
+      background-color: $c-white;
+      max-width: 50rem;
+      padding: 4rem;
+    }
   }
+
+  // Facets
+
+  // States
+}

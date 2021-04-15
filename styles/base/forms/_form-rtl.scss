@@ -1,17 +1,24 @@
 main[dir="rtl"] {
-    // Vars
+  // Vars
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      .form__icon {
-        left: 1.5rem;
-        right: auto;
-      }
+  // Module
+  & {
+    .form__icon {
+      left: 1.5rem;
+      right: auto;
     }
 
-    // Facets
+    .form__col {
+      &:first-child {
+        padding-left: 3rem;
+        padding-right: 0;
+      }
+    }
+  }
 
-    // States
+  // Facets
+
+  // States
 }
