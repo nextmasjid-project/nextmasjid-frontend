@@ -1,33 +1,33 @@
 .alert {
-    // Vars
-    $error: #FBE9F0;
-    $info: #FFFAAA;
-    $success: #d4edda;
+  // Vars
+  $error: #fbe9f0;
+  $info: #fffaaa;
+  $success: #d4edda;
 
-    // Support
+  // Support
 
-    // Module
-    & {
-        background-color: $info;
-        margin: 2rem 0;
-        padding: 2rem;
-        border-radius: 0.4rem;
+  // Module
+  & {
+    background-color: $info;
+    // margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 0.4rem;
 
-        .alert__text {
-          margin-bottom: 1.5rem;
-        }
+    .alert__text {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  // Facets
+  & {
+    &.alert--error {
+      background-color: $error;
     }
 
-    // Facets
-    & {
-        &.alert--error {
-            background-color: $error;
-        }
-
-        &.alert--success {
-            background-color: $success;
-        }
+    &.alert--success {
+      background-color: $success;
     }
+  }
 
-    // States
+  // States
 }
