@@ -5,9 +5,7 @@
 
     <div v-if="modal">
       <overlay @close="handleCloseModal">
-        <p>
-          How to explore the map. Red areas are in most need for masjids.
-        </p>
+        How to explore the map. Red areas are in most need for masjids.
       </overlay>
     </div>
   </div>

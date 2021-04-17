@@ -2,7 +2,8 @@
   <div class="overlay">
     <div class="overlay__content">
       <button class="overlay__button" @click="$emit('close')">
-        <ui-icon symbol="close-icon" />
+        <!-- <ui-icon symbol="close-icon" /> -->
+        CLOSE
       </button>
 
       <div class="overlay__body">

@@ -1,114 +1,117 @@
 .search-map {
-    // Vars
-    $bg-box: #F3F7FA;
-    $box-shadow-box: 0px 14px 34px rgb(17 36 53 / 9%);
-    $border-color: #AAB8C2;
-    $progress-bg: #E1E8ED;
+  // Vars
+  $bg-box: #f3f7fa;
+  $box-shadow-box: 0px 14px 34px rgb(17 36 53 / 9%);
+  $border-color: #aab8c2;
+  $progress-bg: #e1e8ed;
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      .search-map__element {
+  // Module
+  & {
+    .search-map__element {
+      height: 50vh;
+      width: 100%;
+
+      @include mq(">lg") {
         height: 100vh;
-        width: 100%;
-      }
-
-
-      .search-info {
-        width: 27rem;
-        background-color: $bg-box;
-        box-shadow: $box-shadow-box;
-        border-radius: 2rem;
-      }
-
-      .search-info__percentage {
-        display: flex;
-        align-items: center;
-        line-height: 0.5;
-      }
-
-      .search-info__symbol {
-        padding-top: 1.7rem;
-      }
-
-      .search-info__text {
-        padding: 1.5rem 0 0;
-        border-top: 0.5px solid $border-color;
-      }
-
-      .button {
-        font-size: 1.5rem;
-        padding: 1rem 1.5rem;
-      }
-
-      .button--aligned {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .icon {
-        margin-right: 0.5rem;
-        margin-top: -0.3rem;
-      }
-
-      .search-info__progress {
-        width: 100%;
-        height: 1rem;
-        border-radius: 1rem;
-        background-color: $progress-bg;
-        margin-bottom: 2rem;
-      }
-
-      .search-info__bar {
-        background-color: $border-color;
-        width: var(--score, 50%);
-        display: block;
-        height: 100%;
-        border-radius: 1rem;
-      }
-
-      .search-info__group {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
-      }
-
-      .button--full {
-        width: 100%;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .search-info__center {
-        text-align: center;
-      }
-
-      .search-info__top {
-        padding: 2rem 1.5rem;
-      }
-      .search-info__bottom {
-        background-color: $c-white;
-        padding: 2rem 1.5rem;
-        border-radius: 2rem;
       }
     }
 
-    // Facets
-    & {
-      .search-info__bar--yellow {
-        background-color: $c-progress-yellow;
-      }
-
-      .search-info__bar--green {
-        background-color: $c-progress-green;
-      }
-
-      .search-info__bar--red {
-        background-color: $c-progress-red;
-      }
+    .search-info {
+      width: 27rem;
+      background-color: $bg-box;
+      box-shadow: $box-shadow-box;
+      border-radius: 2rem;
     }
 
-    // States
+    .search-info__percentage {
+      display: flex;
+      align-items: center;
+      line-height: 0.5;
+    }
+
+    .search-info__symbol {
+      padding-top: 1.7rem;
+    }
+
+    .search-info__text {
+      padding: 1.5rem 0 0;
+      border-top: 0.5px solid $border-color;
+    }
+
+    .button {
+      font-size: 1.5rem;
+      padding: 1rem 1.5rem;
+    }
+
+    .button--aligned {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+      margin-top: -0.3rem;
+    }
+
+    .search-info__progress {
+      width: 100%;
+      height: 1rem;
+      border-radius: 1rem;
+      background-color: $progress-bg;
+      margin-bottom: 2rem;
+    }
+
+    .search-info__bar {
+      background-color: $border-color;
+      width: var(--score, 50%);
+      display: block;
+      height: 100%;
+      border-radius: 1rem;
+    }
+
+    .search-info__group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+    }
+
+    .button--full {
+      width: 100%;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-info__center {
+      text-align: center;
+    }
+
+    .search-info__top {
+      padding: 2rem 1.5rem;
+    }
+    .search-info__bottom {
+      background-color: $c-white;
+      padding: 2rem 1.5rem;
+      border-radius: 2rem;
+    }
+  }
+
+  // Facets
+  & {
+    .search-info__bar--yellow {
+      background-color: $c-progress-yellow;
+    }
+
+    .search-info__bar--green {
+      background-color: $c-progress-green;
+    }
+
+    .search-info__bar--red {
+      background-color: $c-progress-red;
+    }
+  }
+
+  // States
 }

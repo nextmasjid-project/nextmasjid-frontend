@@ -1,77 +1,51 @@
 .search-sidebar {
-    // Vars
-    $switcher-inactive-text: #112435;
-    $c-text: #8097AC;
+  // Vars
+  $switcher-inactive-text: #112435;
+  $c-text: #8097ac;
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      width: 100%;
+  // Module
+  & {
+    width: 100%;
+    // height: 100%;
+    background-color: white;
+    padding: 2rem;
+
+    @include mq(">lg") {
+      padding: 17rem 3rem 3rem;
+      width: $sidebar-width;
       height: 100vh;
-      background-color: white;
-      padding: 2rem;
-
-      @include mq('>lg') {
-        padding: 17rem 3rem 3rem;
-        width: $sidebar-width;
-      }
-
-      .search-sidebar__text {
-        color: $c-text;
-        margin: 0.7rem 0 5rem;
-      }
-
-
-      .search-sidebar__switcher {
-        display: flex;
-        margin: 3rem 0;
-      }
-
-      .search-sidebar__item {
-        background-color: $c-blue-100;
-        padding: 1.7rem;
-        flex-grow: 1;
-        border-radius: .5rem;
-        color: $switcher-inactive-text;
-        text-align: center;
-      }
     }
 
-    // Facets
-    & {
-      .search-sidebar__item--active {
-        background-color: $c-primary;
-        color: $c-white;
-        box-shadow: $box-shadow-primary-button;
-      }
+    .search-sidebar__text {
+      color: $c-text;
+      margin: 0.7rem 0 5rem;
     }
 
-    // States
+    .search-sidebar__switcher {
+      display: flex;
+      margin: 3rem 0;
+    }
+
+    .search-sidebar__item {
+      background-color: $c-blue-100;
+      padding: 1.7rem;
+      flex-grow: 1;
+      border-radius: 0.5rem;
+      color: $switcher-inactive-text;
+      text-align: center;
+    }
+  }
+
+  // Facets
+  & {
+    .search-sidebar__item--active {
+      background-color: $c-primary;
+      color: $c-white;
+      box-shadow: $box-shadow-primary-button;
+    }
+  }
+
+  // States
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

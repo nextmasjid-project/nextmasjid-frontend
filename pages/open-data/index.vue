@@ -5,17 +5,18 @@
       <sub-hero
         :background-image="require(`@/assets/images/open-data-bg.png`)"
         :title="$t('pages.openData.subHero.title')"
+        :text="$t('pages.openData.subHero.description')"
       />
     </div>
 
     <!-- Blog Tiles -->
     <div class="open-data-tiles">
       <tile
-        v-for="tile in $t('pages.openData.tiles')"
+        v-for="(tile, i) in $t('pages.openData.tiles')"
         :img="require(`@/assets/images/${tile.img}`)"
         :title="tile.title"
         :body="tile.body"
-        :key="tile.title"
+        :key="i"
       />
     </div>
   </div>

@@ -58,25 +58,25 @@
             Loading...
           </div>
           <div v-else>
-            <div v-if="showMessage">
-              <div
-                :class="error ? 'alert alert--error' : 'alert alert--success'"
-              >
-                {{
-                  error
-                    ? "Ups! Submit Failed."
-                    : "Thank you! Your data was submitted."
-                }}
-              </div>
-            </div>
-            <div v-else>
-              <button class="button button--primary" type="submit">
-                {{ $t("pages.contact.form.submit") }}
-              </button>
-            </div>
+            <button class="button button--primary" type="submit">
+              <!-- {{ $t("pages.contact.form.submit") }} -->
+              Submit
+            </button>
           </div>
         </div>
       </form>
+    </div>
+
+    <div v-if="showMessage">
+      <overlay @close="handleCloseMessage">
+        <div :class="error ? 'alert alert--error' : 'alert alert--success'">
+          {{
+            error
+              ? "Ups! Submit Failed."
+              : "Thank you! Your data was submitted."
+          }}
+        </div>
+      </overlay>
     </div>
   </div>
 </template>
@@ -116,15 +116,15 @@ export default {
       console.log(this.form);
 
       this.loading = true;
+      // this.error = true;
 
       setTimeout(() => {
         this.showMessage = true;
         this.loading = false;
-      }, 1000);
-
-      setTimeout(() => {
-        this.showMessage = false;
-      }, 5000);
+      }, 2000);
+    },
+    handleCloseMessage() {
+      this.showMessage = false;
     }
   }
 };

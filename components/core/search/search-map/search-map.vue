@@ -105,6 +105,7 @@ export default {
     // need improvement
     toggleHeatmap(isChecked) {
       this.isHeatmapChecked = isChecked;
+      console.log(this.isHeatmapChecked, "heatmap");
 
       if (this.isHeatmapChecked) {
         this.heatMapInit();
