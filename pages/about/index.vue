@@ -37,7 +37,7 @@
       <h2 class="about-benefits__title">كيف يتم احتساب درجة الموقع المختار؟</h2>
       <div class="about-benefits__text">يعمل المسجد القادم بخوارزميات ذكية لتقييم كل موقع على الخريطة، بالاعتماد على البيانات المتاحة من الجهات الرسمية مثل وزارة الشؤون الإسلامية والدعوة والإرشاد والهيئة العامة للإحصاء. </div>
       <div class="about-benefits__wrapper">
-        <card-benefits  title="٨٥٪" text="على البعد من أماكن المساجد الحالية حسب خريطة وزارة الشؤون الإسلامية والدعوة والإرشاد" :img="require('@/assets/images/distance.png')"></card-benefits>
+        <card-benefits title="٨٥٪" text="على البعد من أماكن المساجد الحالية حسب خريطة وزارة الشؤون الإسلامية والدعوة والإرشاد" :img="require('@/assets/images/distance.png')"></card-benefits>
         <card-benefits title="٥٪" text="الكثافة السكانية للمدينة أو المحافظة بناء على البيانات المتاحة، وقريبا على مستوى الحي" :img="require('@/assets/images/density.png')"></card-benefits>
         <card-benefits title="٥٪" text="القرب من مركز المدينة، حيث تزيد الحركة والتنقل" :img="require('@/assets/images/centre.png')"></card-benefits>
         <card-benefits title="٥٪" text="حجم المدينة، حيث أن المدن الأكبر سكانًا لها احتمالية أعلى في الحاجة لمساجد جديدة مع النمو " :img="require('@/assets/images/population.png')"></card-benefits>

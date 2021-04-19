@@ -5,7 +5,8 @@
 
     <div v-if="modal">
       <overlay @close="handleCloseModal">
-        How to explore the map. Red areas are in most need for masjids.
+        مرحبًا!
+        المناطق باللون الأحمر هي الأكثر احتياجا. قم بتصغير الخريطة وتكبيرها لتصفح المنطقة. عند النقر على أي مكان ستظهر لك مناسبة المكان لبناء مسجد
       </overlay>
     </div>
   </div>
