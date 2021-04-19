@@ -15,8 +15,9 @@
       <div class="search-info__text">
         <h3 class="search-info__title">{{ content.address }}</h3>
         <p class="search-info__desc">
-          المكان الذي قمت بالنقر عليه مناسب بدرجة {{ content.value }}         <span class="search-info__symbol">%</span>
- <br />
+          المكان الذي قمت بالنقر عليه مناسب بدرجة {{ content.value }}
+          <span class="search-info__symbol">%</span>
+          <br />
           Latitude: {{ content.lat }}<br />
           Longitude: {{ content.lng }}
         </p>

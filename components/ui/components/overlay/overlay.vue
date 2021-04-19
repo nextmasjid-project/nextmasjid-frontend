@@ -1,5 +1,5 @@
 <template>
-  <div class="overlay">
+  <div class="overlay" @click.self="$emit('close')">
     <div class="overlay__content">
       <button class="overlay__button" @click="$emit('close')">
         <!-- <ui-icon symbol="close-icon" /> -->

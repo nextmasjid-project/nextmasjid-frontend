@@ -10,21 +10,17 @@
     "navigation": [
       {
         "icon": "icon-menu-location",
-        "title": "Where we build mosque",
+        "title": "Where to Search",
         "route": "search"
       },
-      {
-        "icon": "icon-menu-how",
-        "title": "How we build mosque",
-        "route": "blog"
-      },
-      { "icon": "icon-menu-how", "title": "Open data", "route": "open-data" },
       {
         "icon": "icon-menu-about",
         "title": "About NextMasjid",
         "route": "about"
       },
-      { "icon": "icon-menu-contact", "title": "Contact us", "route": "contact" }
+      { "icon": "icon-menu-how", "title": "Open-Data", "route": "open-data" },
+
+      { "icon": "icon-menu-contact", "title": "Contact Us", "route": "contact" }
     ]
   },
   "meta": {

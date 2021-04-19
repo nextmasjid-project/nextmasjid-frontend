@@ -83,6 +83,8 @@
 
 <script>
 import overlay from "../../components/ui/components/overlay/overlay.vue";
+import { mapActions } from "vuex";
+
 export default {
   components: { overlay },
   name: "index",
@@ -111,10 +113,9 @@ export default {
     };
   },
   methods: {
+    ...mapActions("contact", ["setContactFormData"]),
     handleSubmit(e) {
       e.preventDefault();
-      console.log(this.form);
-
       this.loading = true;
       // this.error = true;
 
@@ -122,6 +123,8 @@ export default {
         this.showMessage = true;
         this.loading = false;
       }, 2000);
+
+      this.setContactFormData(this.form);
     },
     handleCloseMessage() {
       this.showMessage = false;
