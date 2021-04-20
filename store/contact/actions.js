@@ -9,14 +9,14 @@ import { URLS } from "@/services/urls";
  * @return {Object} Set contact form state
  */
 export async function setContactFormData({ state, commit }, payload) {
-  const fd = new FormData();
-  fd.append("Name", payload.fullName);
-  fd.append("Email", payload.email);
-  fd.append("Content", payload.message);
+  // const fd = new FormData();
+  // fd.append("Name", payload.fullName);
+  // fd.append("Email", payload.email);
+  // fd.append("Content", payload.message);
 
-  const { CONTACT_URL } = URLS;
-  const response = await API.post(CONTACT_URL, fd);
-  let { data } = response;
+  // const { CONTACT_URL } = URLS;
+  // const response = await API.post(CONTACT_URL, fd);
+  // let { data } = response;
   //   console.log(data);
-  commit(SET_CONTACT_FORM_DATA, data);
+  commit(SET_CONTACT_FORM_DATA, payload);
 }

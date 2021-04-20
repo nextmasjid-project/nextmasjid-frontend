@@ -47,7 +47,7 @@ export default {
       currentZoomLevel: 16,
       updatedZoomLevel: null,
       isCurrentMosquesChecked: false,
-      isHeatmapChecked: false,
+      isHeatmapChecked: true,
       GoogleMaps: {
         Api: null,
         Icons: null,
@@ -105,7 +105,6 @@ export default {
     // need improvement
     toggleHeatmap(isChecked) {
       this.isHeatmapChecked = isChecked;
-      console.log(this.isHeatmapChecked, "heatmap");
 
       if (this.isHeatmapChecked) {
         this.heatMapInit();
@@ -208,7 +207,12 @@ export default {
       } else {
         this.resetMarkerIcons("currentMosques");
       }
-      this.fetchHeatMapList(coordinates).then(() => this.heatMapInit());
+
+      if (this.isHeatmapChecked === false) {
+        this.GoogleMaps.HeatMap.setMap(null);
+      } else {
+        this.fetchHeatMapList(coordinates).then(() => this.heatMapInit());
+      }
     },
     onClickHandler(e) {
       const { lat, lng } = e.latLng;
