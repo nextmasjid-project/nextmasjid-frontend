@@ -15,8 +15,7 @@
       <div class="search-info__text">
         <h3 class="search-info__title">{{ content.address }}</h3>
         <p class="search-info__desc">
-          المكان الذي قمت بالنقر عليه مناسب بدرجة {{ content.value }}
-          <span class="search-info__symbol">%</span>
+          {{ message }}
           <br />
           Latitude: {{ content.lat }}<br />
           Longitude: {{ content.lng }}
@@ -25,9 +24,9 @@
     </div>
     <div class="search-info__bottom">
       <div class="search-info__group">
-        <a :href="resultLink" class="button button--primary" target="_blank">{{
-          content.locale.websiteVisit
-        }}</a>
+        <a :href="resultLink" class="button button--primary" target="_blank">
+          {{ content.locale.websiteVisit }}
+        </a>
         <button class="button button--outline button--aligned">
           <icon size="small" symbol="icon-share"></icon>
           <span>{{ content.locale.share }}</span>
@@ -72,6 +71,16 @@ export default {
       DETAILS_URL.searchParams.append("lat", lat);
       DETAILS_URL.searchParams.append("lng", lng);
       return DETAILS_URL.href;
+    },
+    message() {
+      const { value, locale } = this.content;
+      if (value >= 70) {
+        return locale.message.ifHigh;
+      } else if (value > 50) {
+        return locale.message.ifLow;
+      } else {
+        return locale.message.ifNot;
+      }
     }
   }
 };

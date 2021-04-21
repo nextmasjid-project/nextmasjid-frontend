@@ -220,7 +220,8 @@ export default {
       const locale = {
         websiteVisit: this.$t("pages.search.infoWindow.websiteVisit"),
         share: this.$t("pages.search.infoWindow.share"),
-        report: this.$t("pages.search.infoWindow.report")
+        report: this.$t("pages.search.infoWindow.report"),
+        message: this.$t("pages.search.infoWindow.message")
       };
       this.fetchCurrentLocationData(payload).then(response => {
         this.isActiveWindow && this.isActiveWindow.close();

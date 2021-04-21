@@ -8,9 +8,17 @@
     "logo": "logo-arabic.svg",
     "logoAlt": "المسجد القادم كيف تبني مسجدا",
     "navigation": [
-      { "icon": "icon-menu-location", "title": "أين تبني مسجدًا", "route": "search" },
-      { "icon": "icon-menu-how", "title": "كيف تبني مسجدًا", "route": "article" },
+      {
+        "icon": "icon-menu-location",
+        "title": "أين تبني مسجدًا",
+        "route": "search"
+      },
       { "icon": "icon-menu-about", "title": "حول الموقع", "route": "about" },
+      {
+        "icon": "icon-menu-how",
+        "title": "كيف تبني مسجدًا",
+        "route": "open-data"
+      },
       { "icon": "icon-menu-contact", "title": "اتصل بنا", "route": "contact" }
     ]
   },
@@ -55,12 +63,9 @@
   "footer": {
     "text": "المسجد القادم | بلا حقوق محفوظة - الخير متاح للجميع",
     "linkText": "انقر هنا لتحميل ما تريد",
-    "socialMedia":
-      {
-        "twitter" : "https://twitter.com/nextmasjid"
-      }
-    
-      
+    "socialMedia": {
+      "twitter": "https://twitter.com/nextmasjid"
+    }
   },
   "pages": {
     "home": {
@@ -166,11 +171,11 @@
         "title": "نسعد بتواصلك",
         "description": "قد نكون أخطأنا في موقع مسجد، أو نسينا إضافته، أو لم تكن حدود المدينة والمحافظة صحيحة ودقيقة. قد يكون لك رأي مميز في تطوير خوارزميات البحث، أو ترغب في التحية والسلام، كن شريكًا في نشر الخير. نفرح كثيرًا بكل رسالة"
       },
-      "form":{
-        "fullName":"اسمك الكريم",
-        "email":"بريدك الإلكتروني",
-        "message":"رسالتك المشكورة",
-        "submit":"إرسال"
+      "form": {
+        "fullName": "اسمك الكريم",
+        "email": "بريدك الإلكتروني",
+        "message": "رسالتك المشكورة",
+        "submit": "إرسال"
       }
     },
     "openData": {
@@ -298,13 +303,19 @@
         "chooseRegion": "حدد المنطقة",
         "chooseCity": "حدد المدينة",
         "editorChoice": "عرض اختيارات المحررين",
-        "currentMosques": "عرض المساجد الحالية"
+        "currentMosques": "عرض المساجد الحالية",
+        "heatmap": "Heatmap"
       },
       "infoWindow": {
         "websiteVisit": "عرض التفاصيل",
         "share": "مشاركة",
         "howItWorks": "كيف يعمل المؤشر القادم",
-        "report": "خطأ في البيانات؟ أبلغنا"
+        "report": "خطأ في البيانات؟ أبلغنا",
+        "message": {
+          "ifNot": "Not Suitable",
+          "ifLow": "Low Suited",
+          "ifHigh": "High Suited"
+        }
       }
     },
     "result": {
@@ -318,5 +329,8 @@
         "title": "أقرب ٣ مساجد"
       }
     }
+  },
+  "modal": {
+    "closeButton": "Arabic Close X"
   }
 }

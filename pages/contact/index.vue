@@ -15,9 +15,9 @@
         <div class="form__row">
           <div class="form__col">
             <div class="form__control">
-              <label class="form__label" for="fullName">{{
-                $t("pages.contact.form.fullName")
-              }}</label>
+              <label class="form__label" for="fullName">
+                {{ $t("pages.contact.form.fullName") }}
+              </label>
               <input
                 id="fullName"
                 class="form__input"
@@ -29,9 +29,9 @@
           </div>
           <div class="form__col">
             <div class="form__control">
-              <label class="form__label" for="email">{{
-                $t("pages.contact.form.email")
-              }}</label>
+              <label class="form__label" for="email">
+                {{ $t("pages.contact.form.email") }}
+              </label>
               <input
                 id="email"
                 class="form__input"
@@ -43,9 +43,9 @@
           </div>
         </div>
         <div class="form__control">
-          <label class="form__label" for="message">{{
-            $t("pages.contact.form.message")
-          }}</label>
+          <label class="form__label" for="message">
+            {{ $t("pages.contact.form.message") }}
+          </label>
           <textarea
             id="message"
             class="form__textarea"
@@ -59,8 +59,7 @@
           </div>
           <div v-else>
             <button class="button button--primary" type="submit">
-              <!-- {{ $t("pages.contact.form.submit") }} -->
-              Submit
+              {{ $t("pages.contact.form.submit") }}
             </button>
           </div>
         </div>

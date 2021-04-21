@@ -62,6 +62,7 @@
     }
   },
   "footer": {
+    "linkText": "Open Data",
     "text": "NextMasjid | All Rights Reserved",
     "socialMedia": {
       "facebook": "http://facebook.com",
@@ -218,7 +219,7 @@
         {
           "img": "image-24.png",
           "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+          "body": "Lorem ipsum dolor sit amet, c some lorem here <br /> test break"
         },
         {
           "img": "image-25.png",
@@ -294,13 +295,18 @@
         "cities": "Cities",
         "chooseRegion": "Choose Region",
         "chooseCity": "Choose City",
-        "heatmap": "Heatmap",
-        "currentMosques": "Current Mosques"
+        "currentMosques": "Current Mosques",
+        "heatmap": "Heatmap"
       },
       "infoWindow": {
         "websiteVisit": "Website visit",
         "share": "Share",
-        "report": "Report"
+        "report": "Report",
+        "message": {
+          "ifNot": "Not Suitable",
+          "ifLow": "Low Suited",
+          "ifHigh": "High Suited"
+        }
       }
     },
     "result": {
@@ -323,8 +329,12 @@
         "fullName": "Full Name",
         "email": "E-mail",
         "message": "Case",
-        "report": "Report case"
+        "report": "Report case",
+        "submit": "Submit"
       }
     }
+  },
+  "modal": {
+    "closeButton": "Close X"
   }
 }

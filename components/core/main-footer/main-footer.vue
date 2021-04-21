@@ -6,8 +6,7 @@
           class="main-header__link"
           :to="localePath({ name: 'open-data' })"
         >
-          <!-- {{ $t("footer.linkText") }} -->
-          NextMasjid Open Data
+          {{ $t("footer.linkText") }}
         </nuxt-link>
         <span>{{ $t("footer.text") }}</span>
       </div>

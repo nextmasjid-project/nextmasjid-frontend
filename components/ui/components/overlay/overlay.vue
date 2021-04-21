@@ -3,7 +3,7 @@
     <div class="overlay__content">
       <button class="overlay__button" @click="$emit('close')">
         <!-- <ui-icon symbol="close-icon" /> -->
-        CLOSE
+        {{ $t("modal.closeButton") }}
       </button>
 
       <div class="overlay__body">

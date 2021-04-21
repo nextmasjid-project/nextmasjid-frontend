@@ -5,8 +5,9 @@
 
   // Module
   & {
-    // box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
     width: 100%;
+    // border-radius: $border-radius;
 
     .tile__image {
       height: 15rem;
