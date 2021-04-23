@@ -4,13 +4,17 @@
     <result-map :api="api" :coords="{lat: this.$route.query.lat, lng: this.$route.query.lng}" />
     <!--  Map Ends -->
 
+
+
+
+
     <!-- Result Container Starts -->
     <div class="result-container" v-if="details">
       <!-- Statistics Starts -->
       <div class="result-statistics">
         <div class="result-statistics__header">
           <h1 class="result-statistics__score">
-            <span class="result-statistics__score-percentage">{{ details.score }}</span>
+            <span class="result-statistics__score-percentage">{{ details.value }}</span>
             <span class="result-statistics__score-symbol">%</span>
           </h1>
           <div class="result-statistics__progress">
@@ -18,7 +22,7 @@
           </div>
         </div>
         <div class="result-statistics__body">
-          <h2 class="result-statistics__body-title">{{ details.address }}</h2>
+          <h3 class="result-statistics__body-title"> تقرير حول النقطة المختارة بالإحداثيات:  {{details.lng}}, {{ details.lat }}</h3>
           <div class="result-statistics__body-inner">
             <div class="result-statistics__body-item">
               <icon class="result-statistics__body-item__icon" size="x-large" symbol="icon-direction"></icon>
@@ -32,34 +36,44 @@
             </div>
             <div class="result-statistics__body-item">
               <icon class="result-statistics__body-item__icon" size="x-large" symbol="icon-groups"></icon>
-              <p class="result-statistics__body-item__title">{{ $t('pages.result.statistics.peopleDensity') }}</p>
-              <p class="result-statistics__body-item__text">{{ details.peopleDensity }}</p>
+              <p class="result-statistics__body-item__title">{{ $t('pages.result.statistics.populationDensity') }}</p>
+              <p class="result-statistics__body-item__text">{{ details.populationDensity }}</p>
             </div>
             <div class="result-statistics__body-item">
               <icon class="result-statistics__body-item__icon" size="x-large" symbol="icon-mosque-group"></icon>
-              <p class="result-statistics__body-item__title">{{ $t('pages.result.statistics.possiblePrayers') }}</p>
-              <p class="result-statistics__body-item__text">{{ details.possiblePrayers }}</p>
+              <p class="result-statistics__body-item__title">{{ $t('pages.result.statistics.expectedPrayers') }}</p>
+              <p class="result-statistics__body-item__text">{{ details.expectedPrayers }}</p>
             </div>
           </div>
         </div>
         <div class="result-statistics__footer">
           <div class="button-group">
-            <button class="button button--primary">Export</button>
-            <button class="button button--outline">Share</button>
+            <button class="button button--primary">تصدير تقرير PDF</button>
+            <button class="button button--outline">مشاركة</button>
           </div>
-          <nuxt-link class="result-statistics__footer-link" to="/">How to calc whatever</nuxt-link>
+          <nuxt-link class="result-statistics__footer-link" to="/">للتعرف على الخوارزمية المتبعة انقر هنا</nuxt-link>
         </div>
       </div>
       <!-- Statistics Ends -->
 
       <!-- Cards Starts -->
       <div class="result-cards">
-        <h2 class="result-cards__title">Location Mosques</h2>
+        <h2 class="result-cards__title">المساجد القريبة</h2>
         <div class="result-cards__inner">
-          <div class="result-cards__item" v-for="card in details.nearestMosques" :key="card.name">
+          <div class="result-cards__item">
             <icon symbol="icon-mosque-v2" size="xxx-large"></icon>
-            <h3 class="result-cards__item-name">{{ card.name }}</h3>
-            <div class="result-cards__item-distance">10km</div>
+            <h3 class="result-cards__item-name">{{ details.firstNearestMasjidName }}</h3>
+            <div class="result-cards__item-distance">{{ details.firstNearestMasjidDistance }}</div>
+          </div>
+          <div class="result-cards__item">
+            <icon symbol="icon-mosque-v2" size="xxx-large"></icon>
+            <h3 class="result-cards__item-name">{{ details.secondNearestMasjidName }}</h3>
+            <div class="result-cards__item-distance">{{ details.secondNearestMasjidDistance }}</div>
+          </div>
+          <div class="result-cards__item">
+            <icon symbol="icon-mosque-v2" size="xxx-large"></icon>
+            <h3 class="result-cards__item-name">{{ details.thirdNearestMasjidName }}</h3>
+            <div class="result-cards__item-distance">{{ details.thirdNearestMasjidDistance }}</div>
           </div>
         </div>
       </div>
@@ -90,14 +104,14 @@ export default {
       return this.getMosqueDetails;
     },
     rootClasses() {
-      const score = this.details.score;
+      const score = this.details.value;
       return this.bemIf(score <= 50 ,'red') ||
         this.bemIf(score > 50 && score < 70 ,'yellow') ||
         this.bemIf(score >= 70 ,'green')
     },
     progressWidth() {
       return {
-        '--score-result': `${this.details.score}%`
+        '--score-result': `${this.details.value}%`
       }
     }
   },

@@ -312,18 +312,18 @@
         "howItWorks": "كيف يعمل المؤشر القادم",
         "report": "خطأ في البيانات؟ أبلغنا",
         "message": {
-          "ifNot": "Not Suitable",
-          "ifLow": "Low Suited",
-          "ifHigh": "High Suited"
+          "ifNot": "هذا المكان غير مناسب لبناء مسجد",
+          "ifLow": "المكان الذي اخترته مناسب بشكل محدود",
+          "ifHigh": "مكان مناسب"
         }
       }
     },
     "result": {
       "statistics": {
-        "mosqueDensity": "كثافة المساجد - عدد المساجد لكل ألف نسمة",
+        "mosqueDensity": "كثافة المساجد - المساجد لكل ألف نسمة",
         "nearestMosqueDistance": "أقرب مسجد",
-        "peopleDensity": "الكثافة السكانية للمدينة",
-        "possiblePrayers": "عدد المصلين في المساحة القريبة"
+        "populationDensity": "الكثافة السكانية للمدينة",
+        "expectedPrayers": "عدد المصلين في المساحة القريبة"
       },
       "mosqueLocations": {
         "title": "أقرب ٣ مساجد"
@@ -331,6 +331,6 @@
     }
   },
   "modal": {
-    "closeButton": "Arabic Close X"
+    "closeButton": "X إغلاق"
   }
 }
