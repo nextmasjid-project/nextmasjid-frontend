@@ -1,20 +1,24 @@
-import axios from 'axios';
+import axios from "axios";
 
-const URL = 'https://nextmasjid-np-be.azurewebsites.net'
-//const URL = 'https://localhost:5005'
+const URL = "https://nextmasjid-np-be.azurewebsites.net";
+// const URL = "http://nextmasjidbackend.azurewebsites.net/";
+// const URL = 'https://localhost:5005'
 
 const API = axios.create({
-  baseURL: URL,
+  baseURL: URL
 });
 
-API.interceptors.request.use(config => {
-    const token = localStorage.getItem('token');
+API.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem("token");
     if (token) {
-      config.headers['Authorization'] = 'Bearer ' + token;
+      config.headers["Authorization"] = "Bearer " + token;
     }
     return config;
-  },error => {
-    return Promise.reject(error)
-});
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
 
-export default API
+export default API;

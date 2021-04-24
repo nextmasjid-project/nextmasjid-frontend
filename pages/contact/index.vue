@@ -24,6 +24,7 @@
                 type="text"
                 autocomplete="off"
                 v-model="form.fullName"
+                minlength="2"
               />
             </div>
           </div>
@@ -50,6 +51,7 @@
             id="message"
             class="form__textarea"
             v-model="form.message"
+            minlength="5"
           ></textarea>
         </div>
 
@@ -82,7 +84,8 @@
 
 <script>
 import overlay from "../../components/ui/components/overlay/overlay.vue";
-import { mapActions } from "vuex";
+import API from "@/services/api";
+import { URLS } from "@/services/urls";
 
 export default {
   components: { overlay },
@@ -112,18 +115,29 @@ export default {
     };
   },
   methods: {
-    ...mapActions("contact", ["setContactFormData"]),
-    handleSubmit(e) {
+    async handleSubmit(e) {
       e.preventDefault();
-      this.loading = true;
-      // this.error = true;
 
-      setTimeout(() => {
-        this.showMessage = true;
-        this.loading = false;
-      }, 2000);
+      if (this.form.fullName && this.form.email && this.form.message) {
+        this.loading = true;
 
-      this.setContactFormData(this.form);
+        const fd = new FormData();
+        fd.append("Name", this.form.fullName);
+        fd.append("Email", this.form.email);
+        fd.append("Content", this.form.message);
+
+        // const { CONTACT_URL } = URLS;
+        // const response = await API.post(CONTACT_URL, fd);
+        // let { data } = response;
+        // console.log(data);
+
+        // this.error = true;
+
+        setTimeout(() => {
+          this.showMessage = true;
+          this.loading = false;
+        }, 1000);
+      }
     },
     handleCloseMessage() {
       this.showMessage = false;
