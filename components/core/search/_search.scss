@@ -1,20 +1,59 @@
 .search {
-    // Vars
+  // Vars
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      .search-container {
-
-        @include mq('>lg') {
-          display: grid;
-          grid-template-columns: 40rem 1fr;
-        }
+  // Module
+  & {
+    .search-container {
+      @include mq(">lg") {
+        display: grid;
+        grid-template-columns: 40rem 1fr;
       }
     }
 
-    // Facets
+    .modal-container {
+      .modal-title {
+        margin-bottom: 2rem;
+      }
 
-    // States
+      .modal-tiles {
+        display: grid;
+        gap: 2rem;
+
+        @include mq(">sm") {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        div {
+          border-radius: 10px;
+          display: grid;
+          grid-template-columns: 40% 1fr;
+          gap: 1rem;
+
+          @include mq(">sm") {
+            display: block;
+          }
+
+          img {
+            width: 100%;
+            border-radius: 10px;
+          }
+
+          p {
+            text-align: left;
+
+            @include mq(">sm") {
+              text-align: center;
+              margin-top: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Facets
+
+  // States
 }

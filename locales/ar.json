@@ -165,7 +165,6 @@
         "description": "<h3>خوارزميات ذكية، وبك نكون أدق وأذكى</h3>لا نستغني عن فكرة أو ملحوظة أو خطأ، خصوصا في بيانات المساجد الحالية وحدود المدن والمحافظات. البيانات الدقيقة ستعطي نتائج دقيقة. وبكم نكون أدق وأذكى <br/><br/><br/> <h3>شكر خاص</h3>نورة عبدالعزيز الشايع، محمد جابر، تنوير راشد، أحمد جدوع، عبدالإله العويس، معاذ المجيدي، عادل الخضري، وليد المطيري، محمد سليم، وآخرون. "
       }
     },
-
     "contact": {
       "subHero": {
         "title": "نسعد بتواصلك",
@@ -216,7 +215,6 @@
         }
       ]
     },
-
     "blog": {
       "subHero": {
         "title": "Blog Page",
@@ -316,6 +314,23 @@
           "ifLow": "المكان الذي اخترته مناسب بشكل محدود",
           "ifHigh": "مكان مناسب"
         }
+      },
+      "firstModal": {
+        "title": "How to use smart map",
+        "content": [
+          {
+            "img": "search-modal-1.png",
+            "text": "Explore the map. Red areas means higher need."
+          },
+          {
+            "img": "search-modal-2.png",
+            "text": "Click on any point to see the spesific value of that location. Click on details for more info."
+          },
+          {
+            "img": "search-modal-3.png",
+            "text": "You can show/hide the heatmap also show/hide the existing mosques."
+          }
+        ]
       }
     },
     "result": {

@@ -73,8 +73,8 @@
         <div :class="error ? 'alert alert--error' : 'alert alert--success'">
           {{
             error
-              ? "Ups! Submit Failed."
-              : "Thank you! Your data was submitted."
+              ? `Ups! Submit Failed.`
+              : `Thank you! Your data was submitted.`
           }}
         </div>
       </overlay>
@@ -84,8 +84,8 @@
 
 <script>
 import overlay from "../../components/ui/components/overlay/overlay.vue";
-import API from "@/services/api";
-import { URLS } from "@/services/urls";
+// import API from "@/services/api";
+// import { URLS } from "@/services/urls";
 
 export default {
   components: { overlay },

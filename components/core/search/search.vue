@@ -5,9 +5,17 @@
 
     <div v-if="modal">
       <overlay @close="handleCloseModal">
-        مرحبًا! المناطق باللون الأحمر هي الأكثر احتياجا. قم بتصغير الخريطة
-        وتكبيرها لتصفح المنطقة. عند النقر على أي مكان ستظهر لك مناسبة المكان
-        لبناء مسجد
+        <div class="modal-container">
+          <h2 class="modal-title">{{ $t("pages.search.firstModal.title") }}</h2>
+          <div class="modal-tiles">
+            <div v-for="tile in tiles" :key="tile.text">
+              <img :src="require(`@/assets/images/${tile.img}`)" alt="" />
+              <p>
+                {{ tile.text }}
+              </p>
+            </div>
+          </div>
+        </div>
       </overlay>
     </div>
   </div>
@@ -28,7 +36,8 @@ export default {
     return {
       isInitialized: false,
       api: null,
-      modal: true
+      modal: true,
+      tiles: []
     };
   },
   computed: {
@@ -49,6 +58,8 @@ export default {
     } catch (e) {
       console.error(e);
     }
+
+    this.tiles = this.$t("pages.search.firstModal.content");
   },
   methods: {
     ...mapActions("search", ["fetchRegionAction", "setGoogleMapApiAction"]),

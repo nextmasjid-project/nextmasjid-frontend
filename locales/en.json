@@ -307,6 +307,23 @@
           "ifLow": "Low Suited",
           "ifHigh": "High Suited"
         }
+      },
+      "firstModal": {
+        "title": "How to use smart map",
+        "content": [
+          {
+            "img": "search-modal-1.png",
+            "text": "Explore the map. Red areas means higher need."
+          },
+          {
+            "img": "search-modal-2.png",
+            "text": "Click on any point to see the spesific value of that location. Click on details for more info."
+          },
+          {
+            "img": "search-modal-3.png",
+            "text": "You can show/hide the heatmap also show/hide the existing mosques."
+          }
+        ]
       }
     },
     "result": {
