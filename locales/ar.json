@@ -184,34 +184,40 @@
       },
       "tiles": [
         {
-          "img": "image-24.png",
+          "img": "icon-06.svg",
           "title": "لتحميل البرمجيات",
-          "body": "الأكواد مفتوحة المصدر لجميع مكونات الموقع"
+          "link": "https://github.com/nextmasjid-project",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-25.png",
+          "img": "icon-07.svg",
           "title": "لتحميل البيانات",
-          "body": "جميع البيانات الخاصة بالمشروع شاملة بيانات المدن والمناطق والمساجد الحالية ودرجة التقييم"
+          "link": "https://github.com/nextmasjid-project/nextmasjid-data",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-26.png",
+          "img": "icon-08.svg",
           "title": "لتحميل التصاميم",
-          "body": "جميع مكونات التصميم والهوية والشعار"
+          "link": "https://github.com/nextmasjid-project/nextmasjid-branding",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-24.png",
+          "img": "icon-09.svg",
           "title": "لتحميل التقرير",
-          "body": "الجزئية الخاصة بتصدير التقارير عبر بي دي إف والتصاميم الخاصة بها"
+          "link": "https://github.com/nextmasjid-project/nextmasjid-exportpdf",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-25.png",
+          "img": "icon-10.svg",
           "title": "وزارة الشؤون الإسلامية",
-          "body": "لاستعراض خريطة المساجد من بوابة وزارة الشؤون الإسلامية"
+          "link": "https://www.moia.gov.sa/EServices/MsjdGIS/Pages/default.aspx",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-26.png",
+          "img": "icon-11.svg",
           "title": "الهيئة العامة للإحصاء",
-          "body": "للوصول للبيانات الديموغرافية من هيئة الإحصاء"
+          "link": "https://www.stats.gov.sa/ar/13",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
         }
       ]
     },

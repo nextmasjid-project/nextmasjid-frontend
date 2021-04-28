@@ -217,33 +217,39 @@
       },
       "tiles": [
         {
-          "img": "image-24.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here <br /> test break"
-        },
-        {
-          "img": "image-25.png",
-          "title": "Lorem ipsum dolor sit amet, c",
+          "img": "icon-06.svg",
+          "title": "لتحميل البرمجيات",
+          "link": "https://github.com/nextmasjid-project",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-26.png",
-          "title": "Lorem ipsum dolor sit amet, c",
+          "img": "icon-07.svg",
+          "title": "لتحميل البيانات",
+          "link": "https://github.com/nextmasjid-project/nextmasjid-data",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-24.png",
-          "title": "Lorem ipsum dolor sit amet, c",
+          "img": "icon-08.svg",
+          "title": "لتحميل التصاميم",
+          "link": "https://github.com/nextmasjid-project/nextmasjid-branding",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-25.png",
-          "title": "Lorem ipsum dolor sit amet, c",
+          "img": "icon-09.svg",
+          "title": "لتحميل التقرير",
+          "link": "https://github.com/nextmasjid-project/nextmasjid-exportpdf",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "image-26.png",
-          "title": "Lorem ipsum dolor sit amet, c",
+          "img": "icon-10.svg",
+          "title": "وزارة الشؤون الإسلامية",
+          "link": "https://www.moia.gov.sa/EServices/MsjdGIS/Pages/default.aspx",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "icon-11.svg",
+          "title": "الهيئة العامة للإحصاء",
+          "link": "https://www.stats.gov.sa/ar/13",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         }
       ]
