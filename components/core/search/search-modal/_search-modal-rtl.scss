@@ -1,0 +1,13 @@
+main[dir="rtl"] {
+  & {
+    .search-modal {
+      p {
+        text-align: right;
+
+        @include mq(">sm") {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

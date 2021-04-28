@@ -5,17 +5,7 @@
 
     <div v-if="modal">
       <overlay @close="handleCloseModal">
-        <div class="modal-container">
-          <h2 class="modal-title">{{ $t("pages.search.firstModal.title") }}</h2>
-          <div class="modal-tiles">
-            <div v-for="tile in tiles" :key="tile.text">
-              <img :src="require(`@/assets/images/${tile.img}`)" alt="" />
-              <p>
-                {{ tile.text }}
-              </p>
-            </div>
-          </div>
-        </div>
+        <search-modal />
       </overlay>
     </div>
   </div>
@@ -25,19 +15,20 @@
 import { mapActions, mapGetters } from "vuex";
 import SearchMap from "@/components/core/search/search-map/search-map";
 import SearchListView from "@/components/core/search/search-list-view/search-list-view";
+import SearchModal from "@/components/core/search/search-modal/search-modal";
 
 export default {
   name: "search",
   components: {
     SearchMap,
-    SearchListView
+    SearchListView,
+    SearchModal
   },
   data() {
     return {
       isInitialized: false,
       api: null,
-      modal: true,
-      tiles: []
+      modal: true
     };
   },
   computed: {
@@ -58,8 +49,6 @@ export default {
     } catch (e) {
       console.error(e);
     }
-
-    this.tiles = this.$t("pages.search.firstModal.content");
   },
   methods: {
     ...mapActions("search", ["fetchRegionAction", "setGoogleMapApiAction"]),
