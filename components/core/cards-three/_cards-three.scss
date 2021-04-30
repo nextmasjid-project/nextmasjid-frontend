@@ -1,0 +1,19 @@
+.cards-three {
+  padding: 2.5rem 0;
+
+  & {
+    .cards-three__img {
+      width: 50px;
+    }
+
+    .cards-three__title {
+      margin-top: 2rem;
+    }
+
+    .cards-three__body {
+      color: $c-blue-200;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+  }
+}

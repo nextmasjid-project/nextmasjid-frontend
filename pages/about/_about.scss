@@ -8,12 +8,8 @@
   background: $bg-color;
 
   & {
-    img {
-      width: 50px;
-    }
-
     .about-top {
-      margin-top: -5rem;
+      margin-top: -100px;
     }
 
     .about-top__list {
@@ -21,36 +17,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       grid-gap: 2.5rem;
-
-      & {
-        .about-top__item {
-          background-color: $c-white;
-          padding: 2.5rem;
-          box-shadow: $box-shadow;
-          border-radius: $border-radius;
-          display: grid;
-          grid-template-columns: 1fr 1fr 5fr;
-
-          & {
-            div:first-child {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-            hr {
-              border: 1px solid $c-border;
-            }
-            h2 {
-              color: $c-primary;
-            }
-            p {
-              color: $c-blue-200;
-              font-weight: 600;
-              margin-top: 2rem;
-            }
-          }
-        }
-      }
     }
 
     .about-tiles {
@@ -59,80 +25,64 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
       grid-gap: 5rem;
-
-      & {
-        .about-tiles__item {
-          padding: 2.5rem 0;
-
-          & {
-            h2 {
-              margin-top: 2rem;
-            }
-            p {
-              color: $c-blue-200;
-              font-weight: 600;
-              margin-top: 2rem;
-            }
-          }
-        }
-      }
     }
 
     .about-how {
       @include make-container;
-      background: $primary-gradient;
-      box-shadow: $box-shadow;
-      border-radius: $border-radius;
-      padding: 5rem;
+      padding: 0 1.5rem;
 
       & {
-        .about-how-top {
-          & {
-            h2 {
-              color: $c-white;
-            }
-            p {
-              color: $c-progress-cyan;
-              font-weight: 700;
-              max-width: 500px;
-              margin-top: 1rem;
-            }
-          }
+        .about-how__wrapper {
+          background: $primary-gradient;
+          box-shadow: $box-shadow;
+          border-radius: $border-radius;
+          padding: 5rem;
+        }
+
+        .about-how__title {
+          color: $c-white;
+        }
+
+        .about-how__body {
+          color: $c-progress-cyan;
+          font-weight: 700;
+          max-width: 500px;
+          margin-top: 1rem;
         }
 
         .about-how-bottom {
           text-align: left;
+        }
 
-          & {
-            h1 {
-              color: $c-white;
-            }
+        .about-how__value {
+          color: $c-white;
+        }
 
-            .about-progress {
-              background: $c-progress-about;
-              height: 15px;
-              border-radius: 10px;
+        .about-how__progress {
+          background: rgba(255, 255, 255, 0.5);
+          height: 15px;
+          border-radius: 10px;
+        }
 
-              & {
-                .about-progress-completed {
-                  background: $c-progress-cyan;
-                  height: 100%;
-                  width: 55%;
-                  border-radius: 10px;
-                }
-              }
-            }
-          }
+        .about-how__progress__bar {
+          background: $c-progress-cyan;
+          height: 100%;
+          width: 55%;
+          border-radius: 10px;
         }
       }
     }
 
     .about-benefits {
-      background: $c-blue-100;
-      padding: 7rem 0;
+      background: $body-bg;
       text-align: center;
 
       & {
+        .about-benefits__wrapper {
+          @include make-container;
+          padding: 7rem 1.5rem;
+        }
+
         .about-benefits__title {
           margin-bottom: 2rem;
         }
@@ -143,34 +93,10 @@
           margin-bottom: 6rem;
         }
 
-        .about-benefits__wrapper {
-          @include make-container;
+        .about-benefits__item {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
           grid-gap: 2.5rem;
-
-          & {
-            .about-benefits__item {
-              background: $c-white;
-              box-shadow: $box-shadow;
-              border-radius: $border-radius;
-              padding: 2.5rem;
-
-              & {
-                h1 {
-                  color: $c-primary;
-                }
-                hr {
-                  border: 1px solid $c-border;
-                }
-                p {
-                  color: $c-blue-200;
-                  font-weight: 600;
-                  padding-top: 1rem;
-                }
-              }
-            }
-          }
         }
       }
     }

@@ -1,0 +1,21 @@
+.cards-four {
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  padding: 2.5rem;
+
+  & {
+    .cards-four__title {
+      color: $c-primary;
+    }
+
+    hr {
+      border: 1px solid $c-border;
+    }
+
+    .cards-four__body {
+      color: $c-blue-200;
+      font-weight: 600;
+      padding-top: 1rem;
+    }
+  }
+}

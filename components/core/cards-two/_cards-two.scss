@@ -1,0 +1,34 @@
+.cards-two {
+  background-color: $c-white;
+  padding: 2.5rem;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  display: grid;
+  grid-template-columns: 1fr 1fr 5fr;
+
+  & {
+    .cards-two-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cards-two__icon {
+      width: 50px;
+    }
+
+    hr {
+      border: 1px solid $c-border;
+    }
+
+    .cards-two__title {
+      color: $c-primary;
+    }
+
+    .cards-two__body {
+      color: $c-blue-200;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+  }
+}

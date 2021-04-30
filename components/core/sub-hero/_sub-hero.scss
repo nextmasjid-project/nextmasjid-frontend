@@ -11,10 +11,20 @@
     align-items: center;
     justify-content: center;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 
     .sub-hero__content {
       @include make-container;
+    }
+
+    .sub-hero__title {
+      color: $c-primary;
+    }
+
+    .sub-hero__text {
+      color: $c-blue-200;
+      font-weight: 600;
+      max-width: 50%;
     }
   }
 
