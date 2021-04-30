@@ -1,24 +1,24 @@
 .sub-hero {
-    // Vars
-    $height: 48rem;
+  // Vars
+  $height: 48rem;
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      height: $height;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-size: cover;
-      background-position: center;
+  // Module
+  & {
+    height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
 
-      .sub-hero__content {
-        @include make-container;
-      }
+    .sub-hero__content {
+      @include make-container;
     }
+  }
 
-    // Facets
+  // Facets
 
-    // States
+  // States
 }

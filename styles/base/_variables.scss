@@ -8,34 +8,34 @@ $sidebar-width: 40rem;
 // Colors
 
 // Primary
-$c-primary: #0065FF;
-$c-primary-dark: #0054D3;
+$c-primary: #0065ff;
+$c-primary-dark: #0054d3;
 
 // Blue color list
-$c-blue-100: #F3F7FA;
-$c-blue-150: #E1E8ED;
-$c-blue-200: #8097AC;
+$c-blue-100: #f3f7fa;
+$c-blue-150: #e1e8ed;
+$c-blue-200: #8097ac;
 $c-blue-500: #112435;
 
 // General Colors
 $c-white: #fff;
 $c-black: #000;
-$c-border: #D9D9D9;
-$c-red: #FB2E2E;
-$c-gray: #F8F8F8;
-$body-bg: #F8F8F8;
+$c-border: #d9d9d9;
+$c-red: #fb2e2e;
+$c-gray: #f8f8f8;
+$body-bg: #f8f8f8;
 
-  // Progress colors
-$c-progress-cyan: #49FFFF;
-$c-progress-orange: #FF8888;
-$c-progress-yellow: #EFE605;
-$c-progress-green: #21973B;
+// Progress colors
+$c-progress-cyan: #49ffff;
+$c-progress-orange: #ff8888;
+$c-progress-yellow: #efe605;
+$c-progress-green: #21973b;
 $c-progress-red: $c-red;
 $c-progress-default: $c-blue-150;
+$c-progress-about: rgba(255, 255, 255, 0.5);
 
 // Borders
-$c-base-border: #AAB9C6;
-
+$c-base-border: #aab9c6;
 
 // Font size
 $base-font-size: 1.8rem;
@@ -47,4 +47,4 @@ $box-shadow-icon: 0px 14px 34px rgba(17, 36, 53, 0.09);
 $box-shadow-icon-hover: 0px 14px 34px rgb(0 101 255 / 25%);
 
 // Gradient
-$primary-gradient: linear-gradient(223.8deg, #0065FF 0.62%, #00C7E5 98.56%);
+$primary-gradient: linear-gradient(223.8deg, #0065ff 0.62%, #00c7e5 98.56%);
