@@ -209,37 +209,37 @@
       },
       "tiles": [
         {
-          "img": "icon-06.svg",
+          "icon": "icon-06.svg",
           "title": "لتحميل البرمجيات",
           "link": "https://github.com/nextmasjid-project",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "icon-07.svg",
+          "icon": "icon-07.svg",
           "title": "لتحميل البيانات",
           "link": "https://github.com/nextmasjid-project/nextmasjid-data",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "icon-08.svg",
+          "icon": "icon-08.svg",
           "title": "لتحميل التصاميم",
           "link": "https://github.com/nextmasjid-project/nextmasjid-branding",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "icon-09.svg",
+          "icon": "icon-09.svg",
           "title": "لتحميل التقرير",
           "link": "https://github.com/nextmasjid-project/nextmasjid-exportpdf",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "icon-10.svg",
+          "icon": "icon-10.svg",
           "title": "وزارة الشؤون الإسلامية",
           "link": "https://www.moia.gov.sa/EServices/MsjdGIS/Pages/default.aspx",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
-          "img": "icon-11.svg",
+          "icon": "icon-11.svg",
           "title": "الهيئة العامة للإحصاء",
           "link": "https://www.stats.gov.sa/ar/13",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"

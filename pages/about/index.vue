@@ -26,11 +26,12 @@
     <!-- About Tiles -->
     <div class="about-tiles">
       <cards-three
-        v-for="(card, index) in $t('pages.about.tiles')"
-        :key="`card-${index}`"
+        v-for="(card, i) in $t('pages.about.tiles')"
+        :key="`card-${i}`"
         :icon="card.icon"
         :title="card.title"
         :body="card.body"
+        :index="i"
       >
       </cards-three>
     </div>
@@ -38,20 +39,22 @@
     <!--  About How To Help  -->
     <div class="about-how">
       <div class="about-how__wrapper">
-        <div class="about-how-top">
-          <h2 class="about-how__title">
-            {{ $t("pages.about.HowToHelp.title") }}
-          </h2>
-          <p class="about-how__body">
-            {{ $t("pages.about.HowToHelp.body") }}
-          </p>
-        </div>
-        <div class="about-how-bottom">
-          <h1 class="about-how__value">
-            {{ $t("pages.about.HowToHelp.value") }}
-          </h1>
-          <div class="about-how__progress">
-            <div class="about-how__progress__bar"></div>
+        <div class="about-how__card">
+          <div class="about-how-top">
+            <h2 class="about-how__title">
+              {{ $t("pages.about.HowToHelp.title") }}
+            </h2>
+            <p class="about-how__body">
+              {{ $t("pages.about.HowToHelp.body") }}
+            </p>
+          </div>
+          <div class="about-how-bottom">
+            <h1 class="about-how__value">
+              {{ $t("pages.about.HowToHelp.value") }}
+            </h1>
+            <div class="about-how__progress">
+              <div class="about-how__progress__bar"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -101,10 +104,7 @@
 </template>
 
 <script>
-import CardsFour from "../../components/core/cards-four/cards-four.vue";
-import cardsThree from "../../components/core/cards-three/cards-three.vue";
 export default {
-  components: { cardsThree, CardsFour },
   name: "index",
   head() {
     return {

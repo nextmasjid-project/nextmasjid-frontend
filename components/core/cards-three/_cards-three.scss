@@ -1,5 +1,19 @@
 .cards-three {
   padding: 2.5rem 0;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-left: $c-border 1px solid;
+    right: -3rem;
+    bottom: 4rem;
+    height: 20%;
+  }
+
+  &:first-child::after {
+    display: none;
+  }
 
   & {
     .cards-three__img {

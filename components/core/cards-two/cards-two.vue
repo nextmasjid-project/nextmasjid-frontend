@@ -8,13 +8,13 @@
       />
     </div>
 
-    <hr />
+    <!-- <hr /> -->
 
-    <div class="card-two-right">
+    <div class="cards-two-right">
       <h2 class="cards-two__title">
         {{ title }}
       </h2>
-      <p class="cards-two__body">{{ body }}</p>
+      <p class="cards-two__body" v-html="body" />
     </div>
   </div>
 </template>

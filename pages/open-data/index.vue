@@ -11,27 +11,14 @@
 
     <!-- Blog Tiles -->
     <div class="open-data-tiles">
-      <div
-        v-for="(tile, i) in $t('pages.openData.tiles')"
-        :key="i"
-        class="open-data-tile"
-      >
-        <img
-          :src="require(`@/assets/images/${tile.img}`)"
-          alt="data"
-          class="open-data-tile__image"
-        />
-
-        <h1 class="open-data-tile__title">
-          <a :href="tile.link" target="_blank">
-            {{ tile.title }}
-          </a>
-        </h1>
-
-        <p class="open-data-tile__body">
-          {{ tile.body }}
-        </p>
-      </div>
+      <cards-grid
+        v-for="(card, i) in $t('pages.openData.tiles')"
+        :key="`card-${i}`"
+        :icon="card.icon"
+        :link="card.link"
+        :title="card.title"
+        :body="card.body"
+      />
       <!-- <tile
         v-for="(tile, i) in $t('pages.openData.tiles')"
         :img="require(`@/assets/images/${tile.img}`)"

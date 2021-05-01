@@ -28,47 +28,54 @@
     }
 
     .about-how {
-      @include make-container;
-      padding: 0 1.5rem;
+      background: linear-gradient(
+        180deg,
+        rgba(237, 241, 244, 1) 50%,
+        rgba(248, 248, 248, 1) 50%
+      );
 
       & {
         .about-how__wrapper {
-          background: $primary-gradient;
-          box-shadow: $box-shadow;
-          border-radius: $border-radius;
-          padding: 5rem;
-        }
+          @include make-container;
+          padding: 0 1.5rem;
 
-        .about-how__title {
-          color: $c-white;
-        }
+          & {
+            .about-how__card {
+              background: $primary-gradient;
+              box-shadow: $box-shadow;
+              border-radius: $border-radius;
+              padding: 5rem;
+            }
 
-        .about-how__body {
-          color: $c-progress-cyan;
-          font-weight: 700;
-          max-width: 500px;
-          margin-top: 1rem;
-        }
+            .about-how__title {
+              color: $c-white;
+            }
 
-        .about-how-bottom {
-          text-align: left;
-        }
+            .about-how__body {
+              color: $c-progress-cyan;
+              font-weight: 700;
+              max-width: 500px;
+              margin-top: 1rem;
+            }
 
-        .about-how__value {
-          color: $c-white;
-        }
+            .about-how__value {
+              color: $c-white;
+              // text-align: left;
+            }
 
-        .about-how__progress {
-          background: rgba(255, 255, 255, 0.5);
-          height: 15px;
-          border-radius: 10px;
-        }
+            .about-how__progress {
+              background: rgba(255, 255, 255, 0.5);
+              height: 1.5rem;
+              border-radius: 10px;
+            }
 
-        .about-how__progress__bar {
-          background: $c-progress-cyan;
-          height: 100%;
-          width: 55%;
-          border-radius: 10px;
+            .about-how__progress__bar {
+              background: $c-progress-cyan;
+              height: 100%;
+              width: 55%;
+              border-radius: 10px;
+            }
+          }
         }
       }
     }

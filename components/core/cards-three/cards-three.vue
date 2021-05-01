@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  props: ["icon", "title", "body"]
+  props: ["icon", "title", "body", "index"]
 };
 </script>
 

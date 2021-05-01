@@ -4,44 +4,15 @@
   // Support
 
   // Module
+
   & {
     .open-data-tiles {
       @include make-container;
-      padding: 7rem 1.5rem;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
       grid-gap: 2.5rem;
       margin-top: -20vh;
-
-      .open-data-tile {
-        background-color: $body-bg;
-        box-shadow: $box-shadow;
-        padding: 5rem;
-        border-radius: $border-radius;
-        text-align: center;
-
-        & {
-          .open-data-tile__image {
-            height: 50px;
-          }
-
-          .open-data-tile__title {
-            margin-top: 2rem;
-            font-weight: 700;
-            font-size: 24px;
-
-            & {
-              a {
-                text-decoration: none;
-              }
-            }
-          }
-
-          .open-data-tile__body {
-            margin-top: 2rem;
-          }
-        }
-      }
+      margin-bottom: 5rem;
     }
   }
 
