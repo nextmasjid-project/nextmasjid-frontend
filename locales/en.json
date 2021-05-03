@@ -328,8 +328,8 @@
       "statistics": {
         "mosqueDensity": "Lorem ipsum dolor sit amet.",
         "nearestMosqueDistance": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "peopleDensity": "Lorem ipsum dolor sit amet, consectetur.",
-        "possiblePrayers": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        "populationDensity": "Lorem ipsum dolor sit amet, consectetur.",
+        "expectedPrayers": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       "mosqueLocations": {
         "title": "Location Mosques"
