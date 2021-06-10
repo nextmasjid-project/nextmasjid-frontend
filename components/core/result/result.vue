@@ -93,9 +93,9 @@
             </button>
             <button class="button button--outline">مشاركة</button>
           </div>
-          <nuxt-link class="result-statistics__footer-link" to="/"
-            >للتعرف على الخوارزمية المتبعة انقر هنا</nuxt-link
-          >
+          <nuxt-link class="result-statistics__footer-link" to="/">
+            للتعرف على الخوارزمية المتبعة انقر هنا
+          </nuxt-link>
         </div>
       </div>
       <!-- Statistics Ends -->
@@ -144,6 +144,7 @@ import { bemMixin } from "@/components/ui";
 import { mapActions, mapGetters } from "vuex";
 import API from "@/services/api";
 import { URLS } from "@/services/urls";
+import axios from "axios";
 
 export default {
   name: "result",
@@ -190,10 +191,8 @@ export default {
   },
   methods: {
     ...mapActions("search", ["fetchMosqueDetailsAction"]),
-    async handleExportPdf() {
-      // console.log(this.getMosqueDetails);
-      const { EXPORT_PDF_URL } = URLS;
-      const res = await API.post(EXPORT_PDF_URL, {
+    handleExportPdf() {
+      const data = {
         scoreColor: "#ed462f",
         score: this.getMosqueDetails.value,
         prayersInPerimeter: this.getMosqueDetails.expectedPrayers,
@@ -206,9 +205,16 @@ export default {
         firstNearstMosque: "مسجد الحارثة بن صعب - 3.2 كلم, شمال غرب",
         secondNearstMosque: "مسجد الفضيل بن عياض - 3.3 كلم, شمال شرق",
         thirdNearstMosque: "مسجد - 3.9 كلم, جنوب"
-      });
-      const { data } = res;
-      console.log(data);
+      };
+
+      axios
+        .post(`https://nextmasjid.azurewebsites.net/api/v1/report/new`, data)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
