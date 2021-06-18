@@ -11,7 +11,7 @@
 
     <!-- Form   -->
     <div class="contact__form">
-      <form class="form" @submit="handleSubmit">
+      <form class="form" @submit.prevent="handleSubmit">
         <div class="form__row">
           <div class="form__col">
             <div class="form__control">
@@ -25,6 +25,8 @@
                 autocomplete="off"
                 v-model="form.fullName"
                 minlength="2"
+                name="fullName"
+                required
               />
             </div>
           </div>
@@ -39,6 +41,8 @@
                 type="email"
                 autocomplete="off"
                 v-model="form.email"
+                name="email"
+                required
               />
             </div>
           </div>
@@ -52,6 +56,8 @@
             class="form__textarea"
             v-model="form.message"
             minlength="5"
+            name="message"
+            required
           ></textarea>
         </div>
 
@@ -84,6 +90,7 @@
 
 <script>
 import overlay from "../../components/ui/components/overlay/overlay.vue";
+import axios from "axios";
 // import API from "@/services/api";
 // import { URLS } from "@/services/urls";
 
@@ -109,35 +116,47 @@ export default {
         email: "",
         message: ""
       },
+      endpoint: "https://formspree.io/f/xjvjrpvb",
       loading: false,
       showMessage: false,
       error: null
     };
   },
   methods: {
-    async handleSubmit(e) {
-      e.preventDefault();
+    async handleSubmit() {
+      this.loading = true;
 
-      if (this.form.fullName && this.form.email && this.form.message) {
-        this.loading = true;
+      const response = await axios.post(this.endpoint, this.form);
+      let { data } = response;
 
-        const fd = new FormData();
-        fd.append("Name", this.form.fullName);
-        fd.append("Email", this.form.email);
-        fd.append("Content", this.form.message);
-
-        // const { CONTACT_URL } = URLS;
-        // const response = await API.post(CONTACT_URL, fd);
-        // let { data } = response;
-        // console.log(data);
-
-        // this.error = true;
-
-        setTimeout(() => {
-          this.showMessage = true;
-          this.loading = false;
-        }, 1000);
+      if (data.ok) {
+        this.loading = false;
+        this.form.fullName = "";
+        this.form.email = "";
+        this.form.message = "";
+      } else {
+        this.error = true;
       }
+
+      this.showMessage = true;
+
+      // const fd = new FormData();
+      // fd.append("Name", this.form.fullName);
+      // fd.append("Email", this.form.email);
+      // fd.append("Content", this.form.message);
+
+      // const { CONTACT_URL } = URLS;
+      // const response = await API.post(CONTACT_URL, fd);
+      // let { data } = response;
+      // console.log(data);
+
+      // this.error = true;
+
+      // setTimeout(() => {
+      //   this.showMessage = true;
+      //   this.loading = false;
+      // }, 1000);
+      // }
     },
     handleCloseMessage() {
       this.showMessage = false;
