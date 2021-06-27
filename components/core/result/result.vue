@@ -89,7 +89,7 @@
         <div class="result-statistics__footer">
           <div class="button-group">
             <button class="button button--primary" @click="handleExportPdf">
-              تصدير تقرير PDF
+              {{ loading ? `Loading...` : `تصدير تقرير PDF` }}
             </button>
             <button class="button button--outline">مشاركة</button>
           </div>
@@ -142,7 +142,7 @@
 <script>
 import { bemMixin } from "@/components/ui";
 import { mapActions, mapGetters } from "vuex";
-import API from "@/services/api";
+// import API from "@/services/api";
 import { URLS } from "@/services/urls";
 import axios from "axios";
 
@@ -152,7 +152,8 @@ export default {
   data() {
     return {
       isInitialized: false,
-      api: null
+      api: null,
+      loading: false
     };
   },
   computed: {
@@ -191,30 +192,33 @@ export default {
   },
   methods: {
     ...mapActions("search", ["fetchMosqueDetailsAction"]),
-    handleExportPdf() {
-      const data = {
+    async handleExportPdf() {
+      this.loading = true;
+
+      const params = {
         scoreColor: "#ed462f",
         score: this.getMosqueDetails.value,
         prayersInPerimeter: this.getMosqueDetails.expectedPrayers,
         distanceToNearestMosque: this.getMosqueDetails.nearestMosqueDistance,
         populationDensity: this.getMosqueDetails.populationDensity,
         mosqueDensity: this.getMosqueDetails.mosqueDensity,
-        long: this.getMosqueDetails.lng.toString(),
-        lat: this.getMosqueDetails.lat.toString(),
+        long: this.getMosqueDetails.lng,
+        lat: this.getMosqueDetails.lat,
         qrcodeUrl: "www.google.com",
-        firstNearstMosque: "مسجد الحارثة بن صعب - 3.2 كلم, شمال غرب",
-        secondNearstMosque: "مسجد الفضيل بن عياض - 3.3 كلم, شمال شرق",
-        thirdNearstMosque: "مسجد - 3.9 كلم, جنوب"
+        firstNearstMosque: this.getMosqueDetails.firstNearestMasjidName,
+        secondNearstMosque: this.getMosqueDetails.secondNearestMasjidName,
+        thirdNearstMosque: this.getMosqueDetails.thirdNearestMasjidName
       };
 
-      axios
-        .post(`https://nextmasjid.azurewebsites.net/api/v1/report/new`, data)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      try {
+        const res = await axios.post(URLS.EXPORT_PDF_URL, params);
+        const link = res.data.report;
+        window.open(link);
+        this.loading = false;
+      } catch (error) {
+        console.log(err);
+        this.loading = false;
+      }
     }
   }
 };
