@@ -17,8 +17,8 @@
         <p class="search-info__desc">
           {{ message }}
           <br />
-          Latitude: {{ content.lat }}<br />
-          Longitude: {{ content.lng }}
+           {{ content.lat }} خط الطول <br />
+           {{ content.lng }} خط العرض 
         </p>
       </div>
     </div>

@@ -304,7 +304,7 @@
         "chooseCity": "حدد المدينة",
         "editorChoice": "عرض اختيارات المحررين",
         "currentMosques": "عرض المساجد الحالية",
-        "heatmap": "Heatmap"
+        "heatmap": "عرض الخريطة الحرارية"
       },
       "infoWindow": {
         "websiteVisit": "عرض التفاصيل",
@@ -318,19 +318,19 @@
         }
       },
       "firstModal": {
-        "title": "How to use smart map",
+        "title": "كيف تستخدم الخريطة الذكية",
         "content": [
           {
             "img": "search-modal-1.png",
-            "text": "Explore the map. Red areas means higher need."
+            "text": "تصفح الخريطة. اللون الأحمر يعرض المناطق الأكثر احتياجا. "
           },
           {
             "img": "search-modal-2.png",
-            "text": "Click on any point to see the spesific value of that location. Click on details for more info."
+            "text": "انقر على أي نقطة بالخريطة للحصول على تفاصيل عن هذا الموقع تحديدا"
           },
           {
             "img": "search-modal-3.png",
-            "text": "You can show/hide the heatmap also show/hide the existing mosques."
+            "text": "بإمكانك عرض أو إخفاء الخريطة الحرارية، وكذلك عرض أو إخفاء المساجد الحالية. المساجد الحالية لاتظهر إلا في مستوى تقريب عال."
           }
         ]
       }

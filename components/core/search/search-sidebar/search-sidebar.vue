@@ -67,7 +67,7 @@
             <span class="control__indicator"></span>
             <span>
               {{ $t("pages.search.sidebar.heatmap") }}
-              {{ heatmap ? "On" : "Off" }}
+
             </span>
           </label>
         </div>
