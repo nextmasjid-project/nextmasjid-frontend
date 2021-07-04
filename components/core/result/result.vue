@@ -88,8 +88,17 @@
         </div>
         <div class="result-statistics__footer">
           <div class="button-group">
-            <button class="button button--primary" @click="handleExportPdf">
-              {{ loading ? `Loading...` : `تصدير تقرير PDF` }}
+            <button
+              class="button button--primary"
+              @click="pdfGenerated ? handleOpenPdf() : handleExportPdf()"
+            >
+              {{
+                pdfGenerated
+                  ? "Open PDF"
+                  : loading
+                  ? `جاري المعالجة`
+                  : `تصدير تقرير PDF`
+              }}
             </button>
             <button class="button button--outline">مشاركة</button>
           </div>
@@ -153,7 +162,9 @@ export default {
     return {
       isInitialized: false,
       api: null,
-      loading: false
+      loading: false,
+      pdfGenerated: false,
+      pdfLink: ""
     };
   },
   computed: {
@@ -195,30 +206,43 @@ export default {
     async handleExportPdf() {
       this.loading = true;
 
+      let color = "";
+      if (this.details.value <= 50) {
+        color = "#fb2e2e";
+      } else if (this.details.value > 50 && this.details.value < 70) {
+        color = "#efe605";
+      } else if (this.details.value >= 70) {
+        color = "#21973b";
+      }
+
       const params = {
-        scoreColor: "#ed462f",
-        score: this.getMosqueDetails.value,
-        prayersInPerimeter: this.getMosqueDetails.expectedPrayers,
-        distanceToNearestMosque: this.getMosqueDetails.nearestMosqueDistance,
-        populationDensity: this.getMosqueDetails.populationDensity,
-        mosqueDensity: this.getMosqueDetails.mosqueDensity,
-        long: this.getMosqueDetails.lng,
-        lat: this.getMosqueDetails.lat,
+        scoreColor: color,
+        score: this.details.value,
+        prayersInPerimeter: this.details.expectedPrayers,
+        distanceToNearestMosque: this.details.nearestMosqueDistance,
+        populationDensity: this.details.populationDensity,
+        mosqueDensity: this.details.mosqueDensity,
+        long: this.details.lng,
+        lat: this.details.lat,
         qrcodeUrl: "www.google.com",
-        firstNearstMosque: this.getMosqueDetails.firstNearestMasjidName,
-        secondNearstMosque: this.getMosqueDetails.secondNearestMasjidName,
-        thirdNearstMosque: this.getMosqueDetails.thirdNearestMasjidName
+        firstNearstMosque: this.details.firstNearestMasjidName,
+        secondNearstMosque: this.details.secondNearestMasjidName,
+        thirdNearstMosque: this.details.thirdNearestMasjidName
       };
 
       try {
         const res = await axios.post(URLS.EXPORT_PDF_URL, params);
-        const link = res.data.report;
-        window.open(link);
+        this.pdfLink = res.data.report;
         this.loading = false;
+        this.pdfGenerated = true;
       } catch (error) {
         console.log(err);
         this.loading = false;
+        this.pdfGenerated = false;
       }
+    },
+    handleOpenPdf() {
+      window.open(this.pdfLink);
     }
   }
 };

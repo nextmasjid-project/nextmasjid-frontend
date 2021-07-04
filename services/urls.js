@@ -10,6 +10,6 @@ export const URLS = {
   MOSQUE_DETAILS_URL: ({ lat, lng, lang }) =>
     `/score/byPointDetails/${lang}/${lat}/${lng}`,
   CONTACT_URL: `/contact/submit`,
-  EXPORT_PDF_URL: `https://nextmasjid-exportpdf.herokuapp.com/api/v1/report/new`
-  // EXPORT_PDF_URL: `http://localhost:3000/api/v1/report/new`
+  // EXPORT_PDF_URL: `https://nextmasjid-exportpdf.herokuapp.com/api/v1/report/new`
+  EXPORT_PDF_URL: `http://localhost:3000/api/v1/report/new`
 };
