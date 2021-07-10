@@ -13,9 +13,9 @@
       <div class="result-statistics">
         <div class="result-statistics__header">
           <h1 class="result-statistics__score">
-            <span class="result-statistics__score-percentage">{{
-              details.value
-            }}</span>
+            <span class="result-statistics__score-percentage">
+              {{ details.value }}
+            </span>
             <span class="result-statistics__score-symbol">%</span>
           </h1>
           <div class="result-statistics__progress">
@@ -224,7 +224,7 @@ export default {
         mosqueDensity: this.details.mosqueDensity,
         long: this.details.lng,
         lat: this.details.lat,
-        qrcodeUrl: "www.google.com",
+        qrcodeUrl: this.$route.fullPath,
         firstNearstMosque: this.details.firstNearestMasjidName,
         secondNearstMosque: this.details.secondNearestMasjidName,
         thirdNearstMosque: this.details.thirdNearestMasjidName
