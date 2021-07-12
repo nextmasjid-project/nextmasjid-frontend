@@ -164,7 +164,8 @@ export default {
       api: null,
       loading: false,
       pdfGenerated: false,
-      pdfLink: ""
+      pdfLink: "",
+      url: "https://green-water-03d474b03.azurestaticapps.net"
     };
   },
   computed: {
@@ -224,7 +225,7 @@ export default {
         mosqueDensity: this.details.mosqueDensity,
         long: this.details.lng,
         lat: this.details.lat,
-        qrcodeUrl: this.$route.fullPath,
+        qrcodeUrl: `${this.url}${this.$route.fullPath}`,
         firstNearstMosque: this.details.firstNearestMasjidName,
         secondNearstMosque: this.details.secondNearestMasjidName,
         thirdNearstMosque: this.details.thirdNearestMasjidName
