@@ -102,7 +102,10 @@
             </button>
             <button class="button button--outline">مشاركة</button>
           </div>
-          <nuxt-link class="result-statistics__footer-link" to="/">
+          <nuxt-link
+            class="result-statistics__footer-link"
+            :to="`/${getLocale}`"
+          >
             للتعرف على الخوارزمية المتبعة انقر هنا
           </nuxt-link>
         </div>
@@ -237,7 +240,7 @@ export default {
         this.loading = false;
         this.pdfGenerated = true;
       } catch (error) {
-        console.log(err);
+        console.log(error);
         this.loading = false;
         this.pdfGenerated = false;
       }
