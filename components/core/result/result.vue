@@ -168,7 +168,9 @@ export default {
       loading: false,
       pdfGenerated: false,
       pdfLink: "",
-      url: "https://green-water-03d474b03.azurestaticapps.net"
+      // beUrl: 'http://localhost:3000',
+      beUrl: "https://nextmasjid-exportpdf.herokuapp.com",
+      feUrl: "https://green-water-03d474b03.azurestaticapps.net"
     };
   },
   computed: {
@@ -235,7 +237,10 @@ export default {
       };
 
       try {
-        const res = await axios.post(URLS.EXPORT_PDF_URL, params);
+        const res = await axios.post(
+          `${this.beUrl}${URLS.EXPORT_PDF_URL}`,
+          params
+        );
         this.pdfLink = res.data.report;
         this.loading = false;
         this.pdfGenerated = true;
