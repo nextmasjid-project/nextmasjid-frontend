@@ -168,7 +168,7 @@ export default {
       loading: false,
       pdfGenerated: false,
       pdfLink: "",
-      // beUrl: 'http://localhost:3000',
+      // beUrl: "http://localhost:3000",
       beUrl: "https://nextmasjid-exportpdf.herokuapp.com",
       feUrl: "https://green-water-03d474b03.azurestaticapps.net"
     };
