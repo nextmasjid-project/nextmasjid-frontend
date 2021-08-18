@@ -62,14 +62,9 @@
         </div>
 
         <div class="contact__c2a">
-          <div v-if="loading">
-            Loading...
-          </div>
-          <div v-else>
-            <button class="button button--primary" type="submit">
-              {{ $t("pages.contact.form.submit") }}
-            </button>
-          </div>
+          <button class="button button--primary" type="submit">
+            {{ loading ? "Loading..." : $t("pages.contact.form.submit") }}
+          </button>
         </div>
       </form>
     </div>
@@ -116,7 +111,7 @@ export default {
         email: "",
         message: ""
       },
-      endpoint: "https://formspree.io/f/xjvjrpvb",
+      endpoint: "https://formspree.io/f/xwkawqea",
       loading: false,
       showMessage: false,
       error: null
