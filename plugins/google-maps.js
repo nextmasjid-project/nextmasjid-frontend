@@ -1,9 +1,10 @@
-const API_KEY = 'AIzaSyB7B6JuvAkUUmIA9_2ljZficL_ti-VGAvw';
-const CALLBACK_NAME = 'gmapsCallback';
+const API_KEY = "AIzaSyB7B6JuvAkUUmIA9_2ljZficL_ti-VGAvw";
+const CALLBACK_NAME = "gmapsCallback";
 
 let initialized = !!window.google;
 let resolveInitPromise;
 let rejectInitPromise;
+
 // This promise handles the initialization
 // status of the google maps script.
 const initPromise = new Promise((resolve, reject) => {
@@ -26,16 +27,16 @@ export function init() {
   // We inject a new script tag into
   // the `<head>` of our HTML to load
   // the Google Maps script.
-  const script = document.createElement('script');
+  const script = document.createElement("script");
   script.async = true;
   script.defer = true;
   script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=visualization&callback=${CALLBACK_NAME}`;
   script.onerror = rejectInitPromise;
-  document.querySelector('head').appendChild(script);
+  document.querySelector("head").appendChild(script);
 
-  return initPromise
+  return initPromise;
 }
 
 export default ({ app }, inject) => {
-  inject('google', init);
-}
+  inject("google", init);
+};
