@@ -72,7 +72,7 @@
     <div v-if="showMessage">
       <overlay @close="handleCloseMessage">
         <div :class="error ? 'alert alert--error' : 'alert alert--success'">
-          {{ error ? errorMessage : `Thank you! Your data was submitted.` }}
+          {{ error ? errorMessage : "شكرًا لكم تم استلام رسالتكم" }}
         </div>
       </overlay>
     </div>

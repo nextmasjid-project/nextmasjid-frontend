@@ -1,78 +1,79 @@
 .main-header {
-    // Vars
+  // Vars
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      padding: 1rem 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      width: 100%;
-      pointer-events: none;
-      background-color: $c-white;
-      box-shadow: 0px 30.78px 66.17px rgba(17, 36, 53, 0.57);
-      border-bottom-left-radius: 1.5rem;
-      border-bottom-right-radius: 1.5rem;
+  // Module
+  & {
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    pointer-events: none;
+    background-color: $c-white;
+    box-shadow: 0px 30.78px 66.17px rgba(17, 36, 53, 0.57);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 
-      @include mq('>lg') {
-        padding: 2rem 0;
-        border-radius: 0;
-        box-shadow: none;
-        background-color: transparent;
-      }
+    @include mq(">lg") {
+      padding: 2rem 0;
+      border-radius: 0;
+      box-shadow: none;
+      background-color: transparent;
+    }
 
-      .main-header__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
-        padding: 0 1.5rem;
+    .main-header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+      padding: 0 1.5rem;
 
-        @include mq('>lg') {
-          padding: 0 4rem;
-        }
-      }
-
-      .main-header__hamburger {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 5rem;
-        background-color: $c-white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: $box-shadow-icon;
-        pointer-events: auto;
-
-        svg {
-          width: 1.7rem;
-          height: 1.7rem;
-        }
-
-        @include mq('>lg') {
-          width: 6rem;
-          height: 6rem;
-        }
-      }
-
-      .main-header__link {
-        display: block;
-        pointer-events: auto;
-      }
-
-      .main-header__logo {
-        width: 12rem;
-
-        @include mq('>lg') {
-          width: 20rem;
-        }
+      @include mq(">lg") {
+        padding: 0 4rem;
       }
     }
 
-    // Facets
+    .main-header__hamburger {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 5rem;
+      background-color: $c-primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box-shadow-icon;
+      pointer-events: auto;
 
-    // States
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        stroke: white;
+      }
+
+      @include mq(">lg") {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+
+    .main-header__link {
+      display: block;
+      pointer-events: auto;
+    }
+
+    .main-header__logo {
+      width: 12rem;
+
+      @include mq(">lg") {
+        width: 20rem;
+      }
+    }
+  }
+
+  // Facets
+
+  // States
 }

@@ -104,7 +104,7 @@
           </div>
           <nuxt-link
             class="result-statistics__footer-link"
-            :to="`/${getLocale}`"
+            :to="localePath({ name: 'index' })"
           >
             للتعرف على الخوارزمية المتبعة انقر هنا
           </nuxt-link>
