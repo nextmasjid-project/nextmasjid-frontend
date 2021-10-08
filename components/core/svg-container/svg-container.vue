@@ -29,15 +29,15 @@
     <symbol id="icon-close" viewBox="0 0 24 24">
       <path
         d="M4 19.4678L19.468 3.99981"
-        stroke="black"
-        stroke-width="2"
+        stroke="white"
+        stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M19.4688 19.4678L4.00079 3.99981"
-        stroke="black"
-        stroke-width="2"
+        stroke="white"
+        stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
