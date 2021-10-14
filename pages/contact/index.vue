@@ -63,7 +63,11 @@
 
         <div class="contact__c2a">
           <button class="button button--primary" type="submit">
-            {{ loading ? "جاري المعالجة" : $t("pages.contact.form.submit") }}
+            {{
+              loading
+                ? $t("pages.contact.form.loading")
+                : $t("pages.contact.form.submit")
+            }}
           </button>
         </div>
       </form>
@@ -72,7 +76,7 @@
     <div v-if="showMessage">
       <overlay @close="handleCloseMessage">
         <div :class="error ? 'alert alert--error' : 'alert alert--success'">
-          {{ error ? errorMessage : "شكرًا لكم تم استلام رسالتكم" }}
+          {{ error ? errorMessage : $t("pages.contact.modal.success") }}
         </div>
       </overlay>
     </div>

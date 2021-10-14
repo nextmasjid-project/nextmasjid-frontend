@@ -62,11 +62,11 @@
     }
   },
   "footer": {
-    "linkText": "Open Data",
     "text": "NextMasjid | All Rights Reserved",
+    "linkText": "Open Data",
     "socialMedia": {
       "facebook": "http://facebook.com",
-      "twitter": "http://twitter.com",
+      "twitter": "https://twitter.com/nextmasjid",
       "instagram": "http://instagram.com"
     }
   },
@@ -101,7 +101,7 @@
     "about": {
       "subHero": {
         "title": "About page",
-        "description": "test"
+        "description": "About page description"
       },
       "topTiles": [
         {
@@ -161,51 +161,29 @@
       },
       "bottom": {
         "title": "Bottom body",
-        "description": "very long text dolore magna aliquyam erat, sed diam voluptua more text show come here dolore <br><br> <h3>magna aliquyam erat,</h3>sed diam voluptua more text show come here\""
+        "description": "<h3>خوارزميات ذكية، وبك نكون أدق وأذكى</h3>لا نستغني عن فكرة أو ملحوظة أو خطأ، خصوصا في بيانات المساجد الحالية وحدود المدن والمحافظات. البيانات الدقيقة ستعطي نتائج دقيقة. وبكم نكون أدق وأذكى <br/><br/><br/> <h3>شكر خاص</h3>نورة عبدالعزيز الشايع، محمد جابر، تنوير راشد، أحمد جدوع، عبدالإله العويس، معاذ المجيدي، عادل الخضري، وليد المطيري، محمد سليم، وآخرون. "
       }
     },
-    "blog": {
+    "contact": {
       "subHero": {
-        "title": "Blog Page",
-        "description": "test"
+        "title": "Contact Page",
+        "description": "Contact page description"
       },
-      "tiles": [
-        {
-          "img": "image-24.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
-        },
-        {
-          "img": "image-25.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
-        },
-        {
-          "img": "image-26.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
-        },
-        {
-          "img": "image-24.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
-        },
-        {
-          "img": "image-25.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
-        },
-        {
-          "img": "image-26.png",
-          "title": "Lorem ipsum dolor sit amet, c",
-          "body": "Lorem ipsum dolor sit amet, c some lorem here"
-        }
-      ]
+      "form": {
+        "fullName": "Full Name",
+        "email": "E-mail",
+        "message": "Case",
+        "loading": "Loading...",
+        "submit": "Submit"
+      },
+      "modal": {
+        "success": "Thank you! Your data has been submitted"
+      }
     },
     "openData": {
       "subHero": {
         "title": "Open Data Page",
-        "description": "test"
+        "description": "Open data page description"
       },
       "tiles": [
         {
@@ -242,6 +220,44 @@
           "icon": "icon-11.svg",
           "title": "الهيئة العامة للإحصاء",
           "link": "https://www.stats.gov.sa/ar/13",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        }
+      ]
+    },
+    "blog": {
+      "subHero": {
+        "title": "Blog Page",
+        "description": "test"
+      },
+      "tiles": [
+        {
+          "img": "image-24.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-25.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-26.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-24.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-25.png",
+          "title": "Lorem ipsum dolor sit amet, c",
+          "body": "Lorem ipsum dolor sit amet, c some lorem here"
+        },
+        {
+          "img": "image-26.png",
+          "title": "Lorem ipsum dolor sit amet, c",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         }
       ]
@@ -293,12 +309,14 @@
         "cities": "Cities",
         "chooseRegion": "Choose Region",
         "chooseCity": "Choose City",
+        "editorChoice": "Editor Choice",
         "currentMosques": "Current Mosques",
         "heatmap": "Heatmap"
       },
       "infoWindow": {
         "websiteVisit": "Website visit",
         "share": "Share",
+        "howItWorks": "How it works",
         "report": "Report",
         "message": {
           "ifNot": "Not Suitable",
@@ -333,19 +351,6 @@
       },
       "mosqueLocations": {
         "title": "Location Mosques"
-      }
-    },
-    "contact": {
-      "subHero": {
-        "title": "Contact Page",
-        "description": "some text here"
-      },
-      "form": {
-        "fullName": "Full Name",
-        "email": "E-mail",
-        "message": "Case",
-        "report": "Report case",
-        "submit": "Submit"
       }
     }
   },

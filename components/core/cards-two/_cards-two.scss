@@ -4,19 +4,17 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   display: grid;
-  grid-template-columns: 10rem 1fr;
+  grid-template-columns: 1fr 1rem 4fr;
   grid-gap: 2.5rem;
 
   & {
     .cards-two-left {
       display: flex;
-      // justify-content: flex-end;
       align-items: center;
-      border-left: $c-border 1px solid;
     }
 
     .cards-two__icon {
-      width: 7rem;
+      width: 8rem;
     }
 
     hr {

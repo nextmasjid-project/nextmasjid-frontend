@@ -31,7 +31,6 @@
         :icon="card.icon"
         :title="card.title"
         :body="card.body"
-        :index="i"
       >
       </cards-three>
     </div>

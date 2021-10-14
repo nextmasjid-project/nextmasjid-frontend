@@ -8,7 +8,7 @@
       />
     </div>
 
-    <!-- <hr /> -->
+    <hr />
 
     <div class="cards-two-right">
       <h2 class="cards-two__title">

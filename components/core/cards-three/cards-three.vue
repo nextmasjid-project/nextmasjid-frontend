@@ -12,8 +12,6 @@
 
 <script>
 export default {
-  props: ["icon", "title", "body", "index"]
+  props: ["icon", "title", "body"]
 };
 </script>
-
-<style></style>
