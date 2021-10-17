@@ -20,7 +20,6 @@
       padding: 2rem;
       position: relative;
       width: 65rem;
-      // height: 41rem;
       display: flex;
       align-items: center;
       @include mq(">lg") {
@@ -38,7 +37,6 @@
     .overlay__body {
       margin-top: 3rem;
       text-align: center;
-      // width: 100%;
     }
   }
 

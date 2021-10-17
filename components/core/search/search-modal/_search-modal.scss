@@ -12,20 +12,10 @@
     .tiles {
       display: grid;
       gap: 2rem;
-
-      @include mq(">sm") {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+      grid-template-columns: 1fr 1fr 1fr;
 
       div {
         border-radius: 10px;
-        display: grid;
-        grid-template-columns: 40% 1fr;
-        gap: 1rem;
-
-        @include mq(">sm") {
-          display: block;
-        }
 
         img {
           width: 100%;
@@ -33,12 +23,8 @@
         }
 
         p {
-          text-align: left;
-
-          @include mq(">sm") {
-            text-align: center;
-            margin-top: 2rem;
-          }
+          text-align: center;
+          margin-top: 2rem;
         }
       }
     }
