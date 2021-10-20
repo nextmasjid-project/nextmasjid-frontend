@@ -22,9 +22,11 @@
     }
 
     .sub-hero__text {
-      // color: $c-blue-200;
       font-weight: 600;
-      max-width: 50%;
+
+      @include mq(">sm") {
+        max-width: 50%;
+      }
     }
   }
 
