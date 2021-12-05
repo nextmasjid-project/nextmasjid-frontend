@@ -1,6 +1,6 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
-  target: "server",
+  target: "static",
 
   server: {
     port: process.env.PORT, // default: 3000
