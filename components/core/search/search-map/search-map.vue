@@ -21,14 +21,14 @@ import {
   createIcons,
   centerMap,
   setMarkerIcon,
-  setMarkerVisibility
+  setMarkerVisibility,
 } from "./map-helpers";
 import {
   createMap,
   createLatLng,
   createHeatMapInstance,
   createInfoWindow,
-  createMarker
+  createMarker,
 } from "./map-entities";
 import Vue from "vue";
 import InfoWindowComponent from "./search-map-info-window/search-map-info-window";
@@ -38,8 +38,8 @@ export default {
   props: {
     api: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -53,15 +53,15 @@ export default {
         Icons: null,
         Markers: {
           editorChoice: [],
-          currentMosques: []
+          currentMosques: [],
         },
         Map: null,
-        HeatMap: null
+        HeatMap: null,
       },
       markerName: {
         editorChoice: "MARKER_EDITOR_CHOICE",
-        currentMosques: "MARKER_CURRENT_MOSQUE"
-      }
+        currentMosques: "MARKER_CURRENT_MOSQUE",
+      },
     };
   },
   computed: {
@@ -70,9 +70,9 @@ export default {
       "getHeatMapList",
       "getEditorSuggestionList",
       "getCurrentMosquesList",
-      "getComponentName"
+      "getComponentName",
     ]),
-    ...mapGetters("languages", ["getLocale"])
+    ...mapGetters("languages", ["getLocale"]),
   },
   mounted() {
     this.fetchAllEditorsSuggestion(this.getLocale).then(() => {
@@ -85,7 +85,7 @@ export default {
       "fetchCurrentLocationData",
       "fetchAllEditorsSuggestion",
       "setCoordsAction",
-      "fetchCurrentMosques"
+      "fetchCurrentMosques",
     ]),
     initMapComponents({ Api }) {
       this.GoogleMaps.Api = Api;
@@ -130,7 +130,7 @@ export default {
     },
     createMap() {
       this.GoogleMaps.Map = createMap(this.GoogleMaps, {
-        element: this.$refs.mapElement
+        element: this.$refs.mapElement,
       });
       this.GoogleMaps.Map.addListener("idle", this.onBoundChanged.bind(this));
       this.GoogleMaps.Map.addListener("click", this.onClickHandler.bind(this));
@@ -140,10 +140,10 @@ export default {
       setMarkerIcon({ marker, icon });
     },
     createMapMarkers(markerType, typeList, markerName) {
-      this.GoogleMaps.Markers[markerType].forEach(marker =>
+      this.GoogleMaps.Markers[markerType].forEach((marker) =>
         marker.setMap(null)
       );
-      this.GoogleMaps.Markers[markerType] = typeList?.map(el =>
+      this.GoogleMaps.Markers[markerType] = typeList?.map((el) =>
         this.createMapMarker(el, markerName)
       );
     },
@@ -165,12 +165,12 @@ export default {
         { Map },
         {
           latlng: { lat, lng },
-          method: "panTo"
+          method: "panTo",
         }
       );
     },
     resetMarkerIcons(markerType) {
-      this.GoogleMaps.Markers[markerType].forEach(marker =>
+      this.GoogleMaps.Markers[markerType].forEach((marker) =>
         setMarkerVisibility(this.GoogleMaps, { marker, toggle: false })
       );
     },
@@ -187,7 +187,7 @@ export default {
         swLat,
         swLng,
         lang: this.getLocale,
-        zoom: currnetZoom
+        zoom: currnetZoom,
       };
       this.updatedZoomLevel = this.GoogleMaps.Map.getZoom();
 
@@ -196,7 +196,7 @@ export default {
 
       if (this.updatedZoomLevel >= this.currentZoomLevel) {
         if (this.isCurrentMosquesChecked) {
-          this.fetchCurrentMosques(coordinates).then(_ => {
+          this.fetchCurrentMosques(coordinates).then((_) => {
             this.createMapMarkers(
               "currentMosques",
               this.getCurrentMosquesList,
@@ -217,24 +217,22 @@ export default {
     onClickHandler(e) {
       const { lat, lng } = e.latLng;
       let payload = { lat: lat(), lng: lng(), lang: this.getLocale };
-      const locale = {
-        websiteVisit: this.$t("pages.search.infoWindow.websiteVisit"),
-        share: this.$t("pages.search.infoWindow.share"),
-        report: this.$t("pages.search.infoWindow.report"),
-        message: this.$t("pages.search.infoWindow.message")
-      };
-      this.fetchCurrentLocationData(payload).then(response => {
+      const locale = this.$t("pages.search.infoWindow");
+
+      this.fetchCurrentLocationData(payload).then((response) => {
         this.isActiveWindow && this.isActiveWindow.close();
         // Parse Info window vue component and mount it to the DOM
         let InfoWindow = Vue.extend(InfoWindowComponent);
         let instanceInfoWindow = new InfoWindow({
-          propsData: { content: { ...response, ...payload, locale } }
+          propsData: {
+            content: { ...response, ...payload, locale },
+          },
         });
         instanceInfoWindow.$mount();
 
         let infoWindow = createInfoWindow(this.GoogleMaps, {
           content: instanceInfoWindow.$el,
-          position: e.latLng
+          position: e.latLng,
         });
         infoWindow.open(this.GoogleMaps.Map);
         this.isActiveWindow = infoWindow;
@@ -242,13 +240,13 @@ export default {
       });
     },
     heatMapInit() {
-      const HEAT_MAP_DATA = this.getHeatMapList.map(el => {
+      const HEAT_MAP_DATA = this.getHeatMapList.map((el) => {
         return {
           location: createLatLng(this.GoogleMaps, {
             lat: el.location.lat,
-            lng: el.location.lng
+            lng: el.location.lng,
           }),
-          weight: el.weight
+          weight: el.weight,
         };
       });
 
@@ -264,7 +262,7 @@ export default {
     },
     setZoomLevel(level) {
       this.GoogleMaps.Map.setZoom(level);
-    }
-  }
+    },
+  },
 };
 </script>

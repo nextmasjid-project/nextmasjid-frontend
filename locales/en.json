@@ -201,13 +201,13 @@
         {
           "icon": "icon-08.svg",
           "title": "لتحميل التصاميم",
-          "link": "https://github.com/nextmasjid-project/nextmasjid-branding",
+          "link": "https://www.figma.com/file/b2ba8uepWwlqsQVudbRN66/Next-Masjid",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
           "icon": "icon-09.svg",
           "title": "لتحميل التقرير",
-          "link": "https://github.com/nextmasjid-project/nextmasjid-exportpdf",
+          "link": "",
           "body": "Lorem ipsum dolor sit amet, c some lorem here"
         },
         {
@@ -319,10 +319,13 @@
         "howItWorks": "How it works",
         "report": "Report",
         "message": {
+          "ifNotGood": "This place is not good",
           "ifNot": "Not Suitable",
           "ifLow": "Low Suited",
           "ifHigh": "High Suited"
-        }
+        },
+        "export": "Export Report",
+        "exportMessage": "Sorry, this feature is coming soon"
       },
       "firstModal": {
         "title": "How to use smart map",

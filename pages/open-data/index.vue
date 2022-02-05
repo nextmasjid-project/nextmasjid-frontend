@@ -40,10 +40,10 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.$t("meta.openData.desc")
-        }
-      ]
+          content: this.$t("meta.openData.desc"),
+        },
+      ],
     };
-  }
+  },
 };
 </script>

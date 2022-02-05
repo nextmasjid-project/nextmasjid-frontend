@@ -6,9 +6,11 @@
       class="cards-grid__icon"
     />
     <h2 class="cards-grid__title">
-      <a :href="link" target="_blank" rel="noopener noreferrer">
+      <a :href="link" target="_blank" rel="noopener noreferrer" v-if="link">
         {{ title }}
       </a>
+
+      <div v-else>Coming soon</div>
     </h2>
     <p class="cards-grid__body">
       {{ body }}
@@ -18,8 +20,8 @@
 
 <script>
 export default {
-  props: ["icon", "title", "link", "body"]
+  props: ["icon", "title", "link", "body"],
 };
 </script>
 
-<style></style>
+

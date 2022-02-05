@@ -40,8 +40,8 @@
 export default {
   data() {
     return {
-      currentYear: new Date().getFullYear()
+      currentYear: new Date().getFullYear(),
     };
-  }
+  },
 };
 </script>

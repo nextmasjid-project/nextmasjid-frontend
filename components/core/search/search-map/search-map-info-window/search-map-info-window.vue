@@ -17,8 +17,8 @@
         <p class="search-info__desc">
           {{ message }}
           <br />
-           {{ content.lat }} خط الطول <br />
-           {{ content.lng }} خط العرض 
+          {{ content.lat }} خط الطول <br />
+          {{ content.lng }} خط العرض
         </p>
       </div>
     </div>
@@ -33,10 +33,14 @@
         </button>
       </div>
       <button class="button button--outline button--full">
-        {{ content.locale.share }}
+        {{ content.locale.export }} <br />
+        ({{ content.locale.exportMessage }})
       </button>
+
       <div class="search-info__center">
-        <a href="" class="search-info__link">{{ content.locale.report }}</a>
+        <a href="contact" class="search-info__link">
+          {{ content.locale.report }}
+        </a>
       </div>
     </div>
   </div>
@@ -50,8 +54,8 @@ export default {
   mixins: [bemMixin("search-info__bar")],
   props: {
     content: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   computed: {
     rootClasses() {
@@ -78,10 +82,12 @@ export default {
         return locale.message.ifHigh;
       } else if (value > 50) {
         return locale.message.ifLow;
+      } else if (value === -1) {
+        return locale.message.ifNotGood;
       } else {
         return locale.message.ifNot;
       }
-    }
-  }
+    },
+  },
 };
 </script>

@@ -198,13 +198,13 @@
         {
           "icon": "icon-08.svg",
           "title": "لتحميل التصاميم",
-          "link": "https://github.com/nextmasjid-project/nextmasjid-branding",
+          "link": "https://www.figma.com/file/b2ba8uepWwlqsQVudbRN66/Next-Masjid",
           "body": "كافة ملفات التصميم الخاصة بالمسجد القادم متاحة بدون حقوق، عبر الرابط أعلاه"
         },
         {
           "icon": "icon-09.svg",
           "title": "لتحميل التقرير",
-          "link": "https://github.com/nextmasjid-project/nextmasjid-exportpdf",
+          "link": "",
           "body": "ملف التصميم الخاص بالتقارير المستخرجة لكل موقع، متاحة بدون حقوق عبر الرابط أعلاه"
         },
         {
@@ -316,10 +316,13 @@
         "howItWorks": "كيف يعمل المؤشر القادم",
         "report": "خطأ في البيانات؟ أبلغنا",
         "message": {
+          "ifNotGood": "This place is not good",
           "ifNot": "هذا المكان غير مناسب لبناء مسجد",
           "ifLow": "المكان الذي اخترته مناسب بشكل محدود",
           "ifHigh": "مكان مناسب"
-        }
+        },
+        "export": "Export Report",
+        "exportMessage": "Sorry, this feature is coming soon"
       },
       "firstModal": {
         "title": "كيف تستخدم الخريطة الذكية",
