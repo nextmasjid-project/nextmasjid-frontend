@@ -218,6 +218,7 @@ export default {
       const { lat, lng } = e.latLng;
       let payload = { lat: lat(), lng: lng(), lang: this.getLocale };
       const locale = this.$t("pages.search.infoWindow");
+      const meta = this.$t("meta.search");
 
       this.fetchCurrentLocationData(payload).then((response) => {
         this.isActiveWindow && this.isActiveWindow.close();
@@ -225,7 +226,7 @@ export default {
         let InfoWindow = Vue.extend(InfoWindowComponent);
         let instanceInfoWindow = new InfoWindow({
           propsData: {
-            content: { ...response, ...payload, locale },
+            content: { ...response, ...payload, locale, meta },
           },
         });
         instanceInfoWindow.$mount();
