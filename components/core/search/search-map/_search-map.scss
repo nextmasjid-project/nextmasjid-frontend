@@ -49,12 +49,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
     }
 
     .icon {
       margin-right: 0.5rem;
-      margin-top: -0.3rem;
+      // margin-top: -0.3rem;
     }
 
     .search-info__progress {
@@ -98,30 +97,8 @@
       border-radius: 2rem;
     }
 
-    .share-button__wrapper {
-      position: relative;
-    }
-
-    .share-button__container {
-      position: absolute;
-      background-color: $c-white;
-      padding: 1rem;
-      border-radius: 0.3rem;
-      top: -4rem;
-      display: flex;
-      box-shadow: $box-shadow;
-      gap: 1rem;
-      left: 50%;
-      transform: translate(-50%, 0);
-      border: $c-border 1px solid;
-    }
-
-    .share-button__item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      background: $c-gray;
+    .search-info__share {
+      margin-top: 1.5rem;
     }
   }
 

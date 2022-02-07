@@ -77,8 +77,7 @@ export default {
         lazy: true,
         langDir: "locales/"
       }
-    ],
-    "vue-social-sharing/nuxt"
+    ]
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

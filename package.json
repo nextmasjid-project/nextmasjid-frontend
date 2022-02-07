@@ -20,8 +20,7 @@
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",
     "swiper": "^6.3.5",
-    "vue-awesome-swiper": "^4.1.1",
-    "vue-social-sharing": "^3.0.8"
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "fibers": "^5.0.0",

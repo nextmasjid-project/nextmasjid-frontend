@@ -28,32 +28,18 @@
           {{ content.locale.websiteVisit }}
         </a>
 
-        <div class="share-button__wrapper">
-          <div v-show="showShare" class="share-button__container">
-            <div
-              class="share-button__item"
-              v-for="share in shares"
-              :key="share.network"
-            >
-              <ShareNetwork
-                :network="share.network"
-                :url="resultLink"
-                :title="content.meta.title"
-                :description="content.meta.description"
-              >
-                <icon :symbol="`icon-${share.icon}`" />
-              </ShareNetwork>
-            </div>
-          </div>
+        <button
+          class="button button--outline button--aligned"
+          @click="handleShare"
+        >
+          <icon size="small" symbol="icon-share"></icon>
+          <span>{{ content.locale.share }}</span>
+        </button>
+      </div>
 
-          <button
-            class="button button--outline button--aligned"
-            @click="handleShare"
-          >
-            <icon size="small" symbol="icon-share"></icon>
-            <span>{{ content.locale.share }}</span>
-          </button>
-        </div>
+      <!-- share button -->
+      <div v-show="showShare" class="search-info__share">
+        <social-share :url="resultLink" :content="content" />
       </div>
 
       <button class="button button--outline button--full">
@@ -72,6 +58,7 @@
 
 <script>
 import bemMixin from "@/components/ui/mixins/bem";
+import overlay from "@/components/ui/components/overlay/overlay";
 
 export default {
   name: "search-map-info-window",
@@ -81,24 +68,12 @@ export default {
       type: Object,
     },
   },
+  components: {
+    overlay,
+  },
   data() {
     return {
       showShare: false,
-      sharing: {
-        title: "test title",
-        description: "test desc",
-      },
-      shares: [
-        {
-          network: "twitter",
-          icon: "twitter-blue",
-          // hashtags: "vuejs,vite"
-        },
-        {
-          network: "whatsapp",
-          icon: "whatsapp",
-        },
-      ],
     };
   },
   computed: {
@@ -136,6 +111,10 @@ export default {
   methods: {
     handleShare() {
       this.showShare = !this.showShare;
+    },
+
+    handleCloseShare() {
+      this.showShare = false;
     },
   },
 };
