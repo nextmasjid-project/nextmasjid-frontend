@@ -1,43 +1,43 @@
 .gm-style {
-    // Vars
+  // Vars
 
-    // Support
+  // Support
 
-    // Module
-    & {
-      .gm-style-iw-d {
-        overflow: auto !important;
-        border-radius: 2rem;
-      }
-
-      .gm-style-iw-c {
-        box-shadow: none;
-        padding: 0;
-        border-radius: 0;
-        background: none;
-      }
-
-      .gm-ui-hover-effect {
-        top: 1rem !important;
-        right: 1rem !important;
-        border-radius: 50% !important;
-        transition: background-color .2s ease-in-out;
-      }
-
-      .gm-ui-hover-effect img {
-        width: 2rem !important;
-        height: 2rem !important;
-        margin: auto !important;
-      }
+  // Module
+  & {
+    .gm-style-iw-d {
+      overflow: auto !important;
+      border-radius: 2rem;
     }
 
-    // Facets
-
-    // States
-    & {
-      .gm-ui-hover-effect:hover {
-        background: #e1e8ed !important;
-        opacity: 1 !important;
-      }
+    .gm-style-iw-c {
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+      background: none;
     }
+
+    .gm-ui-hover-effect {
+      top: 1rem !important;
+      right: 1rem !important;
+      border-radius: 50% !important;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .gm-ui-hover-effect img {
+      width: 2rem !important;
+      height: 2rem !important;
+      margin: auto !important;
+    }
+  }
+
+  // Facets
+
+  // States
+  & {
+    .gm-ui-hover-effect:hover {
+      background: #e1e8ed !important;
+      opacity: 1 !important;
+    }
+  }
 }

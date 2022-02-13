@@ -13,10 +13,7 @@
         class="resp-sharing-button"
         :class="`resp-sharing-button--${share.name}`"
       >
-        <div
-          aria-hidden="true"
-          class="resp-sharing-button__icon resp-sharing-button__icon--solid"
-        >
+        <div aria-hidden="true" class="resp-sharing-button__icon">
           <icon :symbol="`icon-share-${share.name}`" />
         </div>
         {{ share.text }}

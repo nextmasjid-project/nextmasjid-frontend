@@ -38,8 +38,11 @@
       </div>
 
       <!-- share button -->
-      <div v-show="showShare" class="search-info__share">
-        <social-share :url="resultLink" :content="content" />
+      <div v-show="showShare">
+        <div class="search-info__share--wrapper" @click.self="handleShare" />
+        <div class="search-info__share--content">
+          <social-share :url="resultLink" :content="content" />
+        </div>
       </div>
 
       <button class="button button--outline button--full">
@@ -111,10 +114,6 @@ export default {
   methods: {
     handleShare() {
       this.showShare = !this.showShare;
-    },
-
-    handleCloseShare() {
-      this.showShare = false;
     },
   },
 };

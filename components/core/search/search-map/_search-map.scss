@@ -23,6 +23,7 @@
       background-color: $bg-box;
       box-shadow: $box-shadow-box;
       border-radius: 2rem;
+      position: relative;
     }
 
     .search-info__percentage {
@@ -97,8 +98,22 @@
       border-radius: 2rem;
     }
 
-    .search-info__share {
-      margin-top: 1.5rem;
+    .search-info__share--wrapper {
+      position: absolute;
+      background: #000;
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .search-info__share--content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
