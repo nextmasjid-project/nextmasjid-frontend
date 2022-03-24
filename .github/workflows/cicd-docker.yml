@@ -36,16 +36,16 @@ jobs:
         uses: docker/build-push-action@v2
         with:          
           context: .
-          file: ./Dockerfile
+          file: ./docker/Dockerfile
           registry: ${{ env.REGISTRY }}
           push: true          
-          tags: nextmasjiddocker/nextmasjid-fronted:${{ steps.tag.outputs.VERSION }}, nextmasjiddocker/nextmasjid-nginx:latest  
+          tags: nextmasjiddocker/nextmasjid-frontend:${{ steps.tag.outputs.VERSION }}, nextmasjiddocker/nextmasjid-frontend:latest  
 
-      - name: Install SSH Key
-        uses: kielabokkie/ssh-key-and-known-hosts-action@v1.2.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-host: ${{ secrets.SERVER }}    
+      #- name: Install SSH Key
+      #  uses: kielabokkie/ssh-key-and-known-hosts-action@v1.2.0
+      #  with:
+      #    ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #    ssh-host: ${{ secrets.SERVER }}    
           
             
           
