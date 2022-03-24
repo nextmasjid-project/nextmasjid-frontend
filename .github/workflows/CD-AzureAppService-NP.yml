@@ -16,8 +16,10 @@
 # For more information on GitHub Actions for Azure, refer to https://github.com/Azure/Actions
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
 on:
-  release:
-    types: [created]
+  #release:
+  #  types: [created]
+  
+  workflow_dispatch:
 
 env:
   AZURE_WEBAPP_NAME: nextmasjid-np-fe    # set this to your application's name
