@@ -1,6 +1,8 @@
 name: Nuxt.js Front-End CI
 
-on: [push]
+#on: [push]
+on: 
+  workflow_dispatch:
 
 env:
   AZURE_WEBAPP_NAME: nextmasjid-np-fe    # set this to your application's name
