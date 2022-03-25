@@ -56,7 +56,7 @@ jobs:
           RESULT=$(docker network ls -q -f name=nextmasjid-network)
           if [[ -z $RESULT ]]; then 
             docker network create nextmasjid-network
-          fi
+          fi'
 
       - name: Deploy the new image        
         run: |
