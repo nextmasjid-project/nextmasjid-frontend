@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: nextmasjiddocker/nextmasjid-frontend:latest    
+    deploy:
+      replicas: 1
+    container_name: frontend-container
+    networks:
+      nextmasjid-network:
+        ipv4_address: 192.168.20.5
+    
+  #backend:
+  #  build: 
+  #    context: ./backend/docker/
+  #    dockerfile: Dockerfile
+  #  deploy:
+  #    replicas: 1
+  #  container_name: backend-container
+  #  networks:
+  #    nextmasjid-network:
+  #      ipv4_address: 192.168.20.6   
+
+  nginx-container:
+    image: nextmasjiddocker/nextmasjid-nginx:latest    
+    container_name: nginx-container
+    #depends_on:
+    #  - frontend
+    #  - backend
+    networks:
+      nextmasjid-network:
+        ipv4_address: 192.168.20.7
+    ports:
+      - "80:80"
+      - "5000:5000"     
+      - "443:443"       
+
+networks:
+  nextmasjid-network:
+    name: nextmasjid-network
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.20.0/24
+  
