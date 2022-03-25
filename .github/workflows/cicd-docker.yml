@@ -48,12 +48,19 @@ jobs:
         uses: kielabokkie/ssh-key-and-known-hosts-action@v1.2.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-host: ${{ secrets.SERVER }}    
-      - name: Deploy the new image
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} docker container stop $CONTAINER_NAME ;
-             docker container rm $CONTAINER_NAME ;
-             docker container run -d --name $CONTAINER_NAME --restart always nextmasjiddocker/nextmasjid-frontend:latest ; 
-             docker system prune -af 
+          ssh-host: ${{ secrets.SERVER }}  
+        
+      - name: Deploy the new image        
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} '
+          RESULT=$(docker container ls -q -f name=frontend-container)
+          if [[ ! -z $RESULT ]]; then 
+          docker container stop frontend-container 
+          docker container rm frontend-container 
+          else           
+            docker container run \-d \--name frontend-container \--restart always nextmasjiddocker/nextmasjid-frontend:latest
+            docker system prune \-af 
+          fi'
 
       
 
