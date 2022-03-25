@@ -23,10 +23,7 @@ services:
 
   nginx-container:
     image: nextmasjiddocker/nextmasjid-nginx:latest    
-    container_name: nginx-container
-    #depends_on:
-    #  - frontend
-    #  - backend
+    container_name: nginx-container    
     networks:
       nextmasjid-network:
         ipv4_address: 192.168.20.7

@@ -50,25 +50,19 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-host: ${{ secrets.SERVER }}  
 
-      - name: Create container network
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} '
-          RESULT=$(docker network ls -q -f name=nextmasjid-network)
-          if [[ -z $RESULT ]]; then 
-            docker network create nextmasjid-network
-          fi'
-
       - name: Deploy the new image        
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} '
-          RESULT=$(docker container ls -q -f name=frontend-container)
+          wget -L https://github.com/nextmasjid-project/nextmasjid-frontend/blob/main/docker/docker-compose.yml -P /tmp/
+          RESULT=$(docker-compose -f /tmp/docker-compose.yml ps -q --filter name=frontend-container)          
           if [[ ! -z $RESULT ]]; then 
-          docker container stop frontend-container 
-          docker container rm frontend-container 
-          else           
-            docker container run \-d \--name frontend-container --network nextmasjid-network \--restart always nextmasjiddocker/nextmasjid-frontend:latest
-            docker system prune \-af 
-          fi'
+            docker-compose -f /tmp/docker-compose.yml down frontend-container 
+            docker-compose -f /tmp/docker-compose.yml rm -f frontend-container 
+          fi          
+          docker-compose -f /tmp/docker-compose.yml up frontend-container
+          docker system prune \-af
+          rm -rf /tmp/docker-compose.yml
+          '
 
       
 
