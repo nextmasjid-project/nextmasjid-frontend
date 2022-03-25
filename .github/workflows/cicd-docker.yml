@@ -66,7 +66,7 @@ jobs:
           docker container stop frontend-container 
           docker container rm frontend-container 
           else           
-            docker container run \-d \--name frontend-container \--restart always nextmasjiddocker/nextmasjid-frontend:latest
+            docker container run \-d \--name frontend-container --network nextmasjid-network \--restart always nextmasjiddocker/nextmasjid-frontend:latest
             docker system prune \-af 
           fi'
 
