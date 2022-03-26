@@ -54,18 +54,16 @@ jobs:
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} '
           wget -L https://raw.githubusercontent.com/nextmasjid-project/nextmasjid-frontend/main/docker/docker-compose.yml -P /tmp/
-          RESULT=$(docker-compose -f /tmp/docker-compose.yml ps -q --filter name=frontend)          
+          RESULT=$(docker container ps -q -f name=frontend-container)                    
           if [[ ! -z $RESULT ]]; then 
-            docker-compose -f /tmp/docker-compose.yml down frontend 
-            docker-compose -f /tmp/docker-compose.yml rm -f frontend 
+            docker-compose -f /tmp/docker-compose.yml rm -svf frontend             
           fi          
-          docker-compose -f /tmp/docker-compose.yml up -d frontend
           docker system prune \-af
+          docker-compose -f /tmp/docker-compose.yml up -d frontend          
           rm -rf /tmp/docker-compose.yml*
-          '
+          '      
 
-       
-
+         
       
 
 
