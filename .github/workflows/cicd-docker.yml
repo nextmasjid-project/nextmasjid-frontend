@@ -53,16 +53,18 @@ jobs:
       - name: Deploy the new image        
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} '
-          wget -L https://github.com/nextmasjid-project/nextmasjid-frontend/blob/main/docker/docker-compose.yml -P /tmp/
-          RESULT=$(docker-compose -f /tmp/docker-compose.yml ps -q --filter name=frontend-container)          
+          wget -L https://raw.githubusercontent.com/nextmasjid-project/nextmasjid-frontend/main/docker/docker-compose.yml -P /tmp/
+          RESULT=$(docker-compose -f /tmp/docker-compose.yml ps -q --filter name=frontend)          
           if [[ ! -z $RESULT ]]; then 
-            docker-compose -f /tmp/docker-compose.yml down frontend-container 
-            docker-compose -f /tmp/docker-compose.yml rm -f frontend-container 
+            docker-compose -f /tmp/docker-compose.yml down frontend 
+            docker-compose -f /tmp/docker-compose.yml rm -f frontend 
           fi          
-          docker-compose -f /tmp/docker-compose.yml up frontend-container
+          docker-compose -f /tmp/docker-compose.yml up -d frontend
           docker system prune \-af
-          rm -rf /tmp/docker-compose.yml
+          rm -rf /tmp/docker-compose.yml*
           '
+
+       
 
       
 
