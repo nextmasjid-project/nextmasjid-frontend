@@ -10,16 +10,14 @@ services:
       nextmasjid-network:
         ipv4_address: 192.168.20.5
     
-  #backend:
-  #  build: 
-  #    context: ./backend/docker/
-  #    dockerfile: Dockerfile
-  #  deploy:
-  #    replicas: 1
-  #  container_name: backend-container
-  #  networks:
-  #    nextmasjid-network:
-  #      ipv4_address: 192.168.20.6   
+  backend:
+    image: nextmasjiddocker/nextmasjid-backend:latest    
+    deploy:
+      replicas: 1
+    container_name: backend-container
+    networks:
+      nextmasjid-network:
+        ipv4_address: 192.168.20.6   
 
   nginx-container:
     image: nextmasjiddocker/nextmasjid-nginx:latest    
