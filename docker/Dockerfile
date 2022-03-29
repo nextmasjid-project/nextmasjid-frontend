@@ -15,8 +15,6 @@ COPY / /root/nextmasjid-frontend/
 
 WORKDIR /root/nextmasjid-frontend 
 
-RUN rm -rf docker/
-
 RUN npx browserslist@latest --update-db
 
 RUN yarn install && yarn build
