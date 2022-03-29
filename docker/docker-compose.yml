@@ -38,7 +38,7 @@ services:
       - ./nginx/conf/:/etc/nginx/conf.d/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
 
-    certbot:
+  certbot:
     image: certbot/certbot:latest
     container_name: certbot-container
     deploy:
