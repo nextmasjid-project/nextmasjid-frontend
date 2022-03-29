@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const URL = "https://nextmasjidbackend.azurewebsites.net";
-const URL = "https://nextmasjid.pablo.eti.br:5000";
+const URL = "http://nextmasjid.pablo.eti.br:5000";
 
 const API = axios.create({
   baseURL: URL
