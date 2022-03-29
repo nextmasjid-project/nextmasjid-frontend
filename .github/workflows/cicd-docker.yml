@@ -45,7 +45,7 @@ jobs:
           push: true          
           tags: nextmasjiddocker/nextmasjid-frontend:${{ steps.tag.outputs.VERSION }}, nextmasjiddocker/nextmasjid-frontend:latest  
 
-      - name: Deploy the new image        
+      - name: Deploy the new frontend image        
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER }}

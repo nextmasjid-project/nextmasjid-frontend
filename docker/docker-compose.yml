@@ -33,7 +33,23 @@ services:
     ports:
       - "80:80"
       - "5000:5000"     
-      - "443:443"       
+      - "443:443" 
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+
+    certbot:
+    image: certbot/certbot:latest
+    container_name: certbot-container
+    deploy:
+      replicas: 1
+    restart: always    
+    networks:
+      nextmasjid-network:
+        ipv4_address: 192.168.20.8
+    volumes:      
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
 
 networks:
   nextmasjid-network:
