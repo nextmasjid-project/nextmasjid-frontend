@@ -10,6 +10,7 @@ on:
 
 env:
   CONTAINER_NAME: frontend-container
+  SERVICE_NAME: frontend
 
 jobs:  
   build_and_push:
@@ -44,25 +45,25 @@ jobs:
           push: true          
           tags: nextmasjiddocker/nextmasjid-frontend:${{ steps.tag.outputs.VERSION }}, nextmasjiddocker/nextmasjid-frontend:latest  
 
-      - name: Install SSH Key
-        uses: kielabokkie/ssh-key-and-known-hosts-action@v1.2.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-host: ${{ secrets.SERVER }}  
-
       - name: Deploy the new image        
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }} '
-          wget -L https://raw.githubusercontent.com/nextmasjid-project/nextmasjid-frontend/main/docker/docker-compose.yml -P /tmp/
-          RESULT=$(docker container ps -q -f name=frontend-container)                    
-          if [[ ! -z $RESULT ]]; then 
-            docker-compose -f /tmp/docker-compose.yml rm -svf frontend             
-          fi          
-          docker system prune \-af
-          docker-compose -f /tmp/docker-compose.yml up -d frontend          
-          rm -rf /tmp/docker-compose.yml*
-          '      
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: CONTAINER_NAME, SERVICE_NAME
+          script: |
+            wget -L https://raw.githubusercontent.com/nextmasjid-project/nextmasjid-frontend/main/docker/docker-compose.yml -P /tmp/
+            RESULT=$(docker container ps -q -f name=$CONTAINER_NAME)
+            if [[ ! -z $RESULT ]]; then             
+              docker-compose -f /tmp/docker-compose.yml rm -svf $CONTAINER_NAME 
+            fi
+            docker system prune -af      
+            docker-compose -f /tmp/docker-compose.yml up -d $SERVICE_NAME          
+            rm -rf /tmp/docker-compose.yml*
 
+
+   
          
       
 
