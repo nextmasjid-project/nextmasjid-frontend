@@ -19,7 +19,7 @@ services:
       nextmasjid-network:
         ipv4_address: 192.168.20.6   
 
-  nginx-container:
+  nginx:
     image: nextmasjiddocker/nextmasjid-nginx:latest    
     container_name: nginx-container    
     networks:
