@@ -33,7 +33,24 @@ services:
     ports:
       - "80:80"
       - "5000:5000"     
-      - "443:443"    
+      - "443:443"   
+    volumes:
+      - ./ssl-cert/www/:/usr/share/nginx/html:ro
+      - ./ssl-cert/conf/:/etc/nginx/ssl/:ro
+     
+  certbot:
+    image: certbot/certbot:latest
+    container_name: certbot-container
+    deploy:
+      replicas: 1
+    networks:
+      nextmasjid-network:
+        ipv4_address: 192.168.20.8
+    volumes:
+      - ./ssl-cert/www/:/usr/share/nginx/html:rw
+      - ./ssl-cert/conf/:/etc/letsencrypt/:rw
+    command: certonly --webroot -w /usr/share/nginx/html --email pablo@pablo.eti.br --agree-tos -d nextmasjid.pablo.eti.br
+
 
 networks:
   nextmasjid-network:
