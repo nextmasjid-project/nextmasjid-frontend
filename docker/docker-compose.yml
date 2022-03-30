@@ -49,7 +49,7 @@ services:
     volumes:
       - ./ssl-cert/www/:/usr/share/nginx/html:rw
       - ./ssl-cert/conf/:/etc/letsencrypt/:rw
-    command: certonly --webroot -w /usr/share/nginx/html --email pablo@pablo.eti.br --agree-tos -d nextmasjid.pablo.eti.br
+    command: certonly --webroot -w /usr/share/nginx/html --email pablo@pablo.eti.br --agree-tos -d nextmasjid.pablo.eti.br -d nextmasjid-api.pablo.eti.br
 
 
 networks:
