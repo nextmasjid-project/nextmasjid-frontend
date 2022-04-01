@@ -8,9 +8,8 @@ services:
     restart: always
     container_name: frontend-container
     networks:
-      nextmasjid-network:
-        ipv4_address: 192.168.20.5
-    
+      - nextmasjid-network
+            
   backend:
     image: nextmasjiddocker/nextmasjid-backend:latest    
     deploy:
@@ -18,45 +17,10 @@ services:
     restart: always
     container_name: backend-container
     networks:
-      nextmasjid-network:
-        ipv4_address: 192.168.20.6   
-
-  nginx:
-    image: nextmasjiddocker/nextmasjid-nginx:latest    
-    container_name: nginx-container
-    deploy:
-      replicas: 1
-    restart: always    
-    networks:
-      nextmasjid-network:
-        ipv4_address: 192.168.20.7
-    ports:
-      - "80:80"
-      - "5000:5000"     
-      - "443:443"   
-    volumes:
-      - ./ssl-cert/www/:/usr/share/nginx/html:ro
-      - ./ssl-cert/conf/:/etc/nginx/ssl/:ro
-     
-  certbot:
-    image: certbot/certbot:latest
-    container_name: certbot-container
-    deploy:
-      replicas: 1
-    networks:
-      nextmasjid-network:
-        ipv4_address: 192.168.20.8
-    volumes:
-      - ./ssl-cert/www/:/usr/share/nginx/html:rw
-      - ./ssl-cert/conf/:/etc/letsencrypt/:rw
-    command: certonly --webroot -w /usr/share/nginx/html --email pablo@pablo.eti.br --agree-tos -d nextmasjid.pablo.eti.br -d nextmasjid-api.pablo.eti.br
-
+      - nextmasjid-network
 
 networks:
-  nextmasjid-network:
-    name: nextmasjid-network
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.20.0/24
+  nextmasjid-network:        
+    external:
+      name: nginx-network
   
